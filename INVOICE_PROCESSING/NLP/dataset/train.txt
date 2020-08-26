@@ -1,0 +1,63 @@
+No.:`0
+Total:`2
+Date:`1
+ayable to:`3
+Invoice:`0
+Date:`1
+sub total:`2
+Sub total $:`2
+subtotal:`2
+TOTAL:$:`2
+Invoice No.:`0
+Date:`1
+Contact:`3
+Total Amount:`2
+ayable to:`3
+made ayable to:`3
+made payable to`3
+made ayable to`3
+Beneficiary:`3
+Beneficiary`3
+Contact erson:`3
+invoice no`0
+Date :`1
+Total Amount:`2
+Grand Total:`2
+Sub-Total:`2
+Total Payable:`2
+Invoice Number:`0
+Vendor no:`3
+Vendor`3
+Total Amount HKD:`2
+made ayabe to`3
+Invoice Date`1
+SERIE INVOICE NO:`0
+Due HK$:`2
+Total Amount HK$ :`2
+No,:`0
+For and on behalf of`3
+Date:`1
+Vendor name:`3
+vendor name`3
+INVOICE NO.`0
+TAX INVOICE NO.`0
+Sub Total :`2
+Total :`2
+ayment to`3
+arrange ayment to:-`3
+Total HKD`2
+Invoice number`0
+vce Dat`1
+date`1
+Beneficiary name:`3
+for and on behalf of`3
+Invoice no`0
+ve Dat`1
+Invoice No.`0
+TOTAL (HKD)`2
+Invoice No.:`0
+Total Amount:`2
+Grand Total :`2
+Vendor`3
+Total Amount Due`2
+Beneficiary:`3
