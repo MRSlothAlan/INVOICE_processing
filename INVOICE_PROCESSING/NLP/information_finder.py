@@ -2,7 +2,7 @@
 Find specific information from the invoices,
 e.g. invoice number, invoice date, total
 """
-from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.constants import resize_ratio
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.constants import resize_ratio, SHOW_IMAGE
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.graph_process import get_list_of_neighbors
 import cv2
 # import all the predefined rules
@@ -99,7 +99,8 @@ def find_information_rule_based(words_raw_new, image, resize_ratio):
     entries_to_find = ["total", "invoice_no", "date"]
     for entry in entries_to_find:
         image = find_temp(words_raw_new, image, resize_ratio, what=entry)
-    cv2.imshow("try find entry", image)
+    if SHOW_IMAGE:
+        cv2.imshow("try find entry", image)
     return image
 
 

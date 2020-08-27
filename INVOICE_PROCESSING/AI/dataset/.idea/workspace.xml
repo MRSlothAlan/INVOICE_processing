@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b9e10b3b-496c-42be-a79a-d336356c3610" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Gradient_boosting/MS_lightgbm/feature_extraction/extract_usable_features.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Gradient_boosting/MS_lightgbm/testing scripts/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/025441^FUSION DESIGN INTERNATIONAL LIMITED^Invoice FDI-DCTR-19-10792(R ).xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/025461^CIRCUS ONE LTD^92180167  - INV-200608757.PER-1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/025462^CIRCUS ONE LTD^92180163 - INV-200608754.PER-1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/025463^CIRCUS ONE LTD^92180167 - INV-200608753.PER-1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/025464^CIRCUS ONE LTD^92180167 - INV-200608744.PER-1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/025465^CIRCUS ONE LTD^92180088 - INV-200608701.PER.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/025542^DHL EXPRESS (HONG KONG) LIMITED^D00222534.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/025561^KERRY LOGISTICS (HONG KONG) LIMITED^PERIHKT KC INVOICE-K2K0010202.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/025581^ALDO MENSA LIMITED^V2019262-FF.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/025621^ALDO MENSA LIMITED^V2019263-FF.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/025641^VMSD HONG KONG PTE LIMITED^VMHK2632 - PR RS29 GLORIFICATION HKIA -0001-1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/025641^VMSD HONG KONG PTE LIMITED^VMHK2632 - PR RS29 GLORIFICATION HKIA -0001-2 (2).xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/025641^VMSD HONG KONG PTE LIMITED^VMHK2632 - PR RS29 GLORIFICATION HKIA -0001-2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/025642^VMSD HONG KONG PTE LIMITED^VMHK2637 - PR - ABSOLUT EOY HKIA 2019-0001-1 (2).xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/025642^VMSD HONG KONG PTE LIMITED^VMHK2637 - PR - ABSOLUT EOY HKIA 2019-0001-1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/025642^VMSD HONG KONG PTE LIMITED^VMHK2637 - PR - ABSOLUT EOY HKIA 2019-0001-2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1 - Durial_FR_Durial_DEMO NOTES.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1.2 - Durial_NON-PO_INVOICE_FR_Durial_100.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1.3 - Durial_NON-PO_INVOICE_FR_Durial_428-2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/3.1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/8bit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ALGO/minimum_spanning_tree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neural_network/feature_extraction/graph_construction.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Neural_network/feature_extraction/graph_construction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../parse_invoice_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../parse_invoice_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../store_line.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../store_line.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1gfB2YUXIpWAlJgQF4Q7vk9rvR1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../GitHub/attend-copy-parse" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b9e10b3b-496c-42be-a79a-d336356c3610" name="Default Changelist" comment="" />
+      <created>1598495559086</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598495559086</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1598495583273">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1598495583273" />
+  </component>
+</project>

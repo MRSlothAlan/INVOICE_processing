@@ -9,6 +9,7 @@ import cv2
 import math
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.word_parser.parse_words import *
 import tqdm
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.ALGO.minimum_spanning_tree import GraphLineWeights
 
 
 class SameLine:
@@ -253,6 +254,12 @@ class SameLine:
                 self.storage[key][key_line] = merged_nodes_list
         return words_raw_new
 
+    def euclidean_distance_right(self, node1=Node(), node2=Node()):
+        return math.sqrt((pow((node1.center_y - node2.center_y), 2) + pow((node1.center_x - node2.left), 2)))
+
+    def euclidean_distance_left(self, node1=Node(), node2=Node()):
+        return math.sqrt((pow((node1.center_y - node2.center_y), 2) + pow((node1.left - node2.left - node2.width), 2)))
+
     def euclidean_distance(self, node1=Node(), node2=Node()):
         # return a distance between two nodes
         return math.sqrt((pow((node1.center_y - node2.center_y), 2) + pow((node1.center_x - node2.center_x), 2)))
@@ -271,8 +278,7 @@ class SameLine:
                     if abs(node_with_id.center_y - node.center_y) < threshold_height_inline or \
                        abs(node_with_id.top - node.top + node.height) < threshold_height or \
                        abs(node.top - node_with_id.top + node_with_id.height) < threshold_height:
-
-                        temp_dist = self.euclidean_distance(node_with_id, node)
+                        temp_dist = self.euclidean_distance_right(node_with_id, node)
                         if row is not key_same_line:
                             temp_dist = temp_dist * threshold_importance
                         else:
@@ -295,6 +301,7 @@ class SameLine:
         :return:
         """
         min_distance = 999999
+
         if key_same_line == 0 or key_same_line == last_key:
             top_row = -1
             bottom_row = -1
@@ -308,7 +315,7 @@ class SameLine:
             if top_row > -1:
                 min_distance, node_with_id = self.right_node_process(top_row, key_line, node_with_id, min_distance, key_same_line)
             if bottom_row > -1:
-                self.right_node_process(bottom_row, key_line, node_with_id, min_distance, key_same_line)
+                min_distance, node_with_id = self.right_node_process(bottom_row, key_line, node_with_id, min_distance, key_same_line)
         else:
             rows_to_watch = [key_same_line - 1, key_same_line, key_same_line + 1]
             for row_num in rows_to_watch:
@@ -319,16 +326,22 @@ class SameLine:
             # just point to itself
             # UPDATE (25/08/2020): OCR is not that capable, words does not read in a fixed order!!
             for row_num in range(last_key):
-                self.right_node_process(row_num, key_line, node_with_id, min_distance, key_same_line)
+                min_distance, node_with_id = self.right_node_process(row_num, key_line, node_with_id, min_distance, key_same_line)
         if node_with_id.right_node_id is 0 and key_same_line >= 0:
             node_with_id.right_node_id = node_with_id.id
 
+        if min_distance == 999999:
+            min_distance = 0
+        return min_distance
+
     def left_node_process(self, row, key_line, node_with_id, min_distance, key_same_line):
         threshold_height_inline = 5
-        threshold_height = 33
+        threshold_height = 5
         threshold_importance = 5
+        saved_i = -1
+        save_dist = 0
 
-        for node in self.storage[row][key_line]:
+        for index, node in enumerate(self.storage[row][key_line]):
             if node.id is not node_with_id.id:
                 if (node.left + node.width) < node_with_id.left:
                     # set a threshold, the centroid height differences should be small
@@ -336,7 +349,8 @@ class SameLine:
                     if abs(node_with_id.center_y - node.center_y) < threshold_height_inline or \
                        abs(node_with_id.top - node.top + node.height) < threshold_height or \
                        abs(node.top - node_with_id.top + node_with_id.height) < threshold_height:
-                        temp_dist = self.euclidean_distance(node_with_id, node)
+                        # need to calculate distance based on left side, not centriod
+                        temp_dist = self.euclidean_distance_left(node_with_id, node)
                         # add a threshold term to the distance such that node at the same line have higher importance
                         # interestingly, higher the value, lower is the importance (further away)
 
@@ -346,8 +360,13 @@ class SameLine:
                             temp_dist = temp_dist / threshold_importance
 
                         if temp_dist < min_distance:
+                            save_dist = temp_dist
                             min_distance = temp_dist
                             node_with_id.left_node_id = node.id
+                            saved_i = index
+        if saved_i is not -1:
+            pass
+            # print(node_with_id.word, "left: ", self.storage[row][key_line][saved_i].word, "dist: ", save_dist)
         return min_distance, node_with_id
 
     def get_left_node(self, node_with_id, key_same_line, key_line, last_key):
@@ -373,53 +392,83 @@ class SameLine:
             if top_row > -1:
                 min_distance, node_with_id = self.left_node_process(top_row, key_line, node_with_id, min_distance, key_same_line)
             if bottom_row > -1:
-                self.left_node_process(bottom_row, key_line, node_with_id, min_distance, key_same_line)
+                min_distance, node_with_id = self.left_node_process(bottom_row, key_line, node_with_id, min_distance, key_same_line)
         else:
+            # how about just check all the rows?
+            # print("\n\n")
+            for row_num in range(last_key):
+                min_distance, node_with_id = self.left_node_process(row_num, key_line, node_with_id, min_distance, key_same_line)
+
+            """
             rows_to_watch = [key_same_line - 1, key_same_line, key_same_line + 1]
             for row_num in rows_to_watch:
                 min_distance, node_with_id = self.left_node_process(row_num, key_line, node_with_id, min_distance, key_same_line)
-        if node_with_id.left_node_id == 0 and key_same_line >= 0:
+            """
+        # if node_with_id.left_node_id == 0 and key_same_line >= 0:
             # in this case, node is not in line 0 but it also pointed to node 0
             # just point to itself
+        if node_with_id.left_node_id == 0 and key_same_line >= 0:
             node_with_id.left_node_id = node_with_id.id
+        if min_distance == 999999:
+            min_distance = 0
+        return min_distance
 
     def get_bottom_node(self, node_with_id=Node(), key_bottom=int(), key_line=int, last_key=int):
         # scan the bottom row
+        min_distance = 999999
         init_key_bottom = key_bottom
         # the node is already at the bottom
         if (key_bottom - 1) == last_key:
             node_with_id.bottom_node_id = node_with_id.id
+            min_distance = 0
         else:
-            min_distance = 999999
+            saved_dist = 0
+
+            min_center_dist = 999999
+
             # modification: also need to watch 4 row down below
             included_rows = 1
             rows_to_watch = list()
             # search at most 1 rows down stairs
+            # SCAN ALL THE ROWS INSTEAD
             while key_bottom.__int__() <= last_key.__int__() and included_rows <= 4:
                 rows_to_watch.append(key_bottom)
                 key_bottom += 1
                 included_rows += 1
 
-            for key_bottom_defined in rows_to_watch:
+            # for key_bottom_defined in rows_to_watch:
+            for key_bottom_defined in range(last_key):
                 # each node in the whole line
-                for bottom_node_with_id in self.storage[key_bottom_defined][key_line]:
+                saved_i = -1
+                for index, bottom_node_with_id in enumerate(self.storage[key_bottom_defined][key_line]):
                     if bottom_node_with_id.top > (node_with_id.top + node_with_id.height):
                         temp_dist = self.euclidean_distance(node_with_id, bottom_node_with_id)
+                        temp_dist_height = abs(node_with_id.top - bottom_node_with_id.top)
+
                         if temp_dist < min_distance and temp_dist < 300:
+                            saved_i = index
+                            saved_dist = temp_dist
                             min_distance = temp_dist
                             node_with_id.bottom_node_id = bottom_node_with_id.id
 
+                if saved_i is not -1:
+                    pass
+                    # print(node_with_id.word, "bottom: ", self.storage[key_bottom_defined][key_line][saved_i].word, "dist: ", saved_dist)
         if node_with_id.bottom_node_id is 0 and init_key_bottom <= last_key:
             # scan all rows. OCR is not always available to cluster text
             node_with_id.bottom_node_id = node_with_id.id
+        if min_distance == 999999:
+            min_distance = 0
+        return min_distance
 
-    def get_top_node(self, node_with_id=Node(), key_top=int, key_line=int):
+    def get_top_node(self, node_with_id=Node(), key_top=int, key_line=int, last_key=int):
         init_key_top = key_top
+        min_distance = 999999
 
         if key_top == -1:
             node_with_id.top_node_id = node_with_id.id
+            min_distance = 0
         else:
-            min_distance = 999999
             # check top row only
             # update: set rows to watch to 2 rows on top
             included_rows = 1
@@ -429,16 +478,21 @@ class SameLine:
                 key_top -= 1
                 included_rows += 1
 
-            for key_top_defined in rows_to_watch:
+            # for key_top_defined in rows_to_watch:
+            for key_top_defined in range(last_key):
                 for top_node_with_id in self.storage[key_top_defined][key_line]:
                     if top_node_with_id.top < node_with_id.top:
                         temp_dist = self.euclidean_distance(node_with_id, top_node_with_id)
                         if temp_dist < min_distance and temp_dist < 300:
+
                             min_distance = temp_dist
                             node_with_id.top_node_id = top_node_with_id.id
 
         if node_with_id.top_node_id is 0 and init_key_top > 0:
             node_with_id.top_node_id = node_with_id.id
+        if min_distance == 999999:
+            min_distance = 0
+        return min_distance
 
     def generate_graph(self):
         """
@@ -446,6 +500,8 @@ class SameLine:
         center_x and center_y are modified here
         :return:
         """
+        glw = GraphLineWeights()
+
         node_id = 0
         last_key = list(self.storage.keys())[-1]
 
@@ -461,14 +517,21 @@ class SameLine:
             for key_line in self.storage[key]:
                 for node_with_id in self.storage[key][key_line]:
                     # consider 4 sides: top, right, bottom, left
+                    # glw: 0 -> 1 -> 2 -> 3
                     # 1. top, verified
-                    self.get_top_node(node_with_id, key - 1, key_line)
+                    min_dist = self.get_top_node(node_with_id, key - 1, key_line, last_key)
+                    glw.add_node_id_connection(node_with_id.id, 0, node_with_id.top_node_id, min_dist)
                     # 2. bottom
-                    self.get_bottom_node(node_with_id, key + 1, key_line, last_key)
+                    min_dist = self.get_bottom_node(node_with_id, key + 1, key_line, last_key)
+                    glw.add_node_id_connection(node_with_id.id, 2, node_with_id.bottom_node_id, min_dist)
                     # 3. left
-                    self.get_left_node(node_with_id, key, key_line, last_key)
+                    min_dist = self.get_left_node(node_with_id, key, key_line, last_key)
+                    glw.add_node_id_connection(node_with_id.id, 3, node_with_id.left_node_id, min_dist)
                     # 4. right
-                    self.get_right_node(node_with_id, key, key_line, last_key)
+                    min_dist = self.get_right_node(node_with_id, key, key_line, last_key)
+                    glw.add_node_id_connection(node_with_id.id, 1, node_with_id.right_node_id, min_dist)
+
+        return glw
 
     def write_to_file(self, dir):
         with open(dir, "w+", encoding='utf-8') as f:

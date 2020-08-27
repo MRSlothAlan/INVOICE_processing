@@ -22,7 +22,8 @@ from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.constants import *
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.opencv_image_operations import resize_with_ratio, \
     draw_rectangle_text_with_ratio, pre_process_images_before_scanning
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.information_finder import find_information_rule_based
-
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.AI.Neural_network.feature_extraction.graph_construction import *
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.ALGO.minimum_spanning_tree import GraphLineWeights, generate_mst_graph
 
 
 def main():
@@ -46,7 +47,6 @@ def main():
     pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
 
     for image_name in tqdm(image_files):
-        INVOICE_DATA = list()
 
         segment_data = InvoiceHierarchy()
         same_line = SameLine()
@@ -60,6 +60,7 @@ def main():
         resize_copy = resize.copy()
         resize_temp = resize.copy()
         resize_function = resize.copy()
+        resize_mst = resize.copy()
 
         # info = pytesseract.image_to_data(image, lang="chi_tra", output_type='dict')
         # assume all english
@@ -112,8 +113,19 @@ def main():
         # same_line.print()
         # used for node connections
         same_line_copy = same_line
-        print("generate graph for individual words")
-        same_line_copy.generate_graph()
+        print("generate graph for individual words (detailed)")
+
+        glw_detailed = same_line_copy.generate_graph()
+        print("Done")
+        # get total number of nodes
+        total_number_of_nodes = len(words_raw) - 1
+        print("generating minimum spanning tree...")
+        mst, starting_node_id = generate_mst_graph(glw_detailed, total_number_of_nodes)
+        print("Done")
+        if SHOW_IMAGE:
+            resize_mst = mst.draw_mst_on_graph(words_raw, resize_mst, resize_ratio)
+            cv2.imshow("MST", resize_mst)
+
         resize_temp = same_line_copy.draw_graph(words_raw, resize_temp, resize_ratio)
 
         TEMP_LINE = same_line.return_start_last_tokens()
@@ -123,15 +135,16 @@ def main():
         words_raw_new = same_line.merge_nearby_token(width)
         # need to plot a graph to check
         if DEBUG_DETAILED:
-            for index, line_data in enumerate(words_raw_new):
-                resize = draw_rectangle_text_with_ratio(resize,
-                                                        line_data.left, line_data.top,
-                                                        line_data.width,
-                                                        line_data.height,
-                                                        ' ',
-                                                        resize_ratio)
-            cv2.imshow("merged nodes", resize)
-            cv2.waitKey(0)
+            if SHOW_IMAGE:
+                for index, line_data in enumerate(words_raw_new):
+                    resize = draw_rectangle_text_with_ratio(resize,
+                                                            line_data.left, line_data.top,
+                                                            line_data.width,
+                                                            line_data.height,
+                                                            ' ',
+                                                            resize_ratio)
+                cv2.imshow("merged nodes", resize)
+                cv2.waitKey(0)
         """
         generate graph for training!! 
         """
@@ -157,15 +170,18 @@ def main():
         same_block.write_to_file(file_name)
         same_line.write_to_file(file_name)
         """
+        # cluster regions
+
         # generate dataset!
-        if GENERATE_DATASET:
-            pass
+        if DL:
+            adjacency_matrix_basic(words_raw_new)
 
         if DEBUG:
-            # cv2.imshow("image", resize)
-            cv2.imshow("graph", resize_copy)
-            cv2.imshow("original graph", resize_temp)
-            cv2.waitKey(0)
+            if SHOW_IMAGE:
+                # cv2.imshow("image", resize)
+                cv2.imshow("graph", resize_copy)
+                cv2.imshow("original graph", resize_temp)
+                cv2.waitKey(0)
 
         if PARSE:
             # with the node structure, you can tag stuff easily.

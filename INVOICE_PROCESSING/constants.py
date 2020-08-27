@@ -27,10 +27,11 @@ resize_ratio = 0.3
 ignore_char = [" ", "", None, "\n", "\t", "   ", "  "]
 
 DEBUG = True
+SHOW_IMAGE = False
 DEBUG_DETAILED = False
 PARSE = False
 TEMP_TEST = False
-GENERATE_DATASET = True
+DL = True
 
 N_GRAM_NO = 4
 
