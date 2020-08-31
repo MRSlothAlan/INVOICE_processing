@@ -72,6 +72,7 @@ def part_of_speech_label_parsing_rule_based(node_list):
     :return:
     """
     try:
+        # print([node.word for node in node_list])
         # case 1: possible labels with one words only
         n_gram_one = parse_word_nodes_n_gram_fixed(node_list, 1)
         raw_token = [n[0].word for n in n_gram_one]

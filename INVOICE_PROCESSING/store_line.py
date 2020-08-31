@@ -157,6 +157,8 @@ class SameLine:
 
                         new_word_num = len(new_word)
                         new_node_final = Node(new_word, new_left, new_top, new_width, new_height, new_word_num)
+                        # print(new_node_final.word)
+
                         return new_node_final
 
                         # for node in node_list:
@@ -203,6 +205,7 @@ class SameLine:
                                     index += 1
                                     if index < total_length:
                                         current_node = temp[index]
+                                # print([node.word for node in temp_partition])
                                 # append the data first, then perform checking
                                 # print("append: ", TEMP)
                                 final_parsed.append(temp_partition)
@@ -269,21 +272,27 @@ class SameLine:
         threshold_height = 5
         threshold_importance = 5
 
+        # print(node_with_id.word)
+
         for node in self.storage[row][key_line]:
             if node.id is not node_with_id.id:
-                # check the right sode instead
-                if (node_with_id.left + node_with_id.width) < node.left:
+                # check the right node instead
+                # add some buffer region
+
+                if (node_with_id.left + node_with_id.width) <= node.left + 10:
                     # set a threshold, the centroid height differences should be small
                     # or the top point should be closer to the bottom point
                     if abs(node_with_id.center_y - node.center_y) < threshold_height_inline or \
                        abs(node_with_id.top - node.top + node.height) < threshold_height or \
                        abs(node.top - node_with_id.top + node_with_id.height) < threshold_height:
                         temp_dist = self.euclidean_distance_right(node_with_id, node)
+                        # update: key_same_line is no longer a good metric since word may not be in the same line
+                        """
                         if row is not key_same_line:
                             temp_dist = temp_dist * threshold_importance
                         else:
                             temp_dist = temp_dist / threshold_importance
-
+                        """
                         if temp_dist < min_distance:
                             min_distance = temp_dist
                             node_with_id.right_node_id = node.id
@@ -353,11 +362,12 @@ class SameLine:
                         temp_dist = self.euclidean_distance_left(node_with_id, node)
                         # add a threshold term to the distance such that node at the same line have higher importance
                         # interestingly, higher the value, lower is the importance (further away)
-
+                        """
                         if row != key_same_line:
                             temp_dist = temp_dist * threshold_importance
                         else:
                             temp_dist = temp_dist / threshold_importance
+                        """
 
                         if temp_dist < min_distance:
                             save_dist = temp_dist
@@ -516,6 +526,8 @@ class SameLine:
         for key in self.storage:
             for key_line in self.storage[key]:
                 for node_with_id in self.storage[key][key_line]:
+                    # print(node_with_id.word)
+                    # print(node_with_id.left, node_with_id.top, node_with_id.width, node_with_id.height)
                     # consider 4 sides: top, right, bottom, left
                     # glw: 0 -> 1 -> 2 -> 3
                     # 1. top, verified
@@ -560,6 +572,7 @@ class SameLine:
         return results, currency_confirm
 
 
+CopyOfSameLine = type('CopyOfSameLine', SameLine.__bases__, dict(SameLine.__dict__))
 
 
 

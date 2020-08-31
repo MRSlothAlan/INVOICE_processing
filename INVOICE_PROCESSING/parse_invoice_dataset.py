@@ -11,12 +11,13 @@ import cv2
 import numpy as np
 from tqdm import tqdm
 import re
+from copy import copy
 
 import pandas as pd
 import string
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.word_node import Node
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.store_hierarchy import InvoiceHierarchy
-from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.store_line import SameLine
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.store_line import SameLine, CopyOfSameLine
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.store_block import SameBlock
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.constants import *
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.opencv_image_operations import resize_with_ratio, \
@@ -112,7 +113,8 @@ def main():
                                                                          store_block=same_block)
         # same_line.print()
         # used for node connections
-        same_line_copy = same_line
+        same_line_copy = copy(same_line)
+        # same_line_copy = same_line
         print("generate graph for individual words (detailed)")
 
         glw_detailed = same_line_copy.generate_graph()
@@ -128,11 +130,12 @@ def main():
 
         resize_temp = same_line_copy.draw_graph(words_raw, resize_temp, resize_ratio)
 
-        TEMP_LINE = same_line.return_start_last_tokens()
         # need to merge some nodes which are closed together
         # word model will be applied here
         height, width, color = image.shape
         words_raw_new = same_line.merge_nearby_token(width)
+        # for node in words_raw_new:
+          #  print(node.word)
         # need to plot a graph to check
         if DEBUG_DETAILED:
             if SHOW_IMAGE:
@@ -150,6 +153,7 @@ def main():
         """
         print("generate graph of merged nodes")
         same_line.generate_graph()
+        print("Done")
         # each node now has the connection data
         # draw the results
         # 20082020: logic error, need to get a list of raw, MERGED tokens
@@ -158,8 +162,9 @@ def main():
         """
         ======  Temporary testing section  ======
         """
-        find_information_rule_based(words_raw_new, resize_function, resize_ratio)
-
+        import enchant
+        d = enchant.Dict("en_US")
+        image, all_results = find_information_rule_based(words_raw_new, resize_function, resize_ratio, d)
         # check list of raw words and connections
         file_name = output_dir / str(image_name[:-4] + ".txt")
 
@@ -185,13 +190,19 @@ def main():
 
         if PARSE:
             # with the node structure, you can tag stuff easily.
-            results, currency = same_line.use_parser_re(currency_dict)
+            results, currency = same_line_copy.use_parser_re(currency_dict)
             print(results)
-            total = 1 + len(results)
             if currency is not None:
                 print(currency_dict[currency.upper()])
             else:
                 print("currency undefined")
+            # return a json file of data
+            for tagged_items in all_results:
+                label = tagged_items[0]
+                node_neighbor = tagged_items[1]
+                node_origin = tagged_items[2]
+
+                print(label, node_neighbor.word, node_origin.word)
 
 
 if __name__ == '__main__':
