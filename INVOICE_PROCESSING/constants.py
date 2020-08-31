@@ -99,3 +99,4 @@ def save_as_json(json_path, results, currency, currency_info):
     json_object = json.dumps(dictionary_json, indent=4)
     with open(json_path, "w", encoding='utf-8') as json_f:
         json_f.write(json_object)
+    return json_object

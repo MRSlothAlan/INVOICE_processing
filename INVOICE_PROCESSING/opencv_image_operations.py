@@ -2,6 +2,10 @@ import cv2
 import numpy as np
 from whitening import whiten
 import PIL.Image
+import pytesseract
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.constants import *
+import re
+import imutils
 
 
 def resize_with_ratio(image, resize_ratio):
@@ -36,3 +40,44 @@ def pre_process_images_before_scanning(image):
     # whiten images
     image_foreground, image_background = whiten(image_blur, kernel_size=20, downsample=4)
     return PIL.Image.fromarray(image_foreground)
+
+
+def auto_align_image(img):
+    """
+    focus on align image only
+    :param image:
+    :return:
+    """
+    img_rot = img
+    pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
+    try:
+        info = pytesseract.image_to_osd(img)
+        angle_detected = re.search('(?<=Orientation in degrees: )\d+', info).group(0)
+        if int(angle_detected) > 0:
+            print("need to rotate image")
+            img_rot = deskew(img, int(angle_detected))
+            if SHOW_IMAGE:
+                # cv2.imshow(str("rotated image"), img)
+                pass
+            print("rotated")
+    except pytesseract.pytesseract.TesseractError as e:
+        print("skip ocr... ")
+        pass
+
+    return img_rot
+
+
+def deskew(img, angle):
+    h, w = img.shape[:2]
+    center = (w // 2, h // 2)
+    rotated = img
+    if angle < 45:
+        M = cv2.getRotationMatrix2D(center, angle, 1.0)
+        rotated = cv2.warpAffine(img, M, (w, h),
+                                 flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
+    elif abs(angle) >= 90:
+        angle *= -1
+        rotated = imutils.rotate_bound(img, angle)
+
+    return rotated
+

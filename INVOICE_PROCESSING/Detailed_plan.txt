@@ -4,3 +4,4 @@ Detailed plan:
     Morning:
         Focus on invoice number detection and date detection, aim at 100% accurate on test set
     Afternoon:
+        for each aligned image, add "align" at the end of the name

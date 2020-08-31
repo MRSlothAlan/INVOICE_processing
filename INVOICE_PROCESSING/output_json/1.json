@@ -1,0 +1,39 @@
+{
+    "total amount_0": {
+        "left": 1039,
+        "top": 1479,
+        "width": 427,
+        "height": 18,
+        "indication": "Total ",
+        "entry": "1 job 3,500.00 3,500.00 "
+    },
+    "total amount_1": {
+        "left": 1286,
+        "top": 1526,
+        "width": 185,
+        "height": 17,
+        "indication": "Total ",
+        "entry": ": $49,000.00 "
+    },
+    "invoice_number_2": {
+        "left": 1150,
+        "top": 305,
+        "width": 139,
+        "height": 14,
+        "indication": "No. ",
+        "entry": ": V2019264-FF "
+    },
+    "date_3": {
+        "left": 1156,
+        "top": 333,
+        "width": 180,
+        "height": 14,
+        "indication": "Date ",
+        "entry": ": 04 November 2019 "
+    },
+    "currency": {
+        "type": "Hong Kong Dollar",
+        "country": "HONG KONG",
+        "abbreviated": "hkd"
+    }
+}

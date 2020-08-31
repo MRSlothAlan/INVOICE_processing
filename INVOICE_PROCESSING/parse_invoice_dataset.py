@@ -21,13 +21,13 @@ from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.store_line import SameLine, Copy
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.store_block import SameBlock
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.constants import *
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.opencv_image_operations import resize_with_ratio, \
-    draw_rectangle_text_with_ratio, pre_process_images_before_scanning
+    draw_rectangle_text_with_ratio, pre_process_images_before_scanning, auto_align_image
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.information_finder import find_information_rule_based
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.AI.Neural_network.feature_extraction.graph_construction import *
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.ALGO.minimum_spanning_tree import GraphLineWeights, generate_mst_graph
 
 
-def main():
+def parse_main():
     """
     :return:
     """
@@ -57,18 +57,22 @@ def main():
               "\n---------------------------------------------\n")
         image_path = str(dataset_dir / image_name)
         image = cv2.imread(image_path, 1)
+        # info = pytesseract.image_to_data(image, lang="chi_tra", output_type='dict')
+        # assume all english
+        image_pil = pre_process_images_before_scanning(image)
+        image = np.array(image_pil)
+        # to OpenCV format
+        image = image[:, :, ::-1].copy()
+        # align image
+        print("auto align image...")
+        image = auto_align_image(img=image)
+        print("done")
+
         resize = resize_with_ratio(image, resize_ratio)
         resize_copy = resize.copy()
         resize_temp = resize.copy()
         resize_function = resize.copy()
         resize_mst = resize.copy()
-
-        # info = pytesseract.image_to_data(image, lang="chi_tra", output_type='dict')
-        # assume all english
-        image_pil = pre_process_images_before_scanning(image)
-        image = np.array(image_pil)
-        image = image[:, :, ::-1].copy()
-
         info = pytesseract.image_to_data(image, output_type='dict')
 
         """ index defined: 
@@ -216,5 +220,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    parse_main()
 
