@@ -1,0 +1,39 @@
+{
+    "total amount_0": {
+        "left": 46,
+        "top": 344,
+        "width": 490,
+        "height": 13,
+        "indication": "Total ",
+        "entry": "7731084395 11829020 01 11 2019 MEL, MELBOURNE "
+    },
+    "total amount_1": {
+        "left": 1244,
+        "top": 562,
+        "width": 311,
+        "height": 13,
+        "indication": "Total ",
+        "entry": ": HKD : 37.50 3 7,189.00 "
+    },
+    "invoice_number_2": {
+        "left": 286,
+        "top": 97,
+        "width": 241,
+        "height": 16,
+        "indication": "Invoice Number ",
+        "entry": ": HKGIRO1499303 "
+    },
+    "date_3": {
+        "left": 255,
+        "top": 143,
+        "width": 272,
+        "height": 16,
+        "indication": "Date ",
+        "entry": ": 13 11 2019 "
+    },
+    "currency": {
+        "type": "Hong Kong Dollar",
+        "country": "HONG KONG",
+        "abbreviated": "hkd"
+    }
+}

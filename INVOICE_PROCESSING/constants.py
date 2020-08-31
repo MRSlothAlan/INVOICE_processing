@@ -72,7 +72,7 @@ def get_currency_csv():
     return currency_dict
 
 
-# format [[left, top, width, height, 'invoice_number', 'invoice no.: inv-20060-8753']]
+# format [[left, top, width, height, 'invoice_number', original_word, entry]]
 # format ['HONG KONG', 'Hong Kong Dollar']
 def save_as_json(json_path, results, currency, currency_info):
     dictionary_json = dict()
@@ -84,7 +84,8 @@ def save_as_json(json_path, results, currency, currency_info):
         dictionary_json[name]["top"] = result[1]
         dictionary_json[name]["width"] = result[2]
         dictionary_json[name]["height"] = result[3]
-        dictionary_json[name]["content"] = result[5]
+        dictionary_json[name]["indication"] = result[5]
+        dictionary_json[name]["entry"] = result[6]
     dictionary_json["currency"] = dict()
     if currency is not None:
         dictionary_json["currency"]["type"] = currency_info[1]

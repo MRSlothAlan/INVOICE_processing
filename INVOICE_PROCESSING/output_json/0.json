@@ -1,0 +1,103 @@
+{
+    "total amount_0": {
+        "left": 847,
+        "top": 1031,
+        "width": 278,
+        "height": 25,
+        "indication": "Sub-Total 4,401.50 ",
+        "entry": "Sub-Total 4,401.50 "
+    },
+    "total amount_1": {
+        "left": 847,
+        "top": 1031,
+        "width": 278,
+        "height": 25,
+        "indication": "Total ",
+        "entry": "Sub-Total 4,401.50 "
+    },
+    "total amount_2": {
+        "left": 1121,
+        "top": 1427,
+        "width": 162,
+        "height": 18,
+        "indication": "Total Amount ",
+        "entry": "HKD : 4,401.50 "
+    },
+    "total amount_3": {
+        "left": 1106,
+        "top": 1993,
+        "width": 162,
+        "height": 18,
+        "indication": "Total Amount ",
+        "entry": "HKD : 4,401.50 "
+    },
+    "invoice_number_4": {
+        "left": 1339,
+        "top": 377,
+        "width": 169,
+        "height": 16,
+        "indication": "Invoice Number ",
+        "entry": ": D00222534 "
+    },
+    "invoice_number_5": {
+        "left": 1118,
+        "top": 1290,
+        "width": 193,
+        "height": 16,
+        "indication": "Invoice Number ",
+        "entry": ": D00222534 "
+    },
+    "invoice_number_6": {
+        "left": 1103,
+        "top": 1856,
+        "width": 192,
+        "height": 16,
+        "indication": "Invoice Number ",
+        "entry": ": D00222534 "
+    },
+    "date_7": {
+        "left": 1237,
+        "top": 428,
+        "width": 272,
+        "height": 35,
+        "indication": "Date ",
+        "entry": ": 21 10 2019 "
+    },
+    "date_8": {
+        "left": 1237,
+        "top": 428,
+        "width": 272,
+        "height": 35,
+        "indication": "Date ",
+        "entry": ": 21 10 2019 "
+    },
+    "date_9": {
+        "left": 1375,
+        "top": 468,
+        "width": 134,
+        "height": 15,
+        "indication": "Date ",
+        "entry": ": 28 10 2019 "
+    },
+    "date_10": {
+        "left": 1016,
+        "top": 1376,
+        "width": 290,
+        "height": 29,
+        "indication": "Date ",
+        "entry": ": 21 10 2019 "
+    },
+    "date_11": {
+        "left": 1001,
+        "top": 1943,
+        "width": 290,
+        "height": 30,
+        "indication": "Date ",
+        "entry": ": 21 10 2019 "
+    },
+    "currency": {
+        "type": "Hong Kong Dollar",
+        "country": "HONG KONG",
+        "abbreviated": "hkd"
+    }
+}

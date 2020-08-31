@@ -168,7 +168,7 @@ def main():
         # check list of raw words and connections
         file_name = output_dir / str(image_name[:-4] + ".txt")
 
-        # json_name = output_json_dir / str(image_name[:-4] + ".json")
+        json_name = output_json_dir / str(image_name[:-4] + ".json")
 
         # write parsed words to a text file
         """
@@ -191,18 +191,28 @@ def main():
         if PARSE:
             # with the node structure, you can tag stuff easily.
             results, currency = same_line_copy.use_parser_re(currency_dict)
-            print(results)
             if currency is not None:
                 print(currency_dict[currency.upper()])
             else:
                 print("currency undefined")
             # return a json file of data
+            results = list()
             for tagged_items in all_results:
                 label = tagged_items[0]
-                node_neighbor = tagged_items[1]
+                node_entry = tagged_items[1]
                 node_origin = tagged_items[2]
-
-                print(label, node_neighbor.word, node_origin.word)
+                # format [[left, top, width, height, 'invoice_number', original_word, entry]]
+                # format ['HONG KONG', 'Hong Kong Dollar']
+                # def save_as_json(json_path, results, currency, currency_info):
+                results.append([node_entry.left,
+                                node_entry.top,
+                                node_entry.width,
+                                node_entry.height,
+                                label,
+                                node_origin.word,
+                                node_entry.word])
+                # print(label, node_entry.word, node_origin.word)
+            save_as_json(json_name, results, currency, currency_dict[currency.upper()])
 
 
 if __name__ == '__main__':

@@ -1,0 +1,39 @@
+{
+    "total amount_0": {
+        "left": 1224,
+        "top": 1822,
+        "width": 264,
+        "height": 42,
+        "indication": "Total ",
+        "entry": "HK$1 3200 "
+    },
+    "invoice_number_1": {
+        "left": 1038,
+        "top": 284,
+        "width": 80,
+        "height": 21,
+        "indication": "Invoice no ",
+        "entry": "4862 "
+    },
+    "date_2": {
+        "left": 955,
+        "top": 541,
+        "width": 157,
+        "height": 25,
+        "indication": "Date ",
+        "entry": ": 5 Nov, 19 "
+    },
+    "date_3": {
+        "left": 739,
+        "top": 1618,
+        "width": 172,
+        "height": 24,
+        "indication": "Date ",
+        "entry": ": 1 Nov, 19 "
+    },
+    "currency": {
+        "type": "Hong Kong Dollar",
+        "country": "HONG KONG",
+        "abbreviated": "hkd"
+    }
+}

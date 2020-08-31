@@ -1,0 +1,79 @@
+{
+    "total amount_0": {
+        "left": 737,
+        "top": 769,
+        "width": 286,
+        "height": 18,
+        "indication": "Total Amount ",
+        "entry": "1 91,620.5800 USD "
+    },
+    "total amount_1": {
+        "left": 132,
+        "top": 861,
+        "width": 253,
+        "height": 32,
+        "indication": "Total Amount ",
+        "entry": "Remarks IF-HK-4964 "
+    },
+    "total amount_2": {
+        "left": 1285,
+        "top": 1053,
+        "width": 153,
+        "height": 21,
+        "indication": "Total Amount Due ",
+        "entry": "91,620.58 USD "
+    },
+    "invoice_number_3": {
+        "left": 1131,
+        "top": 275,
+        "width": 183,
+        "height": 17,
+        "indication": "Invoice No. ",
+        "entry": ": IF-HK-4964 "
+    },
+    "invoice_number_4": {
+        "left": 1090,
+        "top": 312,
+        "width": 157,
+        "height": 17,
+        "indication": "No. ",
+        "entry": ": 4964 "
+    },
+    "invoice_number_5": {
+        "left": 190,
+        "top": 619,
+        "width": 115,
+        "height": 17,
+        "indication": "No ",
+        "entry": ": 113505 "
+    },
+    "invoice_number_6": {
+        "left": 554,
+        "top": 831,
+        "width": 331,
+        "height": 30,
+        "indication": "SalesEmloyee SerenaNoel-Wilson ",
+        "entry": "00 "
+    },
+    "invoice_number_7": {
+        "left": 132,
+        "top": 861,
+        "width": 253,
+        "height": 32,
+        "indication": "SalesEmloyee SerenaNoel-Wilson ",
+        "entry": "Remarks IF-HK-4964 "
+    },
+    "date_8": {
+        "left": 1286,
+        "top": 576,
+        "width": 49,
+        "height": 17,
+        "indication": "Date ",
+        "entry": "2019 "
+    },
+    "currency": {
+        "type": "US Dollar",
+        "country": "VIRGIN ISLANDS (U.S.)",
+        "abbreviated": "usd"
+    }
+}
