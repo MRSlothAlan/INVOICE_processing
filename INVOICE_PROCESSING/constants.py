@@ -28,6 +28,7 @@ ignore_char = [" ", "", None, "\n", "\t", "   ", "  "]
 
 DEBUG = True
 SHOW_IMAGE = False
+SHOW_SUB_IMAGE = False
 DEBUG_DETAILED = False
 PARSE = True
 TEMP_TEST = False

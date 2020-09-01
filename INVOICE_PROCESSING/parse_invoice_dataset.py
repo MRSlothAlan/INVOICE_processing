@@ -22,9 +22,12 @@ from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.store_block import SameBlock
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.constants import *
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.opencv_image_operations import resize_with_ratio, \
     draw_rectangle_text_with_ratio, pre_process_images_before_scanning, auto_align_image
-from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.information_finder import find_information_rule_based
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.information_finder import find_information_rule_based, \
+    find_line_item_rule_based
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.AI.Neural_network.feature_extraction.graph_construction import *
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.ALGO.minimum_spanning_tree import GraphLineWeights, generate_mst_graph
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.ALGO.region_proposal import *
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.OCR_operation import *
 
 
 def parse_main():
@@ -49,14 +52,12 @@ def parse_main():
 
     for image_name in tqdm(image_files):
 
-        segment_data = InvoiceHierarchy()
-        same_line = SameLine()
-        same_block = SameBlock()
         print("\n---------------------------------------------\n"
               "processing {}".format(image_name),
               "\n---------------------------------------------\n")
         image_path = str(dataset_dir / image_name)
         image = cv2.imread(image_path, 1)
+
         # info = pytesseract.image_to_data(image, lang="chi_tra", output_type='dict')
         # assume all english
         image_pil = pre_process_images_before_scanning(image)
@@ -69,68 +70,55 @@ def parse_main():
         print("done")
 
         resize = resize_with_ratio(image, resize_ratio)
+        resize_region = resize.copy()
         resize_copy = resize.copy()
         resize_temp = resize.copy()
         resize_function = resize.copy()
         resize_mst = resize.copy()
+
+        print("propose regions")
+        # try to pre-process image, generate regions
+        """
+        format of entry:
+        [x, y, w, h]
+        """
+        rect_regions = region_proposal(image)
+
+        if SHOW_IMAGE:
+            for rect in rect_regions:
+                cv2.rectangle(resize_region, (rect[0], rect[1]),
+                              (rect[0] + rect[2], rect[1] + rect[3]), (255, 0, 0), 3)
+            cv2.imshow("regions", resize_region)
+        print("finish")
+
         info = pytesseract.image_to_data(image, output_type='dict')
+        image_copy = image.copy()
 
         """ index defined: 
          level, page_num, block_num, par_num
          line_num, word_num, left, top, width, height, conf, text
          """
-        # assumed that all lists in dict are having uniform length
-        length = len(info['level'])
-        for index in range(length):
-            text = info['text'][index]
-            if text not in ignore_char:
-                left, top, width, height, page_num, block_num, par_num, line_num, word_num = get_OCR_data(info, index)
-                if len(text) > 1 and str(text).__contains__(':'):
-                    # divided the width by the number of characters, define new nodes
-                    split_list = re.split('(:)', text)
-                    split_list_modified = [s for s in split_list if s is not '' or ' ']
-                    width_char_each = int(width / len(text))
-                    word_left = left
-                    for index, splited_token in enumerate(split_list_modified):
-                        left_added = width_char_each * len(splited_token)
-                        token = Node(splited_token, word_left, top, left_added, height, word_num, sub_word_num=index)
-                        word_left += left_added
-                        token.word_parse()
-                        segment_data.add_new_token(token, page_num, block_num, par_num, line_num)
-                else:
-                    token = Node(text, left, top, width, height, word_num)
-                    token.word_parse()
-                    segment_data.add_new_token(token, page_num, block_num, par_num, line_num)
-                    """
-                Usable features for clustering:
-                    coordinates of word
-                    block number
-                        within the block, may have many different words
-                    page num (very rare)
+        words_raw, same_line, same_block = ocr_to_standard_data(info)
 
-                    line num (just group each line) (EASY, done already)
-                        just parse each word, if word near to each other, append it
-                        if:
-                            too far away horizontally
-                """
-        words_raw, same_line, same_block = segment_data.get_lines_blocks(store_line=same_line,
-                                                                         store_block=same_block)
         # same_line.print()
         # used for node connections
         same_line_copy = copy(same_line)
         # same_line_copy = same_line
         print("generate graph for individual words (detailed)")
-
         glw_detailed = same_line_copy.generate_graph()
         print("Done")
         # get total number of nodes
         total_number_of_nodes = len(words_raw) - 1
+
+        """
         print("generating minimum spanning tree...")
         mst, starting_node_id = generate_mst_graph(glw_detailed, total_number_of_nodes)
         print("Done")
+
         if SHOW_IMAGE:
             resize_mst = mst.draw_mst_on_graph(words_raw, resize_mst, resize_ratio)
             cv2.imshow("MST", resize_mst)
+        """
 
         resize_temp = same_line_copy.draw_graph(words_raw, resize_temp, resize_ratio)
 
@@ -139,7 +127,7 @@ def parse_main():
         height, width, color = image.shape
         words_raw_new = same_line.merge_nearby_token(width)
         # for node in words_raw_new:
-          #  print(node.word)
+        # print(node.word)
         # need to plot a graph to check
         if DEBUG_DETAILED:
             if SHOW_IMAGE:
@@ -168,9 +156,9 @@ def parse_main():
         """
         import enchant
         d = enchant.Dict("en_US")
+        # check specific entries only
         image, all_results = find_information_rule_based(words_raw_new, resize_function, resize_ratio, d)
-        # check list of raw words and connections
-        file_name = output_dir / str(image_name[:-4] + ".txt")
+        find_line_item_rule_based(words_raw_new, rect_regions, resize_ratio, image_copy)
 
         json_name = output_json_dir / str(image_name[:-4] + ".json")
 
@@ -179,14 +167,14 @@ def parse_main():
         same_block.write_to_file(file_name)
         same_line.write_to_file(file_name)
         """
-        # cluster regions
 
-        # generate dataset!
+        # generate data set!
+        # may not needed
         if DL:
             adjacency_matrix_basic(words_raw_new)
 
         if DEBUG:
-            if SHOW_IMAGE:
+            if SHOW_IMAGE or SHOW_SUB_IMAGE:
                 # cv2.imshow("image", resize)
                 cv2.imshow("graph", resize_copy)
                 cv2.imshow("original graph", resize_temp)
@@ -216,6 +204,10 @@ def parse_main():
                                 node_origin.word,
                                 node_entry.word])
                 # print(label, node_entry.word, node_origin.word)
+            """
+            Append line items here
+            """
+
             save_as_json(json_name, results, currency, currency_dict[currency.upper()])
 
 

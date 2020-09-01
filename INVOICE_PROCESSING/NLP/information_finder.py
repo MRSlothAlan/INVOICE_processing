@@ -2,13 +2,26 @@
 Find specific information from the invoices,
 e.g. invoice number, invoice date, total
 """
-from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.constants import resize_ratio, SHOW_IMAGE
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.constants import *
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.graph_process import get_list_of_neighbors
 import cv2
 # import all the predefined rules
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.rules import *
 import enchant
 from dateutil.parser import parse
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.word_node import Node
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.rules import *
+import pytesseract
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.OCR_operation import *
+"""
+Now just for testing, will modify it soon
+"""
+
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.store_hierarchy import InvoiceHierarchy
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.store_line import SameLine, \
+    CopyOfSameLine
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.store_block import SameBlock
+import re
 
 
 def is_date(string, fuzzy=False):
@@ -172,5 +185,142 @@ def find_information_rule_based(words_raw_new, image, resize_ratio, dictionary):
     if SHOW_IMAGE:
         cv2.imshow("try find entry", image)
     return image, all_results_collect
+
+
+def extract_words(words_raw_new, rect_bounding_box, resize_r=resize_ratio):
+    """
+    :param words_raw_new:
+    :param rect_bounding_box:
+    :return:
+    """
+    x = rect_bounding_box[0]
+    y = rect_bounding_box[1]
+    w = rect_bounding_box[2]
+    h = rect_bounding_box[3]
+    content = list()
+    min_t = 0
+    max_t = 0
+    word_h = words_raw_new[0].height
+    counter = 0
+
+    for index, raw_node in enumerate(words_raw_new):
+        left = int(raw_node.left * resize_r)
+        top = int(raw_node.top * resize_r)
+        height = int(raw_node.height * resize_r)
+        if left >= x - 5 and \
+           top >= y - 5:
+            if top + height <= (y + h):
+                counter += 1
+                # print("top: ", top)
+                if min_t == 0:
+                    min_t = top
+                else:
+                    min_t = min(min_t, top)
+                if max_t == 0:
+                    max_t = top
+                else:
+                    max_t = max(max_t, top)
+                word_h += height
+                content.append(raw_node)
+    try:
+        word_h /= counter
+    except ZeroDivisionError as e:
+        pass
+    # indicate whether the layout is a table or just a line item
+    # print("average height: ", word_h)
+    # print("max - min: ", abs(max_t - min_t))
+    if abs(max_t - min_t) > (word_h + 1) and word_h > 0:
+        label = "block"
+    else:
+        label = "line"
+    return content, label
+
+
+def generate_raw_words(content):
+    raw_word_list = list()
+    for node in content:
+        words = [str(w).lower() for w in str(node.word).split(" ")]
+        raw_word_list += words
+    final_raw_word_list = [w for w in raw_word_list if w is not '']
+    return final_raw_word_list
+
+
+def is_table_or_table_header(raw_words):
+    """
+    A temporary hard-code solution for english
+    In the long term, a machine learning model should be made
+    Method:
+        blur all line items
+        bounding box indicate table content
+
+        training parameters:
+            1. image cropped
+            2. size
+            3. position of box
+
+    :param raw_words:
+    :return:
+    """
+    score = 0.0
+    count = 0
+    word_list = list(POSSIBLE_HEADER_WORDS.keys())
+    for word in raw_words:
+        if word.lower() in POSSIBLE_HEADER_WORDS.keys():
+            count += 1
+            score += POSSIBLE_HEADER_WORDS[word.lower()]
+    try:
+        score /= count
+    except ZeroDivisionError as e:
+        score = 0
+    # print("Line: {}, Score: {}, No. of words: {}".format(raw_words, score, count))
+    if score > 0.3 and count / len(raw_words) > 0.2:
+        return True
+    else:
+        return False
+    # return len([word for word in raw_words if word in POSSIBLE_HEADER_WORDS]) > 0
+
+
+def find_line_item_rule_based(words_raw_new, rect_regions, resize_r, image):
+    """
+    find line items based on rectangular regions and keywords
+    :param words_raw_new:
+    :param rect_regions:
+    :return:
+    """
+    # print([(node.word, node.left, node.top) for node in words_raw_new])
+    pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
+    for rect in rect_regions:
+        # [x, y, w, h]
+        # extract words from rect region
+        content, label = extract_words(words_raw_new, rect, resize_r)
+        # generate keyword lists
+        keywords_list = generate_raw_words(content)
+        # if it is a block, scan it one more time. within that region
+        # reason: sometimes OCR missed the words
+        if label == "block":
+            segment_data = InvoiceHierarchy()
+            x = int(rect[0] / resize_r)
+            y = int(rect[1] / resize_r)
+            w = int(rect[2] / resize_r)
+            h = int(rect[3] / resize_r)
+            crop_img = image[y:y+h, x:x+w]
+            resize = cv2.resize(crop_img, (int(w * resize_r), int(h * resize_r)))
+            # parse again
+            info_detailed = pytesseract.image_to_data(crop_img, output_type='dict')
+            words_raw, same_line, same_block = ocr_to_standard_data(info_detailed)
+            same_line.generate_graph()
+            resize = same_line.draw_graph(words_raw, resize, resize_r)
+
+            if SHOW_SUB_IMAGE:
+                cv2.imshow("sub region", resize)
+            # check the top row. if it is header, extract the line items
+            # that's it for now
+        elif label == "line":
+            if is_table_or_table_header(keywords_list):
+                print("possible header, which is a line: ", keywords_list)
+        # info = pytesseract.image_to_data(image, output_type='dict')
+        # check whether the region has line items
+
+
 
 
