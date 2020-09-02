@@ -34,6 +34,13 @@ class SameLine:
                 print(key_line)
                 print([node.word for node in self.storage[key][key_line]])
 
+    def return_raw_node(self):
+        raw_list = list()
+        for key in self.storage:
+            for key_line in self.storage[key]:
+                raw_list += [node for node in self.storage[key][key_line]]
+        return raw_list
+
     def draw_the_arrows(self, words_raw, node_id, node, image, resize_ratio, color, thickness=2):
         other_node = set(x for x in words_raw if x.id == node_id).pop()
         image = cv2.line(image, (int(node.center_x * resize_ratio),
@@ -114,7 +121,7 @@ class SameLine:
                             get bi-gram
                             parse word, get     
                     """
-                    list_of_final_temp = parse_word_nodes_n_gram_cumulative(temp_merge_remove_space, N_GRAM_NO)
+                    # list_of_final_temp = parse_word_nodes_n_gram_cumulative(temp_merge_remove_space, N_GRAM_NO)
 
                     def merge_nodes_to_one(node_list):
                         """
@@ -296,6 +303,7 @@ class SameLine:
                         if temp_dist < min_distance:
                             min_distance = temp_dist
                             node_with_id.right_node_id = node.id
+                            node_with_id.right_node_ptr = node
 
         return min_distance, node_with_id
 
@@ -338,6 +346,7 @@ class SameLine:
                 min_distance, node_with_id = self.right_node_process(row_num, key_line, node_with_id, min_distance, key_same_line)
         if node_with_id.right_node_id is 0 and key_same_line >= 0:
             node_with_id.right_node_id = node_with_id.id
+            node_with_id.right_node_ptr = None
 
         if min_distance == 999999:
             min_distance = 0
@@ -373,6 +382,7 @@ class SameLine:
                             save_dist = temp_dist
                             min_distance = temp_dist
                             node_with_id.left_node_id = node.id
+                            node_with_id.left_node_ptr = node
                             saved_i = index
         if saved_i is not -1:
             pass
@@ -419,6 +429,7 @@ class SameLine:
             # just point to itself
         if node_with_id.left_node_id == 0 and key_same_line >= 0:
             node_with_id.left_node_id = node_with_id.id
+            node_with_id.left_node_ptr = None
         if min_distance == 999999:
             min_distance = 0
         return min_distance
@@ -459,6 +470,7 @@ class SameLine:
                             saved_dist = temp_dist
                             min_distance = temp_dist
                             node_with_id.bottom_node_id = bottom_node_with_id.id
+                            node_with_id.bottom_node_ptr = bottom_node_with_id
 
                 if saved_i is not -1:
                     pass
@@ -466,6 +478,7 @@ class SameLine:
         if node_with_id.bottom_node_id is 0 and init_key_bottom <= last_key:
             # scan all rows. OCR is not always available to cluster text
             node_with_id.bottom_node_id = node_with_id.id
+            node_with_id.bottom_node_ptr = None
         if min_distance == 999999:
             min_distance = 0
         return min_distance
@@ -497,10 +510,11 @@ class SameLine:
                             min_distance = temp_dist
                             node_with_id.top_node_id = top_node_with_id.id
                             # 02092020 update: linked structure
-
+                            node_with_id.top_node_ptr = top_node_with_id
 
         if node_with_id.top_node_id is 0 and init_key_top > 0:
             node_with_id.top_node_id = node_with_id.id
+            node_with_id.top_node_ptr = None
         if min_distance == 999999:
             min_distance = 0
         return min_distance

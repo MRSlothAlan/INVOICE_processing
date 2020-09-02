@@ -28,11 +28,15 @@ ignore_char = [" ", "", None, "\n", "\t", "   ", "  "]
 
 DEBUG = True
 SHOW_IMAGE = False
-SHOW_SUB_IMAGE = True
+SHOW_SUB_IMAGE = False
 DEBUG_DETAILED = False
 PARSE = True
 TEMP_TEST = False
 DL = False
+
+LOG_LINE_ITEM = False
+
+HEADER_IS_BLOCK = False
 
 N_GRAM_NO = 4
 

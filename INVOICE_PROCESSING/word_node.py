@@ -25,9 +25,9 @@ class Node:
         self.left_node_id = 0
         # I should have used linked structure before
         self.top_node_ptr = None
+        self.left_node_ptr = None
         self.right_node_ptr = None
         self.bottom_node_ptr = None
-        self.left_node_ptr = None
         # add a label field for the label of the node
         self.label = ""
         # add a POS field for the tag

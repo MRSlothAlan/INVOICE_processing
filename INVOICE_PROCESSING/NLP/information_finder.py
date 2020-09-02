@@ -15,6 +15,13 @@ import pytesseract
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.OCR_operation import *
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.basic_operations.basic_string_operation import \
     levenshtein_ratio_and_distance
+import numpy as np
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.graph_process import *
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.word_parser.parse_words import \
+    part_of_speech_label_parsing_rule_based
+
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING import constants
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.constants import LOG_LINE_ITEM
 """
 Now just for testing, will modify it soon
 """
@@ -249,7 +256,7 @@ def generate_raw_words(content):
     return final_raw_word_list
 
 
-def is_table_or_table_header(raw_words):
+def is_table_header(raw_words):
     """
     A temporary hard-code solution for english
     In the long term, a machine learning model should be made
@@ -287,11 +294,69 @@ def is_table_or_table_header(raw_words):
         score = 0
     # print("Line: {}, Score: {}, No. of words: {}".format(raw_words, score, count))
     # 02092020: only rows with score > 80% or above are extracted
-    if score > 0.8:
+    if score >= 0.8:
         return True, score
     else:
         return False, score
     # return len([word for word in raw_words if word in POSSIBLE_HEADER_WORDS]) > 0
+
+
+def parse_lines_get_items(content, keywords_list, score, index, rect_regions, words_raw_new, resize_r, is_block, width):
+    table_line_items = list()
+    if not is_block:
+        if LOG_LINE_ITEM:
+            # this works like a charm :-)
+            print("\nPOSSIBLE HEADER(LINE):{}, SCORE:{}\n".format(keywords_list, score))
+            table_line_items.append(content)
+    # append the header first
+    # since this is a LINE, that means line items are those lines below it.
+    temp_ptr = index
+    while temp_ptr < len(rect_regions):
+        content_temp, label = extract_words(words_raw_new, rect_regions[temp_ptr], resize_r)
+        line_node_merged = merge_nearby_node_info_process(content_temp, width)
+        keywords_list_temp = generate_raw_words(content_temp)
+        # check whether any word(s) within the row has the label 'total'
+        # perform word matching for now
+        table_line_items.append(line_node_merged)
+        # error, sometimes the line is 'empty'
+        if len(line_node_merged) > 0:
+            try:
+                if max(levenshtein_ratio_and_distance("total", w, ratio_calc=True)
+                       for w in keywords_list_temp) >= 0.8:
+                    break
+            except ValueError as e:
+                # you can skip safely
+                pass
+        temp_ptr += 1
+    if LOG_LINE_ITEM:
+        print("Proposed line items (without machine learning)")
+        for line_item in table_line_items:
+            print(line_item)
+    return table_line_items
+
+
+def is_header_only(all_lines_in_block_raw):
+    if LOG_LINE_ITEM:
+        print("CHECK IS HEADER ONLY?")
+    """
+    characteristics of only header:
+        not many digits e.g. no HK$2400
+        length is short (not necessary) 
+    """
+    num_digits = 0
+    for item in all_lines_in_block_raw:
+        for node in item:
+            parsed = [c.isdigit() for c in node.word]
+            for bool in parsed:
+                if bool:
+                    num_digits += 1
+    # I do not believe that there are more than 4 digits existed in a header
+    if num_digits < 4:
+        if LOG_LINE_ITEM:
+            print("\nonly a header\n")
+        return True
+    else:
+        return False
 
 
 def find_line_item_rule_based(words_raw_new, rect_regions, resize_r, image):
@@ -303,48 +368,193 @@ def find_line_item_rule_based(words_raw_new, rect_regions, resize_r, image):
     """
     # print([(node.word, node.left, node.top) for node in words_raw_new])
     pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
-    for rect in rect_regions:
+    """
+    Store all proposed line items, decided the final candidate based on score of header
+    Format of each entry:
+        [all_lines_in_block_raw, score]
+    """
+    ALL_SUGGESTED_LINE_ITEMS = list()
+
+    temp_line_items = list()
+    temp_block_header_score = 0
+
+    for index, rect in enumerate(rect_regions):
         # [x, y, w, h]
         # extract words from rect region
         content, label = extract_words(words_raw_new, rect, resize_r)
         # if it is a block, scan it one more time. within that region
-        # reason: sometimes OCR missed the words
+        # reason: sometimes OCR missed the words, and it is very true
         if label == "block":
+            # check this and think whether you need to parse the invoice once again or not
+            # this keyword list contains the original contents
+            # can be used to find linked rows again!
+            keywords_list = generate_raw_words(content)
+            bool, score = is_table_header(keywords_list)
+            if bool:
+                if LOG_LINE_ITEM:
+                    print("\nPOSSIBLE HEADER(BLOCK):{}, SCORE:{}\n".format(keywords_list, score))
+                # if header detected, scan the entries below and get line items
+                # You can parse again if the quality of content is not satisfactory
+                # e.g. line item is missing
+                # you should parse again then
 
-            x = int(rect[0] / resize_r)
-            y = int(rect[1] / resize_r)
-            w = int(rect[2] / resize_r)
-            h = int(rect[3] / resize_r)
-            crop_img = image[y:y+h, x:x+w]
+                # to-do:
+                # determine when to parse again (hard, if you do ML then it is not a problem)
+                #       temporary plan: parse if score >= 80% (valuable information)
+                #                       -> so that it is worth the time to parse it again
+                # parse the block into lines and scan each line again
+                # problem: invoice parsed and invoice RE-parsed get different words ha ha
+                # solution: filling each other, missing words? fill back in!
+                if score >= 0.8:
+                    score_header_block = score
+                    x = int(rect[0] / resize_r)
+                    y = int(rect[1] / resize_r)
+                    w = int(rect[2] / resize_r)
+                    h = int(rect[3] / resize_r)
+                    crop_img = image[y:y + h, x:x + w]
+                    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (1, 1))
+                    crop_img = cv2.erode(crop_img, kernel, iterations=1)
+                    if SHOW_SUB_IMAGE:
+                        cv2.imshow("sub region original", crop_img)
+                        cv2.waitKey(0)
 
-            resize = cv2.resize(crop_img, (int(w * resize_r), int(h * resize_r)))
-            # parse again
-            info_detailed = pytesseract.image_to_data(crop_img, output_type='dict')
-            words_raw, same_line, same_block = ocr_to_standard_data(info_detailed)
-            same_line.generate_graph()
-            resize = same_line.draw_graph(words_raw, resize, resize_r)
+                    resize = cv2.resize(crop_img, (int(w * resize_r), int(h * resize_r)))
+                    # before parse again, check the words and see whether the block contains headers
+                    # parsing takes time
+                    # parse again
+                    height, width, color = crop_img.shape
+                    info_detailed = pytesseract.image_to_data(crop_img, output_type='dict')
+                    words_raw, same_line, same_block = ocr_to_standard_data(info_detailed)
+                    same_line.generate_graph()
+                    resize = same_line.draw_graph(words_raw, resize, resize_r)
 
-            # find all the lines by connecting the right neighbors
-            # it is a pity that I haven't thought of this before
-            # may include this in the same line class
-            # a much smarter way
+                    # find all the lines by connecting the right neighbors
+                    # a much smarter way
 
-            if SHOW_SUB_IMAGE:
-                cv2.imshow("sub region", resize)
-                cv2.waitKey(0)
-            # check the top row. if it is header, extract the line items
-            # that's it for now
+                    # Linked list implementation
+                    new_raw = same_line.return_raw_node()
+                    # sometimes, parsed data is not great, compare to the entries generated previously
+                    if LOG_LINE_ITEM:
+                        print("Newly parsed words: ", [n.word for n in new_raw])
+
+                    all_lines_in_block = get_linked_rows(new_raw)
+                    all_lines_in_block_raw = get_linked_rows(content)
+                    """
+                    based on all lines, get those which are line items
+                    it really depends on OCR, really
+
+                    depends on:
+                        header location
+                        whether the line is NOT labeled with entries such as invoice_no
+                    """
+                    if LOG_LINE_ITEM:
+                        print("Proposed line items (block) (without machine learning)")
+                    for index, line in enumerate(all_lines_in_block):
+                        # print([n.word for n in line])
+                        # part_of_speech_label_parsing_rule_based(line)
+                        line = merge_nearby_node_info_process(line, width)
+                        all_lines_in_block[index] = line
+                        if LOG_LINE_ITEM:
+                            print([n.word for n in line])
+                    if LOG_LINE_ITEM:
+                        print("\nProposed line items (block) original:")
+                        for line_raw in all_lines_in_block_raw:
+                            print([n.word for n in line_raw])
+                    if LOG_LINE_ITEM:
+                        print("\nUPDATE THE ORIGINAL ROWS")
+                    for index_r, line_raw in enumerate(all_lines_in_block_raw):
+                        # for each line, compare to that in newly parsed content
+                        line_raw_list = [n.word for n in line_raw]
+                        for line_new in all_lines_in_block:
+                            line_new_list = [nn.word for nn in line_new]
+                            # main_list = np.setdiff1d([nn.word for nn in line_new], [n.word for n in line_raw])
+                            max_score = 0.0
+                            read_already = [0] * len(line_new_list)
+                            for word_raw in line_raw_list:
+                                for index_n, word_new in enumerate(line_new_list):
+                                    score = levenshtein_ratio_and_distance(word_raw,
+                                                                           word_new,
+                                                                           ratio_calc=True)
+                                    max_score = max(max_score, score)
+                                    if score >= 0.8 and read_already[index_n] != 1:
+                                        # marked as read already, won't append this
+                                        read_already[index_n] = 1
+
+                            if any(i in line_new_list for i in line_raw_list) or max_score >= 0.8:
+                                if LOG_LINE_ITEM:
+                                    print("{},{}".format(line_raw_list, line_new_list))
+                                # original as the baseline
+                                if len(line_raw_list) < len(line_new_list):
+                                    # that means there are new info
+                                    # append and sort by coordinates
+                                    for index_n, word_new in enumerate(line_new_list):
+                                        if read_already[index_n] == 0:
+                                            # just for checking
+                                            line_raw_list.append(word_new)
+                                            # really append new node here
+                                            all_lines_in_block_raw[index_r].append(line_new[index_n])
+                                if LOG_LINE_ITEM:
+                                    print("New: {}".format([node.word for node in all_lines_in_block_raw[index_r]]))
+                    # after update the block content, make judgement
+                    # To-do: sometimes the block is only the header itself, need to parse the lines
+                    if is_header_only(all_lines_in_block_raw):
+                        constants.HEADER_IS_BLOCK = True
+
+                        temp_line_items += all_lines_in_block_raw
+                        temp_block_header_score = score_header_block
+
+                    else:
+                        constants.HEADER_IS_BLOCK = False
+                        # append it to the proposed line items
+                        ALL_SUGGESTED_LINE_ITEMS.append([all_lines_in_block_raw, score_header_block])
+
+                    if SHOW_SUB_IMAGE:
+                        cv2.imshow("sub region", resize)
+                        cv2.waitKey(0)
+
         elif label == "line":
+            height, width, color = image.shape
+            # set a boolean,
             # generate keyword lists
             keywords_list = generate_raw_words(content)
-            bool, score = is_table_or_table_header(keywords_list)
-            if bool:
-                # this works like a charm :-)
-                print("POSSIBLE HEADER:{}, SCORE:{}".format(keywords_list, score))
-                # scan the rows below it
+            if not constants.HEADER_IS_BLOCK:
+                # check whether line is header
+                bool, score = is_table_header(keywords_list)
+                print(keywords_list)
+                print(score)
+                if bool:
+                    table_line_items = parse_lines_get_items(content, keywords_list, score, index, rect_regions,
+                                                             words_raw_new, resize_r, HEADER_IS_BLOCK, width)
+                    ALL_SUGGESTED_LINE_ITEMS.append([table_line_items, score])
 
-        # info = pytesseract.image_to_data(image, output_type='dict')
-        # check whether the region has line items
+            elif constants.HEADER_IS_BLOCK:
+                # the previous header is a block type
+                # no need to check the header, directly find content now
+                if LOG_LINE_ITEM:
+                    print("Header is a block, but no info such as 'total'")
+                    print("parse the lines below")
+                table_line_items = parse_lines_get_items(None, None, None, index, rect_regions, words_raw_new, resize_r,
+                                                         constants.HEADER_IS_BLOCK, width)
+                temp_line_items += table_line_items
+
+                ALL_SUGGESTED_LINE_ITEMS.append([temp_line_items, temp_block_header_score])
+
+                temp_block_header_score = 0
+                temp_line_items = list()
+                # reset this flag
+                constants.HEADER_IS_BLOCK = False
+
+    """
+    To-do:
+        Change the format to json
+        check scoring system
+    """
+    for proposed in ALL_SUGGESTED_LINE_ITEMS:
+        print("\n===PROPOSED===")
+        for entry in proposed[0]:
+            print([node.word for node in entry])
+        print("SCORE=", proposed[1])
+
 
 
 

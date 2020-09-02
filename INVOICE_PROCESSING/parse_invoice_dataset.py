@@ -146,6 +146,7 @@ def parse_main():
         resize_copy = same_line.draw_graph(words_raw_new, resize_copy, resize_ratio)
         import enchant
         d = enchant.Dict("en_US")
+
         # check specific entries only
         image, all_results = find_information_rule_based(words_raw_new, resize_function, resize_ratio, d)
         find_line_item_rule_based(words_raw_new, rect_regions, resize_ratio, image_copy)

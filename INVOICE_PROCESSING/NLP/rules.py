@@ -66,5 +66,10 @@ POSSIBLE_HEADER_WORDS = {
     "bill" : 0.3,
     "period" : 0.2,
     "total" : 0.4,
-    "details" : 0.8
+    "details" : 0.8,
+    "detail" : 0.9,
+    "particulars" : 0.7,
+    "po.no.": 0.6,
+    "net amount": 0.5,
+    "net" : 0.6
 }
