@@ -109,7 +109,6 @@ def parse_main():
         print("Done")
         # get total number of nodes
         total_number_of_nodes = len(words_raw) - 1
-
         """
         print("generating minimum spanning tree...")
         mst, starting_node_id = generate_mst_graph(glw_detailed, total_number_of_nodes)
@@ -119,9 +118,7 @@ def parse_main():
             resize_mst = mst.draw_mst_on_graph(words_raw, resize_mst, resize_ratio)
             cv2.imshow("MST", resize_mst)
         """
-
         resize_temp = same_line_copy.draw_graph(words_raw, resize_temp, resize_ratio)
-
         # need to merge some nodes which are closed together
         # word model will be applied here
         height, width, color = image.shape
@@ -140,9 +137,6 @@ def parse_main():
                                                             resize_ratio)
                 cv2.imshow("merged nodes", resize)
                 cv2.waitKey(0)
-        """
-        generate graph for training!! 
-        """
         print("generate graph of merged nodes")
         same_line.generate_graph()
         print("Done")
@@ -150,10 +144,6 @@ def parse_main():
         # draw the results
         # 20082020: logic error, need to get a list of raw, MERGED tokens
         resize_copy = same_line.draw_graph(words_raw_new, resize_copy, resize_ratio)
-
-        """
-        ======  Temporary testing section  ======
-        """
         import enchant
         d = enchant.Dict("en_US")
         # check specific entries only
@@ -207,8 +197,10 @@ def parse_main():
             """
             Append line items here
             """
-
-            save_as_json(json_name, results, currency, currency_dict[currency.upper()])
+            try:
+                save_as_json(json_name, results, currency, currency_dict[currency.upper()])
+            except AttributeError as e:
+                save_as_json(json_name, results, currency=None, currency_info=None)
 
 
 if __name__ == '__main__':

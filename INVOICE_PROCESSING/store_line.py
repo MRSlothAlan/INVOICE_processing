@@ -433,7 +433,6 @@ class SameLine:
             min_distance = 0
         else:
             saved_dist = 0
-
             min_center_dist = 999999
 
             # modification: also need to watch 4 row down below
@@ -497,6 +496,8 @@ class SameLine:
 
                             min_distance = temp_dist
                             node_with_id.top_node_id = top_node_with_id.id
+                            # 02092020 update: linked structure
+
 
         if node_with_id.top_node_id is 0 and init_key_top > 0:
             node_with_id.top_node_id = node_with_id.id

@@ -1,0 +1,63 @@
+{
+    "total amount_0": {
+        "left": 1114,
+        "top": 825,
+        "width": 287,
+        "height": 22,
+        "indication": "total ",
+        "entry": ": $ 1,170.00 "
+    },
+    "total amount_1": {
+        "left": 874,
+        "top": 968,
+        "width": 526,
+        "height": 21,
+        "indication": "total ",
+        "entry": "1LM 35778 $ 35,778.0 "
+    },
+    "total amount_2": {
+        "left": 871,
+        "top": 1255,
+        "width": 527,
+        "height": 21,
+        "indication": "total ",
+        "entry": "2 jobs 5200 $ 10,400.00 "
+    },
+    "total amount_3": {
+        "left": 1111,
+        "top": 1313,
+        "width": 287,
+        "height": 21,
+        "indication": "total ",
+        "entry": ": $ 104,300.00 "
+    },
+    "total amount_4": {
+        "left": 871,
+        "top": 1427,
+        "width": 648,
+        "height": 22,
+        "indication": "total ",
+        "entry": "1 job 1720 $ 1,720.00 i "
+    },
+    "total amount_5": {
+        "left": 1095,
+        "top": 1773,
+        "width": 299,
+        "height": 23,
+        "indication": "Total ",
+        "entry": ": $ 129,720.00 "
+    },
+    "date_6": {
+        "left": 381,
+        "top": 619,
+        "width": 123,
+        "height": 22,
+        "indication": "date ",
+        "entry": ": July 2019 "
+    },
+    "currency": {
+        "type": "undefined",
+        "country": "undefined",
+        "abbreviated": "undefined"
+    }
+}

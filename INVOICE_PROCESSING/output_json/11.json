@@ -1,0 +1,39 @@
+{
+    "total amount_0": {
+        "left": 1044,
+        "top": 719,
+        "width": 262,
+        "height": 17,
+        "indication": "Total ",
+        "entry": "USD 11,709.86 "
+    },
+    "total amount_1": {
+        "left": 1046,
+        "top": 747,
+        "width": 260,
+        "height": 17,
+        "indication": "TOTAL ",
+        "entry": "USD 115,758.68 "
+    },
+    "total amount_2": {
+        "left": 1004,
+        "top": 889,
+        "width": 240,
+        "height": 17,
+        "indication": "TOTAL ",
+        "entry": ": USD 115,758.68 "
+    },
+    "date_3": {
+        "left": 322,
+        "top": 326,
+        "width": 176,
+        "height": 17,
+        "indication": "Date ",
+        "entry": ": October 31, 2019 "
+    },
+    "currency": {
+        "type": "US Dollar",
+        "country": "VIRGIN ISLANDS (U.S.)",
+        "abbreviated": "usd"
+    }
+}

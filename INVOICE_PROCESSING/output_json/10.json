@@ -1,0 +1,47 @@
+{
+    "total amount_0": {
+        "left": 1302,
+        "top": 1715,
+        "width": 132,
+        "height": 18,
+        "indication": "Total amount ",
+        "entry": "7,135.00 USD "
+    },
+    "invoice_number_1": {
+        "left": 1338,
+        "top": 513,
+        "width": 123,
+        "height": 14,
+        "indication": "No. ",
+        "entry": ": 201000986C. "
+    },
+    "invoice_number_2": {
+        "left": 1299,
+        "top": 534,
+        "width": 120,
+        "height": 14,
+        "indication": "No. ",
+        "entry": ": 201000986C "
+    },
+    "invoice_number_3": {
+        "left": 1299,
+        "top": 534,
+        "width": 120,
+        "height": 14,
+        "indication": "No. ",
+        "entry": ": 201000986C "
+    },
+    "date_4": {
+        "left": 1310,
+        "top": 941,
+        "width": 132,
+        "height": 20,
+        "indication": "Date ",
+        "entry": "21 10 2019 "
+    },
+    "currency": {
+        "type": "US Dollar",
+        "country": "VIRGIN ISLANDS (U.S.)",
+        "abbreviated": "usd"
+    }
+}

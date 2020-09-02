@@ -1,0 +1,63 @@
+{
+    "total amount_0": {
+        "left": 1318,
+        "top": 1210,
+        "width": 227,
+        "height": 18,
+        "indication": "Subtotal 1,916.00 ",
+        "entry": "Subtotal 1,916.00 "
+    },
+    "invoice_number_1": {
+        "left": 921,
+        "top": 96,
+        "width": 267,
+        "height": 12,
+        "indication": "NO. ",
+        "entry": "CO.REG.NO. : 198201419K GST REG. "
+    },
+    "invoice_number_2": {
+        "left": 1216,
+        "top": 84,
+        "width": 214,
+        "height": 18,
+        "indication": "NO. ",
+        "entry": ": M200441192 e@ "
+    },
+    "invoice_number_3": {
+        "left": 1073,
+        "top": 337,
+        "width": 100,
+        "height": 18,
+        "indication": "Invoice No. ",
+        "entry": "1C003629 "
+    },
+    "invoice_number_4": {
+        "left": 1073,
+        "top": 517,
+        "width": 66,
+        "height": 16,
+        "indication": "No. ",
+        "entry": "30f 4 "
+    },
+    "invoice_number_5": {
+        "left": 63,
+        "top": 1157,
+        "width": 175,
+        "height": 13,
+        "indication": "(NO ",
+        "entry": "3.10) INSTALLATION "
+    },
+    "date_6": {
+        "left": 1073,
+        "top": 398,
+        "width": 113,
+        "height": 21,
+        "indication": "Date ",
+        "entry": "27 11 2019 "
+    },
+    "currency": {
+        "type": "Portuguese Escudo",
+        "country": "PORTUGAL",
+        "abbreviated": "pte"
+    }
+}

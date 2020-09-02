@@ -1,0 +1,47 @@
+{
+    "total amount_0": {
+        "left": 917,
+        "top": 1027,
+        "width": 475,
+        "height": 21,
+        "indication": "TOTAL ",
+        "entry": "ae @se2 CHARGE KRW 4,400 "
+    },
+    "total amount_1": {
+        "left": 1142,
+        "top": 1050,
+        "width": 250,
+        "height": 35,
+        "indication": "TOTAL ",
+        "entry": "AMOUNT KRW 54, 400 "
+    },
+    "total amount_2": {
+        "left": 914,
+        "top": 1134,
+        "width": 480,
+        "height": 46,
+        "indication": "TOTAL ",
+        "entry": "Ji AMI CARD AMOUNT KRW 5A, 400, "
+    },
+    "invoice_number_3": {
+        "left": 917,
+        "top": 999,
+        "width": 121,
+        "height": 21,
+        "indication": "NO. ",
+        "entry": "S28 vse "
+    },
+    "invoice_number_4": {
+        "left": 1209,
+        "top": 1175,
+        "width": 144,
+        "height": 20,
+        "indication": "NO ",
+        "entry": "D4 5646 Gio "
+    },
+    "currency": {
+        "type": "Won",
+        "country": "KOREA (THE REPUBLIC OF)",
+        "abbreviated": "krw"
+    }
+}

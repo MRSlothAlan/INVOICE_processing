@@ -1,0 +1,23 @@
+{
+    "invoice_number_0": {
+        "left": 125,
+        "top": 67,
+        "width": 64,
+        "height": 66,
+        "indication": "No. ",
+        "entry": "9 "
+    },
+    "invoice_number_1": {
+        "left": 167,
+        "top": 265,
+        "width": 256,
+        "height": 17,
+        "indication": "Invoice No. ",
+        "entry": ": INV-20060-8701 "
+    },
+    "currency": {
+        "type": "Hong Kong Dollar",
+        "country": "HONG KONG",
+        "abbreviated": "hkd"
+    }
+}

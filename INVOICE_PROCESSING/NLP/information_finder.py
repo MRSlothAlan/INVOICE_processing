@@ -13,6 +13,8 @@ from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.word_node import Node
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.rules import *
 import pytesseract
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.OCR_operation import *
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.basic_operations.basic_string_operation import \
+    levenshtein_ratio_and_distance
 """
 Now just for testing, will modify it soon
 """
@@ -227,9 +229,11 @@ def extract_words(words_raw_new, rect_bounding_box, resize_r=resize_ratio):
     except ZeroDivisionError as e:
         pass
     # indicate whether the layout is a table or just a line item
+    # print("\n", [node.word for node in content])
     # print("average height: ", word_h)
     # print("max - min: ", abs(max_t - min_t))
-    if abs(max_t - min_t) > (word_h + 1) and word_h > 0:
+    # determine whether it is a block, and whether it is a block which is big enough
+    if abs(max_t - min_t) > 10:
         label = "block"
     else:
         label = "line"
@@ -265,18 +269,28 @@ def is_table_or_table_header(raw_words):
     count = 0
     word_list = list(POSSIBLE_HEADER_WORDS.keys())
     for word in raw_words:
-        if word.lower() in POSSIBLE_HEADER_WORDS.keys():
+        # need to apply Levenshtein Distance in order to extract words needed
+        # also apply the weighting defined by me.
+        max_score = max(levenshtein_ratio_and_distance(word.lower(), k, True)
+                        for k in word_list)
+        try:
+            max_score *= float(POSSIBLE_HEADER_WORDS[word])
+        except KeyError:
+            max_score *= 0.95
+
+        if max_score > 0.7:
             count += 1
-            score += POSSIBLE_HEADER_WORDS[word.lower()]
+            score += max_score
     try:
         score /= count
     except ZeroDivisionError as e:
         score = 0
     # print("Line: {}, Score: {}, No. of words: {}".format(raw_words, score, count))
-    if score > 0.3 and count / len(raw_words) > 0.2:
-        return True
+    # 02092020: only rows with score > 80% or above are extracted
+    if score > 0.8:
+        return True, score
     else:
-        return False
+        return False, score
     # return len([word for word in raw_words if word in POSSIBLE_HEADER_WORDS]) > 0
 
 
@@ -293,17 +307,16 @@ def find_line_item_rule_based(words_raw_new, rect_regions, resize_r, image):
         # [x, y, w, h]
         # extract words from rect region
         content, label = extract_words(words_raw_new, rect, resize_r)
-        # generate keyword lists
-        keywords_list = generate_raw_words(content)
         # if it is a block, scan it one more time. within that region
         # reason: sometimes OCR missed the words
         if label == "block":
-            segment_data = InvoiceHierarchy()
+
             x = int(rect[0] / resize_r)
             y = int(rect[1] / resize_r)
             w = int(rect[2] / resize_r)
             h = int(rect[3] / resize_r)
             crop_img = image[y:y+h, x:x+w]
+
             resize = cv2.resize(crop_img, (int(w * resize_r), int(h * resize_r)))
             # parse again
             info_detailed = pytesseract.image_to_data(crop_img, output_type='dict')
@@ -311,13 +324,25 @@ def find_line_item_rule_based(words_raw_new, rect_regions, resize_r, image):
             same_line.generate_graph()
             resize = same_line.draw_graph(words_raw, resize, resize_r)
 
+            # find all the lines by connecting the right neighbors
+            # it is a pity that I haven't thought of this before
+            # may include this in the same line class
+            # a much smarter way
+
             if SHOW_SUB_IMAGE:
                 cv2.imshow("sub region", resize)
+                cv2.waitKey(0)
             # check the top row. if it is header, extract the line items
             # that's it for now
         elif label == "line":
-            if is_table_or_table_header(keywords_list):
-                print("possible header, which is a line: ", keywords_list)
+            # generate keyword lists
+            keywords_list = generate_raw_words(content)
+            bool, score = is_table_or_table_header(keywords_list)
+            if bool:
+                # this works like a charm :-)
+                print("POSSIBLE HEADER:{}, SCORE:{}".format(keywords_list, score))
+                # scan the rows below it
+
         # info = pytesseract.image_to_data(image, output_type='dict')
         # check whether the region has line items
 
