@@ -28,7 +28,7 @@ resize_ratio = 0.3
 ignore_char = [" ", "", None, "\n", "\t", "   ", "  "]
 
 DEBUG = True
-SHOW_IMAGE = True
+SHOW_IMAGE = False
 SHOW_SUB_IMAGE = False
 DEBUG_DETAILED = False
 PARSE = True

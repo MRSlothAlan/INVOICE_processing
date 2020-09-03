@@ -4,7 +4,7 @@
         "top": 1479,
         "width": 427,
         "height": 18,
-        "indication": "Total ",
+        "indication": "Grand Total ",
         "entry": "1 job 3,500.00 3,500.00 "
     },
     "total amount_1": {
@@ -12,7 +12,7 @@
         "top": 1526,
         "width": 185,
         "height": 17,
-        "indication": "Total ",
+        "indication": "Grand Total ",
         "entry": ": $49,000.00 "
     },
     "invoice_number_2": {
@@ -271,14 +271,14 @@
                 "starting_left": 1188,
                 "starting_top": 1527,
                 "raw_sentence": [
-                    "Grand  Total  : $49,000.00  "
+                    "Grand Total  : $49,000.00  "
                 ]
             },
             "31": {
                 "starting_left": 1188,
                 "starting_top": 1527,
                 "raw_sentence": [
-                    "Grand  Total  : $49,000.00  "
+                    "Grand Total  : $49,000.00  "
                 ]
             },
             "32": {
@@ -626,14 +626,14 @@
                 "starting_left": 1188,
                 "starting_top": 1527,
                 "raw_sentence": [
-                    "Grand  Total  : $49,000.00  "
+                    "Grand Total  : $49,000.00  "
                 ]
             },
             "28": {
                 "starting_left": 1188,
                 "starting_top": 1527,
                 "raw_sentence": [
-                    "Grand  Total  : $49,000.00  "
+                    "Grand Total  : $49,000.00  "
                 ]
             },
             "29": {

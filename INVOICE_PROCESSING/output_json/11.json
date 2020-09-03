@@ -23,7 +23,15 @@
         "indication": "TOTAL ",
         "entry": ": USD 115,758.68 "
     },
-    "date_3": {
+    "invoice_number_3": {
+        "left": 462,
+        "top": 466,
+        "width": 129,
+        "height": 16,
+        "indication": "Note Number ",
+        "entry": ": DRI9MK047 "
+    },
+    "date_4": {
         "left": 322,
         "top": 326,
         "width": 176,

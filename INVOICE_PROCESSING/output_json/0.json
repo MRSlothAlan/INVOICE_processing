@@ -4,34 +4,26 @@
         "top": 1031,
         "width": 278,
         "height": 25,
-        "indication": "Sub-Total 4,401.50 ",
+        "indication": "Total Payable ",
         "entry": "Sub-Total 4,401.50 "
     },
     "total amount_1": {
-        "left": 847,
-        "top": 1031,
-        "width": 278,
-        "height": 25,
-        "indication": "Total ",
-        "entry": "Sub-Total 4,401.50 "
+        "left": 1154,
+        "top": 1427,
+        "width": 129,
+        "height": 18,
+        "indication": "Total Amount HKD ",
+        "entry": ": 4,401.50 "
     },
     "total amount_2": {
-        "left": 1121,
-        "top": 1427,
-        "width": 162,
-        "height": 18,
-        "indication": "Total Amount ",
-        "entry": "HKD : 4,401.50 "
-    },
-    "total amount_3": {
-        "left": 1106,
+        "left": 1139,
         "top": 1993,
-        "width": 162,
+        "width": 129,
         "height": 18,
-        "indication": "Total Amount ",
-        "entry": "HKD : 4,401.50 "
+        "indication": "Total Amount HKD ",
+        "entry": ": 4,401.50 "
     },
-    "invoice_number_4": {
+    "invoice_number_3": {
         "left": 1339,
         "top": 377,
         "width": 169,
@@ -39,7 +31,7 @@
         "indication": "Invoice Number ",
         "entry": ": D00222534 "
     },
-    "invoice_number_5": {
+    "invoice_number_4": {
         "left": 1118,
         "top": 1290,
         "width": 193,
@@ -47,13 +39,21 @@
         "indication": "Invoice Number ",
         "entry": ": D00222534 "
     },
-    "invoice_number_6": {
+    "invoice_number_5": {
         "left": 1103,
         "top": 1856,
         "width": 192,
         "height": 16,
         "indication": "Invoice Number ",
         "entry": ": D00222534 "
+    },
+    "date_6": {
+        "left": 1237,
+        "top": 428,
+        "width": 272,
+        "height": 35,
+        "indication": "Date ",
+        "entry": ": 21 10 2019 "
     },
     "date_7": {
         "left": 1237,
@@ -64,14 +64,6 @@
         "entry": ": 21 10 2019 "
     },
     "date_8": {
-        "left": 1237,
-        "top": 428,
-        "width": 272,
-        "height": 35,
-        "indication": "Date ",
-        "entry": ": 21 10 2019 "
-    },
-    "date_9": {
         "left": 1375,
         "top": 468,
         "width": 134,
@@ -79,7 +71,7 @@
         "indication": "Date ",
         "entry": ": 28 10 2019 "
     },
-    "date_10": {
+    "date_9": {
         "left": 1016,
         "top": 1376,
         "width": 290,
@@ -87,7 +79,7 @@
         "indication": "Date ",
         "entry": ": 21 10 2019 "
     },
-    "date_11": {
+    "date_10": {
         "left": 1001,
         "top": 1943,
         "width": 290,
@@ -193,9 +185,15 @@
                 "raw_sentence": [
                     "THIS Is A COMPUTER GENERATED ",
                     "INVOICE. NO ",
-                    "SIGNATURE IS REQUIRED ",
-                    "Total ",
-                    "Payable : HKD ",
+                    "SIGNATURE IS REQUIRED "
+                ]
+            },
+            "7": {
+                "starting_left": 1026,
+                "starting_top": 1078,
+                "raw_sentence": [
+                    "Total Payable ",
+                    ": HKD ",
                     "4,401.50 "
                 ]
             }
