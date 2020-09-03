@@ -71,5 +71,6 @@ POSSIBLE_HEADER_WORDS = {
     "particulars" : 0.7,
     "po.no.": 0.6,
     "net amount": 0.5,
-    "net" : 0.6
+    "net" : 0.6,
+    "po" : 0.8
 }

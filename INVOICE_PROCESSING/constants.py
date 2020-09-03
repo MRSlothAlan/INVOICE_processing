@@ -5,6 +5,7 @@ import csv
 import json
 import gensim
 import gensim.downloader as api
+import numpy as np
 
 """
 Characters allowed for data set generation
@@ -79,7 +80,7 @@ def get_currency_csv():
 
 # format [[left, top, width, height, 'invoice_number', original_word, entry]]
 # format ['HONG KONG', 'Hong Kong Dollar']
-def save_as_json(json_path, results, currency, currency_info):
+def save_as_json(json_path, results, line_items, currency, currency_info):
     dictionary_json = dict()
     for index, result in enumerate(results):
         name = result[4] + "_" + str(index)
@@ -92,6 +93,26 @@ def save_as_json(json_path, results, currency, currency_info):
         dictionary_json[name]["indication"] = result[5]
         dictionary_json[name]["entry"] = result[6]
     dictionary_json["currency"] = dict()
+    """
+    Format of proposed line items (each entry)
+        [<line items>, <score>] 
+    """
+
+    for index, proposed in enumerate(line_items):
+        name_table = "table_proposed_" + str(index)
+        dictionary_json[name_table] = dict()
+        dictionary_json[name_table]["confidence"] = proposed[1]
+        dictionary_json[name_table]["raw_content"] = dict()
+
+        for index_line, line in enumerate(proposed[0]):
+            # check whether the list is 1D first
+            if len(np.array(line).shape) > 1:
+                line = list(np.concatenate(line).flat)
+            if len(line) > 0:
+                dictionary_json[name_table]["raw_content"][index_line] = dict()
+                dictionary_json[name_table]["raw_content"][index_line]["starting_left"] = line[0].left
+                dictionary_json[name_table]["raw_content"][index_line]["starting_top"] = line[0].top
+                dictionary_json[name_table]["raw_content"][index_line]["raw_sentence"] = [n.word for n in line]
     if currency is not None:
         dictionary_json["currency"]["type"] = currency_info[1]
         dictionary_json["currency"]["country"] = currency_info[0]

@@ -75,5 +75,84 @@
         "type": "Portuguese Escudo",
         "country": "PORTUGAL",
         "abbreviated": "pte"
+    },
+    "table_proposed_0": {
+        "confidence": 0.8305555555555556,
+        "raw_content": {
+            "0": {
+                "starting_left": 458,
+                "starting_top": 785,
+                "raw_sentence": [
+                    "DESCRIPTIONS ",
+                    "Quantity AMT (SGD) "
+                ]
+            },
+            "1": {
+                "starting_left": 44,
+                "starting_top": 847,
+                "raw_sentence": [
+                    "Project : Suly of 2 Pernod Ricard Full Time Brand Ambassador for Sho. "
+                ]
+            },
+            "2": {
+                "starting_left": 44,
+                "starting_top": 904,
+                "raw_sentence": [
+                    "Dates : 01 Setember 2019 to 31 October 2019 "
+                ]
+            },
+            "3": {
+                "starting_left": 43,
+                "starting_top": 963,
+                "raw_sentence": [
+                    "Venues : T2 De, T3 De. "
+                ]
+            },
+            "4": {
+                "starting_left": 44,
+                "starting_top": 1025,
+                "raw_sentence": [
+                    "Quote Ref : Q1906-157 ",
+                    "$11,253.00 "
+                ]
+            },
+            "5": {
+                "starting_left": 44,
+                "starting_top": 1055,
+                "raw_sentence": [
+                    "PO ",
+                    "No ",
+                    ": 93195036 "
+                ]
+            },
+            "6": {
+                "starting_left": 43,
+                "starting_top": 1112,
+                "raw_sentence": [
+                    "This Invoice is for Full Payment "
+                ]
+            },
+            "7": {
+                "starting_left": 46,
+                "starting_top": 1130,
+                "raw_sentence": [
+                    "ERE LAST ITEM fRR EEE "
+                ]
+            },
+            "8": {
+                "starting_left": 1106,
+                "starting_top": 1167,
+                "raw_sentence": [
+                    "Sub-total : $11,253.00 "
+                ]
+            },
+            "9": {
+                "starting_left": 1117,
+                "starting_top": 1202,
+                "raw_sentence": [
+                    "7% GST $787.71 "
+                ]
+            }
+        }
     }
 }

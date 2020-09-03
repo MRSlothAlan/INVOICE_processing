@@ -91,7 +91,15 @@ def parse_main():
             cv2.imshow("regions", resize_region)
         print("finish")
 
+        # kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (2, 2))
+        # image_erode = cv2.erode(image, kernel, iterations=1)
+        # thicken black lines
+        # info = pytesseract.image_to_data(image_erode, output_type='dict')
         info = pytesseract.image_to_data(image, output_type='dict')
+        # proposed method: merge two ocr results, in order to get the BEST info
+        # problem: may not necessary at all
+        # info_original = pytesseract.image_to_data(image, output_type='dict')
+
         image_copy = image.copy()
 
         """ index defined: 
@@ -149,7 +157,7 @@ def parse_main():
 
         # check specific entries only
         image, all_results = find_information_rule_based(words_raw_new, resize_function, resize_ratio, d)
-        find_line_item_rule_based(words_raw_new, rect_regions, resize_ratio, image_copy)
+        all_line_items = find_line_item_rule_based(words_raw_new, rect_regions, resize_ratio, image_copy)
 
         json_name = output_json_dir / str(image_name[:-4] + ".json")
 
@@ -198,10 +206,11 @@ def parse_main():
             """
             Append line items here
             """
+
             try:
-                save_as_json(json_name, results, currency, currency_dict[currency.upper()])
+                save_as_json(json_name, results, all_line_items, currency, currency_dict[currency.upper()])
             except AttributeError as e:
-                save_as_json(json_name, results, currency=None, currency_info=None)
+                save_as_json(json_name, results, all_line_items, currency=None, currency_info=None)
 
 
 if __name__ == '__main__':

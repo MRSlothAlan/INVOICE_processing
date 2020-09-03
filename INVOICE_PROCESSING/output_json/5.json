@@ -75,5 +75,236 @@
         "type": "US Dollar",
         "country": "VIRGIN ISLANDS (U.S.)",
         "abbreviated": "usd"
+    },
+    "table_proposed_0": {
+        "confidence": 0.8,
+        "raw_content": {
+            "0": {
+                "starting_left": 183,
+                "starting_top": 333,
+                "raw_sentence": [
+                    "15 Canton Road, Harbour City,  ",
+                    "Your PO  :  "
+                ]
+            },
+            "1": {
+                "starting_left": 1009,
+                "starting_top": 350,
+                "raw_sentence": [
+                    "Your PO  :  Tsimshatsui, Kowloon,  "
+                ]
+            },
+            "2": {
+                "starting_left": 1010,
+                "starting_top": 388,
+                "raw_sentence": [
+                    "Vendor No.  :  "
+                ]
+            },
+            "3": {
+                "starting_left": 182,
+                "starting_top": 428,
+                "raw_sentence": [
+                    "Hong Kong  ",
+                    "Invoice  Date  : 2 Se 2019  "
+                ]
+            },
+            "4": {
+                "starting_left": 118,
+                "starting_top": 468,
+                "raw_sentence": [
+                    "Attn : Hamish Millar  ",
+                    "Insection  :  "
+                ]
+            },
+            "5": {
+                "starting_left": 118,
+                "starting_top": 518,
+                "raw_sentence": [
+                    "Tel  ",
+                    "Shi  :  "
+                ]
+            },
+            "6": {
+                "starting_left": 1010,
+                "starting_top": 538,
+                "raw_sentence": [
+                    "Arrival  :  "
+                ]
+            },
+            "7": {
+                "starting_left": 120,
+                "starting_top": 568,
+                "raw_sentence": [
+                    "Fax :  ",
+                    "Due  Date  2019  "
+                ]
+            },
+            "8": {
+                "starting_left": 118,
+                "starting_top": 619,
+                "raw_sentence": [
+                    "VAT  No  : 113505  "
+                ]
+            },
+            "9": {
+                "starting_left": 118,
+                "starting_top": 664,
+                "raw_sentence": [
+                    "WE RESERVE THE RIGHT TO CHARGE 2% PER MONTH OR PART THEREOF AS PENALTY FOR ANY LATE PAYMENT.  "
+                ]
+            },
+            "10": {
+                "starting_left": 130,
+                "starting_top": 720,
+                "raw_sentence": [
+                    "# Descrition  ",
+                    "Quantity Unit Price  ",
+                    "Amounts  Korea - Slit delivery costs  ",
+                    "1 91,620.5800 USD  ",
+                    "91,620.58 USD  "
+                ]
+            },
+            "11": {
+                "starting_left": 131,
+                "starting_top": 835,
+                "raw_sentence": [
+                    "SalesEmloyee SerenaNoel-Wilson  00  ",
+                    "nnn eenennnnnennnnnnne  "
+                ]
+            },
+            "12": {
+                "starting_left": 1194,
+                "starting_top": 850,
+                "raw_sentence": [
+                    "nnn eenennnnnennnnnnne  Remarks IF-HK-4964  ",
+                    "Total Amount  ",
+                    "91,620.58 USD  "
+                ]
+            }
+        }
+    },
+    "table_proposed_1": {
+        "confidence": 0.8,
+        "raw_content": {
+            "0": {
+                "starting_left": 1009,
+                "starting_top": 350,
+                "raw_sentence": [
+                    "Your PO  :  Tsimshatsui, Kowloon,  "
+                ]
+            },
+            "1": {
+                "starting_left": 1010,
+                "starting_top": 388,
+                "raw_sentence": [
+                    "Vendor No.  :  "
+                ]
+            },
+            "2": {
+                "starting_left": 182,
+                "starting_top": 428,
+                "raw_sentence": [
+                    "Hong Kong  ",
+                    "Invoice  Date  : 2 Se 2019  "
+                ]
+            },
+            "3": {
+                "starting_left": 118,
+                "starting_top": 468,
+                "raw_sentence": [
+                    "Attn : Hamish Millar  ",
+                    "Insection  :  "
+                ]
+            },
+            "4": {
+                "starting_left": 118,
+                "starting_top": 518,
+                "raw_sentence": [
+                    "Tel  ",
+                    "Shi  :  "
+                ]
+            },
+            "5": {
+                "starting_left": 1010,
+                "starting_top": 538,
+                "raw_sentence": [
+                    "Arrival  :  "
+                ]
+            },
+            "6": {
+                "starting_left": 120,
+                "starting_top": 568,
+                "raw_sentence": [
+                    "Fax :  ",
+                    "Due  Date  2019  "
+                ]
+            },
+            "7": {
+                "starting_left": 118,
+                "starting_top": 619,
+                "raw_sentence": [
+                    "VAT  No  : 113505  "
+                ]
+            },
+            "8": {
+                "starting_left": 118,
+                "starting_top": 664,
+                "raw_sentence": [
+                    "WE RESERVE THE RIGHT TO CHARGE 2% PER MONTH OR PART THEREOF AS PENALTY FOR ANY LATE PAYMENT.  "
+                ]
+            },
+            "9": {
+                "starting_left": 130,
+                "starting_top": 720,
+                "raw_sentence": [
+                    "# Descrition  ",
+                    "Quantity Unit Price  ",
+                    "Amounts  Korea - Slit delivery costs  ",
+                    "1 91,620.5800 USD  ",
+                    "91,620.58 USD  "
+                ]
+            },
+            "10": {
+                "starting_left": 131,
+                "starting_top": 835,
+                "raw_sentence": [
+                    "SalesEmloyee SerenaNoel-Wilson  00  ",
+                    "nnn eenennnnnennnnnnne  "
+                ]
+            },
+            "11": {
+                "starting_left": 1194,
+                "starting_top": 850,
+                "raw_sentence": [
+                    "nnn eenennnnnennnnnnne  Remarks IF-HK-4964  ",
+                    "Total Amount  ",
+                    "91,620.58 USD  "
+                ]
+            }
+        }
+    },
+    "table_proposed_2": {
+        "confidence": 0.8908424908424908,
+        "raw_content": {
+            "0": {
+                "starting_left": 130,
+                "starting_top": 720,
+                "raw_sentence": [
+                    "# Descrition ",
+                    "Quantity Unit Price ",
+                    "Amounts "
+                ]
+            },
+            "1": {
+                "starting_left": 170,
+                "starting_top": 770,
+                "raw_sentence": [
+                    "Korea - Slit delivery costs ",
+                    "1 91,620.5800 USD ",
+                    "91,620.58 USD "
+                ]
+            }
+        }
     }
 }

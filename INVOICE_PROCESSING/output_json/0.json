@@ -99,5 +99,106 @@
         "type": "Hong Kong Dollar",
         "country": "HONG KONG",
         "abbreviated": "hkd"
+    },
+    "table_proposed_0": {
+        "confidence": 0.8,
+        "raw_content": {
+            "0": {
+                "starting_left": 305,
+                "starting_top": 518,
+                "raw_sentence": [
+                    "Please Reimburse the ",
+                    "Total ",
+                    "Charges Shown Below To : DHL  EXPRESS (HONG KONG) LIMITED "
+                ]
+            },
+            "1": {
+                "starting_left": 700,
+                "starting_top": 557,
+                "raw_sentence": [
+                    "Shiment Details "
+                ]
+            },
+            "2": {
+                "starting_left": 126,
+                "starting_top": 599,
+                "raw_sentence": [
+                    "Origin : SIN Pieces : 1 Contents : MARTELL CORDON BLEU COGNAC "
+                ]
+            },
+            "3": {
+                "starting_left": 130,
+                "starting_top": 629,
+                "raw_sentence": [
+                    "Destination : HKG Weight : 12.60 Assessed Value : ",
+                    "Arrival ",
+                    ": "
+                ]
+            }
+        }
+    },
+    "table_proposed_1": {
+        "confidence": 0.8,
+        "raw_content": {
+            "0": {
+                "starting_left": 732,
+                "starting_top": 721,
+                "raw_sentence": [
+                    "Billing Details "
+                ]
+            },
+            "1": {
+                "starting_left": 372,
+                "starting_top": 755,
+                "raw_sentence": [
+                    "IMPORT EXPORT DUTIES ",
+                    "4,311.50 ",
+                    "4,311.50 "
+                ]
+            },
+            "2": {
+                "starting_left": 371,
+                "starting_top": 778,
+                "raw_sentence": [
+                    "DISBURSEMENTS ",
+                    "90.00 ",
+                    "90.00 "
+                ]
+            },
+            "3": {
+                "starting_left": 181,
+                "starting_top": 981,
+                "raw_sentence": [
+                    "Payment Terms Payment Terms : 7 Days "
+                ]
+            },
+            "4": {
+                "starting_left": 158,
+                "starting_top": 1013,
+                "raw_sentence": [
+                    "Cash on delivery unless "
+                ]
+            },
+            "5": {
+                "starting_left": 121,
+                "starting_top": 1035,
+                "raw_sentence": [
+                    "stated otherwise on the invoice ",
+                    "Sub-Total 4,401.50 "
+                ]
+            },
+            "6": {
+                "starting_left": 129,
+                "starting_top": 1066,
+                "raw_sentence": [
+                    "THIS Is A COMPUTER GENERATED ",
+                    "INVOICE. NO ",
+                    "SIGNATURE IS REQUIRED ",
+                    "Total ",
+                    "Payable : HKD ",
+                    "4,401.50 "
+                ]
+            }
+        }
     }
 }

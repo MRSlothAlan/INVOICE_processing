@@ -43,5 +43,97 @@
         "type": "US Dollar",
         "country": "VIRGIN ISLANDS (U.S.)",
         "abbreviated": "usd"
+    },
+    "table_proposed_0": {
+        "confidence": 0.8086309523809523,
+        "raw_content": {
+            "0": {
+                "starting_left": 197,
+                "starting_top": 1308,
+                "raw_sentence": [
+                    "Order Descrition ",
+                    "Period ",
+                    "GST Annual condition ",
+                    "Net "
+                ]
+            },
+            "1": {
+                "starting_left": 1092,
+                "starting_top": 1334,
+                "raw_sentence": [
+                    "amount "
+                ]
+            },
+            "2": {
+                "starting_left": 197,
+                "starting_top": 1369,
+                "raw_sentence": [
+                    "Brand Advertising site "
+                ]
+            },
+            "3": {
+                "starting_left": 189,
+                "starting_top": 1419,
+                "raw_sentence": [
+                    "6060583 Royal Salute DF JKT T3 07  "
+                ]
+            },
+            "4": {
+                "starting_left": 190,
+                "starting_top": 1443,
+                "raw_sentence": [
+                    "Royal Salute  "
+                ]
+            },
+            "5": {
+                "starting_left": 190,
+                "starting_top": 1466,
+                "raw_sentence": [
+                    "312 Wky visual, backlit instore anel 01.01.2019 - 31.12.2019 0 6,050.00 USD 6,050.00 USD  "
+                ]
+            },
+            "6": {
+                "starting_left": 189,
+                "starting_top": 1520,
+                "raw_sentence": [
+                    "6068532 Royal Salute DF JKT T3 07  "
+                ]
+            },
+            "7": {
+                "starting_left": 190,
+                "starting_top": 1544,
+                "raw_sentence": [
+                    "Royal Salute  "
+                ]
+            },
+            "8": {
+                "starting_left": 190,
+                "starting_top": 1568,
+                "raw_sentence": [
+                    "311 Wky visual, backlit backwall  01.01.2019 - 31.12.2019 0 1,085.00 USD 1,085.00 USD  "
+                ]
+            },
+            "9": {
+                "starting_left": 968,
+                "starting_top": 1657,
+                "raw_sentence": [
+                    "Net amount  7,135.00 USD  "
+                ]
+            },
+            "10": {
+                "starting_left": 968,
+                "starting_top": 1686,
+                "raw_sentence": [
+                    "GST 0% 0.00 USD  "
+                ]
+            },
+            "11": {
+                "starting_left": 967,
+                "starting_top": 1717,
+                "raw_sentence": [
+                    "Total amount  7,135.00 USD  "
+                ]
+            }
+        }
     }
 }

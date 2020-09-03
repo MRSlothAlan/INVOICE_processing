@@ -520,8 +520,6 @@ def find_line_item_rule_based(words_raw_new, rect_regions, resize_r, image):
             if not constants.HEADER_IS_BLOCK:
                 # check whether line is header
                 bool, score = is_table_header(keywords_list)
-                print(keywords_list)
-                print(score)
                 if bool:
                     table_line_items = parse_lines_get_items(content, keywords_list, score, index, rect_regions,
                                                              words_raw_new, resize_r, HEADER_IS_BLOCK, width)
@@ -549,11 +547,14 @@ def find_line_item_rule_based(words_raw_new, rect_regions, resize_r, image):
         Change the format to json
         check scoring system
     """
-    for proposed in ALL_SUGGESTED_LINE_ITEMS:
-        print("\n===PROPOSED===")
-        for entry in proposed[0]:
-            print([node.word for node in entry])
-        print("SCORE=", proposed[1])
+    if LOG_LINE_ITEM:
+        for proposed in ALL_SUGGESTED_LINE_ITEMS:
+            print("\n===PROPOSED===")
+            for entry in proposed[0]:
+                print([node.word for node in entry])
+            print("SCORE=", proposed[1])
+
+    return ALL_SUGGESTED_LINE_ITEMS
 
 
 

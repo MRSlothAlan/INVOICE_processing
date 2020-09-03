@@ -35,5 +35,444 @@
         "type": "Hong Kong Dollar",
         "country": "HONG KONG",
         "abbreviated": "hkd"
+    },
+    "table_proposed_0": {
+        "confidence": 0.908695652173913,
+        "raw_content": {
+            "0": {
+                "starting_left": 155,
+                "starting_top": 527,
+                "raw_sentence": [
+                    "Item Model Descritions  ",
+                    "Qi Unit  ",
+                    "HKD  "
+                ]
+            },
+            "1": {
+                "starting_left": 251,
+                "starting_top": 578,
+                "raw_sentence": [
+                    "Vendor name : Aldo Mensa Limited  "
+                ]
+            },
+            "2": {
+                "starting_left": 251,
+                "starting_top": 602,
+                "raw_sentence": [
+                    "Vendor code : 18057  "
+                ]
+            },
+            "3": {
+                "starting_left": 252,
+                "starting_top": 630,
+                "raw_sentence": [
+                    "PRATR PO number : #92195310, #92195311  "
+                ]
+            },
+            "4": {
+                "starting_left": 252,
+                "starting_top": 685,
+                "raw_sentence": [
+                    "Re : Videos for Taiwan HPP(Secret Seyside - Longmorn)  "
+                ]
+            },
+            "5": {
+                "starting_left": 251,
+                "starting_top": 734,
+                "raw_sentence": [
+                    "Video re-sizing & re-editing  ",
+                    "1 job 3,500.00 3,500.00  "
+                ]
+            },
+            "6": {
+                "starting_left": 252,
+                "starting_top": 783,
+                "raw_sentence": [
+                    "Re : Videos for Taiwan HPP(Secret Seyside Carerdonich)  "
+                ]
+            },
+            "7": {
+                "starting_left": 251,
+                "starting_top": 832,
+                "raw_sentence": [
+                    "Video re-sizing & re-editing  ",
+                    "1job 3,500.00 3,500.00  "
+                ]
+            },
+            "8": {
+                "starting_left": 252,
+                "starting_top": 880,
+                "raw_sentence": [
+                    "Re : Videos for Taiwan HPP(Sing malt of Scotland)  "
+                ]
+            },
+            "9": {
+                "starting_left": 252,
+                "starting_top": 880,
+                "raw_sentence": [
+                    "Re : Videos for Taiwan HPP(Sing malt of Scotland)  (16 : 9 redesigned into 1280 x 960)  "
+                ]
+            },
+            "10": {
+                "starting_left": 251,
+                "starting_top": 927,
+                "raw_sentence": [
+                    "Video re-sizing & re-editing  ",
+                    "1 job 3,500.00 3,500.00  "
+                ]
+            },
+            "11": {
+                "starting_left": 251,
+                "starting_top": 953,
+                "raw_sentence": [
+                    "Video animation redesign & reositioning  ",
+                    "1 job 3,500.00 3,500.00  "
+                ]
+            },
+            "12": {
+                "starting_left": 252,
+                "starting_top": 979,
+                "raw_sentence": [
+                    "Final content assembling & rendering  ",
+                    "1 job 3,500.00 3,500.00  "
+                ]
+            },
+            "13": {
+                "starting_left": 252,
+                "starting_top": 1028,
+                "raw_sentence": [
+                    "RE : RMT2-PRERWHR  RARE OE  "
+                ]
+            },
+            "14": {
+                "starting_left": 188,
+                "starting_top": 1080,
+                "raw_sentence": [
+                    "1 Re : MartellXO+MCB  "
+                ]
+            },
+            "15": {
+                "starting_left": 252,
+                "starting_top": 1104,
+                "raw_sentence": [
+                    "(16 : 9 redesigned into 3456 X 384)  "
+                ]
+            },
+            "16": {
+                "starting_left": 251,
+                "starting_top": 1129,
+                "raw_sentence": [
+                    "Video re-sizing & re-editing  ",
+                    "1job 3,500.00 3,500.00  "
+                ]
+            },
+            "17": {
+                "starting_left": 251,
+                "starting_top": 1155,
+                "raw_sentence": [
+                    "Video animation redesign & reositioning  ",
+                    "1job 3,500.00 3,500.00  "
+                ]
+            },
+            "18": {
+                "starting_left": 252,
+                "starting_top": 1180,
+                "raw_sentence": [
+                    "Final content assembling & rendering  ",
+                    "1 job 3,500.00 3,500.00  "
+                ]
+            },
+            "19": {
+                "starting_left": 187,
+                "starting_top": 1229,
+                "raw_sentence": [
+                    "2 Re : Secret Seyside  "
+                ]
+            },
+            "20": {
+                "starting_left": 252,
+                "starting_top": 1254,
+                "raw_sentence": [
+                    "(16 : 9 redesigned into 3456 X 384)  "
+                ]
+            },
+            "21": {
+                "starting_left": 251,
+                "starting_top": 1278,
+                "raw_sentence": [
+                    "Video re-sizing & re-editing  ",
+                    "1 job 3,500.00 3,500.00  "
+                ]
+            },
+            "22": {
+                "starting_left": 251,
+                "starting_top": 1304,
+                "raw_sentence": [
+                    "Video animation redesign & reositioning  ",
+                    "1 job 3,500.00 3,500.00  "
+                ]
+            },
+            "23": {
+                "starting_left": 252,
+                "starting_top": 1330,
+                "raw_sentence": [
+                    "Final content assembling & rendering  ",
+                    "1 job 3,500.00 3,500.00  "
+                ]
+            },
+            "24": {
+                "starting_left": 187,
+                "starting_top": 1378,
+                "raw_sentence": [
+                    "3 Re : MXO+RS21  "
+                ]
+            },
+            "25": {
+                "starting_left": 252,
+                "starting_top": 1403,
+                "raw_sentence": [
+                    "(16 : 9 redesigned into 1280 x 960)  "
+                ]
+            },
+            "26": {
+                "starting_left": 251,
+                "starting_top": 1427,
+                "raw_sentence": [
+                    "Video re-sizing & re-editing  ",
+                    "1 job 3,500.00 3,500.00  "
+                ]
+            },
+            "27": {
+                "starting_left": 251,
+                "starting_top": 1453,
+                "raw_sentence": [
+                    "Video animation redesign & reositioning  ",
+                    "1 job 3,500.00 3,500.00  "
+                ]
+            },
+            "28": {
+                "starting_left": 252,
+                "starting_top": 1479,
+                "raw_sentence": [
+                    "Final content assembling & rendering  ",
+                    "1 job 3,500.00 3,500.00  "
+                ]
+            },
+            "29": {
+                "starting_left": 1188,
+                "starting_top": 1527,
+                "raw_sentence": [
+                    "Grand  Total  : $49,000.00  "
+                ]
+            }
+        }
+    },
+    "table_proposed_1": {
+        "confidence": 0.8,
+        "raw_content": {
+            "0": {
+                "starting_left": 252,
+                "starting_top": 630,
+                "raw_sentence": [
+                    "PRATR PO number : #92195310, #92195311  "
+                ]
+            },
+            "1": {
+                "starting_left": 252,
+                "starting_top": 685,
+                "raw_sentence": [
+                    "Re : Videos for Taiwan HPP(Secret Seyside - Longmorn)  "
+                ]
+            },
+            "2": {
+                "starting_left": 251,
+                "starting_top": 734,
+                "raw_sentence": [
+                    "Video re-sizing & re-editing  ",
+                    "1 job 3,500.00 3,500.00  "
+                ]
+            },
+            "3": {
+                "starting_left": 252,
+                "starting_top": 783,
+                "raw_sentence": [
+                    "Re : Videos for Taiwan HPP(Secret Seyside Carerdonich)  "
+                ]
+            },
+            "4": {
+                "starting_left": 251,
+                "starting_top": 832,
+                "raw_sentence": [
+                    "Video re-sizing & re-editing  ",
+                    "1job 3,500.00 3,500.00  "
+                ]
+            },
+            "5": {
+                "starting_left": 252,
+                "starting_top": 880,
+                "raw_sentence": [
+                    "Re : Videos for Taiwan HPP(Sing malt of Scotland)  "
+                ]
+            },
+            "6": {
+                "starting_left": 252,
+                "starting_top": 880,
+                "raw_sentence": [
+                    "Re : Videos for Taiwan HPP(Sing malt of Scotland)  (16 : 9 redesigned into 1280 x 960)  "
+                ]
+            },
+            "7": {
+                "starting_left": 251,
+                "starting_top": 927,
+                "raw_sentence": [
+                    "Video re-sizing & re-editing  ",
+                    "1 job 3,500.00 3,500.00  "
+                ]
+            },
+            "8": {
+                "starting_left": 251,
+                "starting_top": 953,
+                "raw_sentence": [
+                    "Video animation redesign & reositioning  ",
+                    "1 job 3,500.00 3,500.00  "
+                ]
+            },
+            "9": {
+                "starting_left": 252,
+                "starting_top": 979,
+                "raw_sentence": [
+                    "Final content assembling & rendering  ",
+                    "1 job 3,500.00 3,500.00  "
+                ]
+            },
+            "10": {
+                "starting_left": 252,
+                "starting_top": 1028,
+                "raw_sentence": [
+                    "RE : RMT2-PRERWHR  RARE OE  "
+                ]
+            },
+            "11": {
+                "starting_left": 188,
+                "starting_top": 1080,
+                "raw_sentence": [
+                    "1 Re : MartellXO+MCB  "
+                ]
+            },
+            "12": {
+                "starting_left": 252,
+                "starting_top": 1104,
+                "raw_sentence": [
+                    "(16 : 9 redesigned into 3456 X 384)  "
+                ]
+            },
+            "13": {
+                "starting_left": 251,
+                "starting_top": 1129,
+                "raw_sentence": [
+                    "Video re-sizing & re-editing  ",
+                    "1job 3,500.00 3,500.00  "
+                ]
+            },
+            "14": {
+                "starting_left": 251,
+                "starting_top": 1155,
+                "raw_sentence": [
+                    "Video animation redesign & reositioning  ",
+                    "1job 3,500.00 3,500.00  "
+                ]
+            },
+            "15": {
+                "starting_left": 252,
+                "starting_top": 1180,
+                "raw_sentence": [
+                    "Final content assembling & rendering  ",
+                    "1 job 3,500.00 3,500.00  "
+                ]
+            },
+            "16": {
+                "starting_left": 187,
+                "starting_top": 1229,
+                "raw_sentence": [
+                    "2 Re : Secret Seyside  "
+                ]
+            },
+            "17": {
+                "starting_left": 252,
+                "starting_top": 1254,
+                "raw_sentence": [
+                    "(16 : 9 redesigned into 3456 X 384)  "
+                ]
+            },
+            "18": {
+                "starting_left": 251,
+                "starting_top": 1278,
+                "raw_sentence": [
+                    "Video re-sizing & re-editing  ",
+                    "1 job 3,500.00 3,500.00  "
+                ]
+            },
+            "19": {
+                "starting_left": 251,
+                "starting_top": 1304,
+                "raw_sentence": [
+                    "Video animation redesign & reositioning  ",
+                    "1 job 3,500.00 3,500.00  "
+                ]
+            },
+            "20": {
+                "starting_left": 252,
+                "starting_top": 1330,
+                "raw_sentence": [
+                    "Final content assembling & rendering  ",
+                    "1 job 3,500.00 3,500.00  "
+                ]
+            },
+            "21": {
+                "starting_left": 187,
+                "starting_top": 1378,
+                "raw_sentence": [
+                    "3 Re : MXO+RS21  "
+                ]
+            },
+            "22": {
+                "starting_left": 252,
+                "starting_top": 1403,
+                "raw_sentence": [
+                    "(16 : 9 redesigned into 1280 x 960)  "
+                ]
+            },
+            "23": {
+                "starting_left": 251,
+                "starting_top": 1427,
+                "raw_sentence": [
+                    "Video re-sizing & re-editing  ",
+                    "1 job 3,500.00 3,500.00  "
+                ]
+            },
+            "24": {
+                "starting_left": 251,
+                "starting_top": 1453,
+                "raw_sentence": [
+                    "Video animation redesign & reositioning  ",
+                    "1 job 3,500.00 3,500.00  "
+                ]
+            },
+            "25": {
+                "starting_left": 252,
+                "starting_top": 1479,
+                "raw_sentence": [
+                    "Final content assembling & rendering  ",
+                    "1 job 3,500.00 3,500.00  "
+                ]
+            },
+            "26": {
+                "starting_left": 1188,
+                "starting_top": 1527,
+                "raw_sentence": [
+                    "Grand  Total  : $49,000.00  "
+                ]
+            }
+        }
     }
 }

@@ -59,5 +59,39 @@
         "type": "undefined",
         "country": "undefined",
         "abbreviated": "undefined"
+    },
+    "table_proposed_0": {
+        "confidence": 0.8300000000000001,
+        "raw_content": {
+            "0": {
+                "starting_left": 75,
+                "starting_top": 530,
+                "raw_sentence": [
+                    "DESCRIPTION  ",
+                    "TY UNIT AMOUNT (HK  "
+                ]
+            },
+            "2": {
+                "starting_left": 74,
+                "starting_top": 589,
+                "raw_sentence": [
+                    "Re : Ballantines counter at Pu Dong Airort SH S2  "
+                ]
+            },
+            "3": {
+                "starting_left": 72,
+                "starting_top": 617,
+                "raw_sentence": [
+                    "Tentative comletion  date  : July 2019  "
+                ]
+            },
+            "4": {
+                "starting_left": 72,
+                "starting_top": 646,
+                "raw_sentence": [
+                    "Total  area : N.A.  "
+                ]
+            }
+        }
     }
 }
