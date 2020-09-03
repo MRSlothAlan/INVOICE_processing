@@ -28,14 +28,14 @@ resize_ratio = 0.3
 ignore_char = [" ", "", None, "\n", "\t", "   ", "  "]
 
 DEBUG = True
-SHOW_IMAGE = False
+SHOW_IMAGE = True
 SHOW_SUB_IMAGE = False
 DEBUG_DETAILED = False
 PARSE = True
 TEMP_TEST = False
 DL = False
 
-LOG_LINE_ITEM = False
+LOG_LINE_ITEM = True
 
 HEADER_IS_BLOCK = False
 

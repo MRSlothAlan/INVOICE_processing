@@ -74,3 +74,29 @@ POSSIBLE_HEADER_WORDS = {
     "net" : 0.6,
     "po" : 0.8
 }
+
+# used in parsing total amount
+POSSIBLE_GRAND_TOTAL_WORDS = [
+    "grand total",
+    "total",
+    "total payable",
+    "total hkd",
+    "total amount due",
+    "total(hk$)",
+]
+
+# used in parsing date
+POSSIBLE_DATE_WORDS = [
+    "date",
+    "date due",
+    "invoice date",
+]
+
+POSSIBLE_INVOICE_NO_WORDS = [
+    "no.",
+    "no",
+    "no.:",
+    "invoice number",
+    "invoice no.",
+    "invoice no"
+]

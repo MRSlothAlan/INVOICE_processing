@@ -20,6 +20,8 @@ known trigram:
     total amount hkd --> total
 """
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.const_labels import *
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.basic_operations.basic_string_operation import \
+    levenshtein_ratio_and_distance
 
 
 def regex_parse_unigram(unigram_node_list):

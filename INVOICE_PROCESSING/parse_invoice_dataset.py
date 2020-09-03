@@ -107,8 +107,6 @@ def parse_main():
          line_num, word_num, left, top, width, height, conf, text
          """
         words_raw, same_line, same_block = ocr_to_standard_data(info)
-
-        # same_line.print()
         # used for node connections
         same_line_copy = copy(same_line)
         # same_line_copy = same_line
@@ -206,7 +204,6 @@ def parse_main():
             """
             Append line items here
             """
-
             try:
                 save_as_json(json_name, results, all_line_items, currency, currency_dict[currency.upper()])
             except AttributeError as e:

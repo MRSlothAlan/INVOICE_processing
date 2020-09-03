@@ -43,40 +43,49 @@
                 "starting_left": 155,
                 "starting_top": 527,
                 "raw_sentence": [
+                    "Item Model Descritions ",
+                    "Qi Unit ",
+                    "HKD "
+                ]
+            },
+            "1": {
+                "starting_left": 155,
+                "starting_top": 527,
+                "raw_sentence": [
                     "Item Model Descritions  ",
                     "Qi Unit  ",
                     "HKD  "
                 ]
             },
-            "1": {
+            "2": {
                 "starting_left": 251,
                 "starting_top": 578,
                 "raw_sentence": [
                     "Vendor name : Aldo Mensa Limited  "
                 ]
             },
-            "2": {
+            "3": {
                 "starting_left": 251,
                 "starting_top": 602,
                 "raw_sentence": [
                     "Vendor code : 18057  "
                 ]
             },
-            "3": {
+            "4": {
                 "starting_left": 252,
                 "starting_top": 630,
                 "raw_sentence": [
                     "PRATR PO number : #92195310, #92195311  "
                 ]
             },
-            "4": {
+            "5": {
                 "starting_left": 252,
                 "starting_top": 685,
                 "raw_sentence": [
                     "Re : Videos for Taiwan HPP(Secret Seyside - Longmorn)  "
                 ]
             },
-            "5": {
+            "6": {
                 "starting_left": 251,
                 "starting_top": 734,
                 "raw_sentence": [
@@ -84,14 +93,14 @@
                     "1 job 3,500.00 3,500.00  "
                 ]
             },
-            "6": {
+            "7": {
                 "starting_left": 252,
                 "starting_top": 783,
                 "raw_sentence": [
                     "Re : Videos for Taiwan HPP(Secret Seyside Carerdonich)  "
                 ]
             },
-            "7": {
+            "8": {
                 "starting_left": 251,
                 "starting_top": 832,
                 "raw_sentence": [
@@ -99,21 +108,21 @@
                     "1job 3,500.00 3,500.00  "
                 ]
             },
-            "8": {
+            "9": {
                 "starting_left": 252,
                 "starting_top": 880,
                 "raw_sentence": [
                     "Re : Videos for Taiwan HPP(Sing malt of Scotland)  "
                 ]
             },
-            "9": {
+            "10": {
                 "starting_left": 252,
                 "starting_top": 880,
                 "raw_sentence": [
                     "Re : Videos for Taiwan HPP(Sing malt of Scotland)  (16 : 9 redesigned into 1280 x 960)  "
                 ]
             },
-            "10": {
+            "11": {
                 "starting_left": 251,
                 "starting_top": 927,
                 "raw_sentence": [
@@ -121,7 +130,7 @@
                     "1 job 3,500.00 3,500.00  "
                 ]
             },
-            "11": {
+            "12": {
                 "starting_left": 251,
                 "starting_top": 953,
                 "raw_sentence": [
@@ -129,7 +138,7 @@
                     "1 job 3,500.00 3,500.00  "
                 ]
             },
-            "12": {
+            "13": {
                 "starting_left": 252,
                 "starting_top": 979,
                 "raw_sentence": [
@@ -137,28 +146,28 @@
                     "1 job 3,500.00 3,500.00  "
                 ]
             },
-            "13": {
+            "14": {
                 "starting_left": 252,
                 "starting_top": 1028,
                 "raw_sentence": [
                     "RE : RMT2-PRERWHR  RARE OE  "
                 ]
             },
-            "14": {
+            "15": {
                 "starting_left": 188,
                 "starting_top": 1080,
                 "raw_sentence": [
                     "1 Re : MartellXO+MCB  "
                 ]
             },
-            "15": {
+            "16": {
                 "starting_left": 252,
                 "starting_top": 1104,
                 "raw_sentence": [
                     "(16 : 9 redesigned into 3456 X 384)  "
                 ]
             },
-            "16": {
+            "17": {
                 "starting_left": 251,
                 "starting_top": 1129,
                 "raw_sentence": [
@@ -166,7 +175,7 @@
                     "1job 3,500.00 3,500.00  "
                 ]
             },
-            "17": {
+            "18": {
                 "starting_left": 251,
                 "starting_top": 1155,
                 "raw_sentence": [
@@ -174,7 +183,7 @@
                     "1job 3,500.00 3,500.00  "
                 ]
             },
-            "18": {
+            "19": {
                 "starting_left": 252,
                 "starting_top": 1180,
                 "raw_sentence": [
@@ -182,21 +191,21 @@
                     "1 job 3,500.00 3,500.00  "
                 ]
             },
-            "19": {
+            "20": {
                 "starting_left": 187,
                 "starting_top": 1229,
                 "raw_sentence": [
                     "2 Re : Secret Seyside  "
                 ]
             },
-            "20": {
+            "21": {
                 "starting_left": 252,
                 "starting_top": 1254,
                 "raw_sentence": [
                     "(16 : 9 redesigned into 3456 X 384)  "
                 ]
             },
-            "21": {
+            "22": {
                 "starting_left": 251,
                 "starting_top": 1278,
                 "raw_sentence": [
@@ -204,7 +213,7 @@
                     "1 job 3,500.00 3,500.00  "
                 ]
             },
-            "22": {
+            "23": {
                 "starting_left": 251,
                 "starting_top": 1304,
                 "raw_sentence": [
@@ -212,7 +221,7 @@
                     "1 job 3,500.00 3,500.00  "
                 ]
             },
-            "23": {
+            "24": {
                 "starting_left": 252,
                 "starting_top": 1330,
                 "raw_sentence": [
@@ -220,21 +229,21 @@
                     "1 job 3,500.00 3,500.00  "
                 ]
             },
-            "24": {
+            "25": {
                 "starting_left": 187,
                 "starting_top": 1378,
                 "raw_sentence": [
                     "3 Re : MXO+RS21  "
                 ]
             },
-            "25": {
+            "26": {
                 "starting_left": 252,
                 "starting_top": 1403,
                 "raw_sentence": [
                     "(16 : 9 redesigned into 1280 x 960)  "
                 ]
             },
-            "26": {
+            "27": {
                 "starting_left": 251,
                 "starting_top": 1427,
                 "raw_sentence": [
@@ -242,7 +251,7 @@
                     "1 job 3,500.00 3,500.00  "
                 ]
             },
-            "27": {
+            "28": {
                 "starting_left": 251,
                 "starting_top": 1453,
                 "raw_sentence": [
@@ -250,7 +259,7 @@
                     "1 job 3,500.00 3,500.00  "
                 ]
             },
-            "28": {
+            "29": {
                 "starting_left": 252,
                 "starting_top": 1479,
                 "raw_sentence": [
@@ -258,11 +267,151 @@
                     "1 job 3,500.00 3,500.00  "
                 ]
             },
-            "29": {
+            "30": {
                 "starting_left": 1188,
                 "starting_top": 1527,
                 "raw_sentence": [
                     "Grand  Total  : $49,000.00  "
+                ]
+            },
+            "31": {
+                "starting_left": 1188,
+                "starting_top": 1527,
+                "raw_sentence": [
+                    "Grand  Total  : $49,000.00  "
+                ]
+            },
+            "32": {
+                "starting_left": 220,
+                "starting_top": 1571,
+                "raw_sentence": [
+                    "1 Currency :  "
+                ]
+            },
+            "33": {
+                "starting_left": 251,
+                "starting_top": 1594,
+                "raw_sentence": [
+                    "All Price quoted in HKD, FOB Taiei  "
+                ]
+            },
+            "34": {
+                "starting_left": 219,
+                "starting_top": 1618,
+                "raw_sentence": [
+                    "2 Payment Methode :  "
+                ]
+            },
+            "35": {
+                "starting_left": 252,
+                "starting_top": 1641,
+                "raw_sentence": [
+                    "Cheque ayable to ALDO MENSA LIMITED  "
+                ]
+            },
+            "36": {
+                "starting_left": 252,
+                "starting_top": 1664,
+                "raw_sentence": [
+                    "or via Bank Transfer :  "
+                ]
+            },
+            "37": {
+                "starting_left": 252,
+                "starting_top": 1664,
+                "raw_sentence": [
+                    "or via Bank Transfer :  Beneficiary Name : ALDO MENSA Limited ( Account Holders Name)  "
+                ]
+            },
+            "38": {
+                "starting_left": 252,
+                "starting_top": 1687,
+                "raw_sentence": [
+                    "Beneficiary Name : ALDO MENSA Limited ( Account Holders Name)  Beneficiary Address : Unit 1801, 18 F Wayson Commercial Building, 28 Connaught Road West, Hong Kong  "
+                ]
+            },
+            "39": {
+                "starting_left": 252,
+                "starting_top": 1710,
+                "raw_sentence": [
+                    "Beneficiary Address : Unit 1801, 18 F Wayson Commercial Building, 28 Connaught Road West, Hong Kong  Bank Name : ICBC (ASIA) Limited  "
+                ]
+            },
+            "40": {
+                "starting_left": 252,
+                "starting_top": 1756,
+                "raw_sentence": [
+                    "Bank Address : 1 F, 9 Queens Road, Central, Hong Kong  "
+                ]
+            },
+            "41": {
+                "starting_left": 252,
+                "starting_top": 1780,
+                "raw_sentence": [
+                    "Bank Account Number : 701-010-03010-4  "
+                ]
+            },
+            "42": {
+                "starting_left": 252,
+                "starting_top": 1780,
+                "raw_sentence": [
+                    "Bank Account Number : 701-010-03010-4  Swift Code : UBHKHKHH (bank code : 072 branch code : 701)  "
+                ]
+            },
+            "43": {
+                "starting_left": 219,
+                "starting_top": 1826,
+                "raw_sentence": [
+                    "3 General Terms & Conditions :  "
+                ]
+            },
+            "44": {
+                "starting_left": 234,
+                "starting_top": 1849,
+                "raw_sentence": [
+                    "NA  "
+                ]
+            },
+            "45": {
+                "starting_left": 219,
+                "starting_top": 1872,
+                "raw_sentence": [
+                    "4 Others :  "
+                ]
+            },
+            "46": {
+                "starting_left": 234,
+                "starting_top": 1895,
+                "raw_sentence": [
+                    "NA  "
+                ]
+            },
+            "47": {
+                "starting_left": 962,
+                "starting_top": 1916,
+                "raw_sentence": [
+                    "For and on behalf of  "
+                ]
+            },
+            "48": {
+                "starting_left": 960,
+                "starting_top": 1941,
+                "raw_sentence": [
+                    "Aldo Mensa Limited  "
+                ]
+            },
+            "50": {
+                "starting_left": 962,
+                "starting_top": 2081,
+                "raw_sentence": [
+                    "Foster FUNG  "
+                ]
+            },
+            "51": {
+                "starting_left": 1404,
+                "starting_top": 2174,
+                "raw_sentence": [
+                    "Page 1  "
                 ]
             }
         }
@@ -274,17 +423,24 @@
                 "starting_left": 252,
                 "starting_top": 630,
                 "raw_sentence": [
-                    "PRATR PO number : #92195310, #92195311  "
+                    "PRATR PO number : #92195310, #92195311 "
                 ]
             },
             "1": {
+                "starting_left": 252,
+                "starting_top": 630,
+                "raw_sentence": [
+                    "PRATR PO number : #92195310, #92195311  "
+                ]
+            },
+            "2": {
                 "starting_left": 252,
                 "starting_top": 685,
                 "raw_sentence": [
                     "Re : Videos for Taiwan HPP(Secret Seyside - Longmorn)  "
                 ]
             },
-            "2": {
+            "3": {
                 "starting_left": 251,
                 "starting_top": 734,
                 "raw_sentence": [
@@ -292,14 +448,14 @@
                     "1 job 3,500.00 3,500.00  "
                 ]
             },
-            "3": {
+            "4": {
                 "starting_left": 252,
                 "starting_top": 783,
                 "raw_sentence": [
                     "Re : Videos for Taiwan HPP(Secret Seyside Carerdonich)  "
                 ]
             },
-            "4": {
+            "5": {
                 "starting_left": 251,
                 "starting_top": 832,
                 "raw_sentence": [
@@ -307,21 +463,21 @@
                     "1job 3,500.00 3,500.00  "
                 ]
             },
-            "5": {
+            "6": {
                 "starting_left": 252,
                 "starting_top": 880,
                 "raw_sentence": [
                     "Re : Videos for Taiwan HPP(Sing malt of Scotland)  "
                 ]
             },
-            "6": {
+            "7": {
                 "starting_left": 252,
                 "starting_top": 880,
                 "raw_sentence": [
                     "Re : Videos for Taiwan HPP(Sing malt of Scotland)  (16 : 9 redesigned into 1280 x 960)  "
                 ]
             },
-            "7": {
+            "8": {
                 "starting_left": 251,
                 "starting_top": 927,
                 "raw_sentence": [
@@ -329,7 +485,7 @@
                     "1 job 3,500.00 3,500.00  "
                 ]
             },
-            "8": {
+            "9": {
                 "starting_left": 251,
                 "starting_top": 953,
                 "raw_sentence": [
@@ -337,7 +493,7 @@
                     "1 job 3,500.00 3,500.00  "
                 ]
             },
-            "9": {
+            "10": {
                 "starting_left": 252,
                 "starting_top": 979,
                 "raw_sentence": [
@@ -345,28 +501,28 @@
                     "1 job 3,500.00 3,500.00  "
                 ]
             },
-            "10": {
+            "11": {
                 "starting_left": 252,
                 "starting_top": 1028,
                 "raw_sentence": [
                     "RE : RMT2-PRERWHR  RARE OE  "
                 ]
             },
-            "11": {
+            "12": {
                 "starting_left": 188,
                 "starting_top": 1080,
                 "raw_sentence": [
                     "1 Re : MartellXO+MCB  "
                 ]
             },
-            "12": {
+            "13": {
                 "starting_left": 252,
                 "starting_top": 1104,
                 "raw_sentence": [
                     "(16 : 9 redesigned into 3456 X 384)  "
                 ]
             },
-            "13": {
+            "14": {
                 "starting_left": 251,
                 "starting_top": 1129,
                 "raw_sentence": [
@@ -374,7 +530,7 @@
                     "1job 3,500.00 3,500.00  "
                 ]
             },
-            "14": {
+            "15": {
                 "starting_left": 251,
                 "starting_top": 1155,
                 "raw_sentence": [
@@ -382,7 +538,7 @@
                     "1job 3,500.00 3,500.00  "
                 ]
             },
-            "15": {
+            "16": {
                 "starting_left": 252,
                 "starting_top": 1180,
                 "raw_sentence": [
@@ -390,21 +546,21 @@
                     "1 job 3,500.00 3,500.00  "
                 ]
             },
-            "16": {
+            "17": {
                 "starting_left": 187,
                 "starting_top": 1229,
                 "raw_sentence": [
                     "2 Re : Secret Seyside  "
                 ]
             },
-            "17": {
+            "18": {
                 "starting_left": 252,
                 "starting_top": 1254,
                 "raw_sentence": [
                     "(16 : 9 redesigned into 3456 X 384)  "
                 ]
             },
-            "18": {
+            "19": {
                 "starting_left": 251,
                 "starting_top": 1278,
                 "raw_sentence": [
@@ -412,7 +568,7 @@
                     "1 job 3,500.00 3,500.00  "
                 ]
             },
-            "19": {
+            "20": {
                 "starting_left": 251,
                 "starting_top": 1304,
                 "raw_sentence": [
@@ -420,7 +576,7 @@
                     "1 job 3,500.00 3,500.00  "
                 ]
             },
-            "20": {
+            "21": {
                 "starting_left": 252,
                 "starting_top": 1330,
                 "raw_sentence": [
@@ -428,21 +584,21 @@
                     "1 job 3,500.00 3,500.00  "
                 ]
             },
-            "21": {
+            "22": {
                 "starting_left": 187,
                 "starting_top": 1378,
                 "raw_sentence": [
                     "3 Re : MXO+RS21  "
                 ]
             },
-            "22": {
+            "23": {
                 "starting_left": 252,
                 "starting_top": 1403,
                 "raw_sentence": [
                     "(16 : 9 redesigned into 1280 x 960)  "
                 ]
             },
-            "23": {
+            "24": {
                 "starting_left": 251,
                 "starting_top": 1427,
                 "raw_sentence": [
@@ -450,7 +606,7 @@
                     "1 job 3,500.00 3,500.00  "
                 ]
             },
-            "24": {
+            "25": {
                 "starting_left": 251,
                 "starting_top": 1453,
                 "raw_sentence": [
@@ -458,7 +614,7 @@
                     "1 job 3,500.00 3,500.00  "
                 ]
             },
-            "25": {
+            "26": {
                 "starting_left": 252,
                 "starting_top": 1479,
                 "raw_sentence": [
@@ -466,11 +622,151 @@
                     "1 job 3,500.00 3,500.00  "
                 ]
             },
-            "26": {
+            "27": {
                 "starting_left": 1188,
                 "starting_top": 1527,
                 "raw_sentence": [
                     "Grand  Total  : $49,000.00  "
+                ]
+            },
+            "28": {
+                "starting_left": 1188,
+                "starting_top": 1527,
+                "raw_sentence": [
+                    "Grand  Total  : $49,000.00  "
+                ]
+            },
+            "29": {
+                "starting_left": 220,
+                "starting_top": 1571,
+                "raw_sentence": [
+                    "1 Currency :  "
+                ]
+            },
+            "30": {
+                "starting_left": 251,
+                "starting_top": 1594,
+                "raw_sentence": [
+                    "All Price quoted in HKD, FOB Taiei  "
+                ]
+            },
+            "31": {
+                "starting_left": 219,
+                "starting_top": 1618,
+                "raw_sentence": [
+                    "2 Payment Methode :  "
+                ]
+            },
+            "32": {
+                "starting_left": 252,
+                "starting_top": 1641,
+                "raw_sentence": [
+                    "Cheque ayable to ALDO MENSA LIMITED  "
+                ]
+            },
+            "33": {
+                "starting_left": 252,
+                "starting_top": 1664,
+                "raw_sentence": [
+                    "or via Bank Transfer :  "
+                ]
+            },
+            "34": {
+                "starting_left": 252,
+                "starting_top": 1664,
+                "raw_sentence": [
+                    "or via Bank Transfer :  Beneficiary Name : ALDO MENSA Limited ( Account Holders Name)  "
+                ]
+            },
+            "35": {
+                "starting_left": 252,
+                "starting_top": 1687,
+                "raw_sentence": [
+                    "Beneficiary Name : ALDO MENSA Limited ( Account Holders Name)  Beneficiary Address : Unit 1801, 18 F Wayson Commercial Building, 28 Connaught Road West, Hong Kong  "
+                ]
+            },
+            "36": {
+                "starting_left": 252,
+                "starting_top": 1710,
+                "raw_sentence": [
+                    "Beneficiary Address : Unit 1801, 18 F Wayson Commercial Building, 28 Connaught Road West, Hong Kong  Bank Name : ICBC (ASIA) Limited  "
+                ]
+            },
+            "37": {
+                "starting_left": 252,
+                "starting_top": 1756,
+                "raw_sentence": [
+                    "Bank Address : 1 F, 9 Queens Road, Central, Hong Kong  "
+                ]
+            },
+            "38": {
+                "starting_left": 252,
+                "starting_top": 1780,
+                "raw_sentence": [
+                    "Bank Account Number : 701-010-03010-4  "
+                ]
+            },
+            "39": {
+                "starting_left": 252,
+                "starting_top": 1780,
+                "raw_sentence": [
+                    "Bank Account Number : 701-010-03010-4  Swift Code : UBHKHKHH (bank code : 072 branch code : 701)  "
+                ]
+            },
+            "40": {
+                "starting_left": 219,
+                "starting_top": 1826,
+                "raw_sentence": [
+                    "3 General Terms & Conditions :  "
+                ]
+            },
+            "41": {
+                "starting_left": 234,
+                "starting_top": 1849,
+                "raw_sentence": [
+                    "NA  "
+                ]
+            },
+            "42": {
+                "starting_left": 219,
+                "starting_top": 1872,
+                "raw_sentence": [
+                    "4 Others :  "
+                ]
+            },
+            "43": {
+                "starting_left": 234,
+                "starting_top": 1895,
+                "raw_sentence": [
+                    "NA  "
+                ]
+            },
+            "44": {
+                "starting_left": 962,
+                "starting_top": 1916,
+                "raw_sentence": [
+                    "For and on behalf of  "
+                ]
+            },
+            "45": {
+                "starting_left": 960,
+                "starting_top": 1941,
+                "raw_sentence": [
+                    "Aldo Mensa Limited  "
+                ]
+            },
+            "47": {
+                "starting_left": 962,
+                "starting_top": 2081,
+                "raw_sentence": [
+                    "Foster FUNG  "
+                ]
+            },
+            "48": {
+                "starting_left": 1404,
+                "starting_top": 2174,
+                "raw_sentence": [
+                    "Page 1  "
                 ]
             }
         }

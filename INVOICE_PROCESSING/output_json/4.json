@@ -101,94 +101,101 @@
                 "starting_left": 177,
                 "starting_top": 1181,
                 "raw_sentence": [
-                    "All remittance charges, commission and bank charges, telegrahic transfer, and any articular country tax charges shall  "
+                    "All remittance charges, commission and bank charges, telegrahic transfer, and any articular country tax charges shall "
                 ]
             },
             "1": {
+                "starting_left": 177,
+                "starting_top": 1181,
+                "raw_sentence": [
+                    "All remittance charges, commission and bank charges, telegrahic transfer, and any articular country tax charges shall  "
+                ]
+            },
+            "2": {
                 "starting_left": 147,
                 "starting_top": 1213,
                 "raw_sentence": [
                     "be strictly borne by the  invoice reciient  or remittance arty. (DataSource ays for its own local bank charges.)  "
                 ]
             },
-            "2": {
+            "3": {
                 "starting_left": 147,
                 "starting_top": 1244,
                 "raw_sentence": [
                     "TEERAAR,  SRAM,  RISERRIB  "
                 ]
             },
-            "3": {
+            "4": {
                 "starting_left": 147,
                 "starting_top": 1291,
                 "raw_sentence": [
                     "(DataSource RIES PABEMAIRITAA.  )  "
                 ]
             },
-            "4": {
+            "5": {
                 "starting_left": 146,
                 "starting_top": 1362,
                 "raw_sentence": [
                     "Payment methods : By cheque made ayable to DataSource International Limited OR  "
                 ]
             },
-            "5": {
+            "6": {
                 "starting_left": 365,
                 "starting_top": 1391,
                 "raw_sentence": [
                     "ByTT  "
                 ]
             },
-            "7": {
+            "8": {
                 "starting_left": 457,
                 "starting_top": 1445,
                 "raw_sentence": [
                     "Account  No.  "
                 ]
             },
-            "8": {
+            "9": {
                 "starting_left": 459,
                 "starting_top": 1472,
                 "raw_sentence": [
                     "Bank Name : HSBC  "
                 ]
             },
-            "9": {
+            "10": {
                 "starting_left": 458,
                 "starting_top": 1500,
                 "raw_sentence": [
                     "Swift Code  No.  : HSBCHKHHHKH  "
                 ]
             },
-            "10": {
+            "11": {
                 "starting_left": 459,
                 "starting_top": 1527,
                 "raw_sentence": [
                     "Branch Address : Sho 2A, 2 F, Hoewell Centre, 183 Queens Road East, Wanchai, Hong Kong  "
                 ]
             },
-            "11": {
+            "12": {
                 "starting_left": 458,
                 "starting_top": 1556,
                 "raw_sentence": [
                     "Currency : Above account accets HKD, USD, EUR or CNY  "
                 ]
             },
-            "12": {
+            "13": {
                 "starting_left": 146,
                 "starting_top": 1610,
                 "raw_sentence": [
                     "Remarks :  "
                 ]
             },
-            "13": {
+            "14": {
                 "starting_left": 141,
                 "starting_top": 1662,
                 "raw_sentence": [
                     "Thank you for your business,  "
                 ]
             },
-            "14": {
+            "15": {
                 "starting_left": 1351,
                 "starting_top": 2131,
                 "raw_sentence": [

@@ -27,11 +27,19 @@
                 "starting_left": 48,
                 "starting_top": 326,
                 "raw_sentence": [
+                    "Billing Customer : ",
+                    "Delivery To Shiment Details : "
+                ]
+            },
+            "1": {
+                "starting_left": 48,
+                "starting_top": 326,
+                "raw_sentence": [
                     "Billing Customer :  ",
                     "Delivery To Shiment Details :  "
                 ]
             },
-            "1": {
+            "2": {
                 "starting_left": 69,
                 "starting_top": 357,
                 "raw_sentence": [
@@ -40,7 +48,7 @@
                     "118 F, The Ritz-Carlton Hong Kong  25 F, Sun Life Tower  15 Canton Road, Harbour City  Tsimshatsui, Kowloon, Hong Kong  "
                 ]
             },
-            "2": {
+            "3": {
                 "starting_left": 49,
                 "starting_top": 510,
                 "raw_sentence": [
@@ -48,7 +56,7 @@
                     "Contact :  "
                 ]
             },
-            "3": {
+            "4": {
                 "starting_left": 49,
                 "starting_top": 510,
                 "raw_sentence": [
@@ -56,7 +64,7 @@
                     "Contact :  Miss Maylis Berger  "
                 ]
             },
-            "4": {
+            "5": {
                 "starting_left": 48,
                 "starting_top": 572,
                 "raw_sentence": [
@@ -64,14 +72,14 @@
                     "Number :  "
                 ]
             },
-            "5": {
+            "6": {
                 "starting_left": 68,
                 "starting_top": 603,
                 "raw_sentence": [
                     "2378 7948  2381 8922  "
                 ]
             },
-            "6": {
+            "7": {
                 "starting_left": 49,
                 "starting_top": 666,
                 "raw_sentence": [
@@ -79,7 +87,7 @@
                     "Your Ref. :  "
                 ]
             },
-            "7": {
+            "8": {
                 "starting_left": 69,
                 "starting_top": 693,
                 "raw_sentence": [
@@ -87,7 +95,7 @@
                     "TMK  PO#92180167  "
                 ]
             },
-            "8": {
+            "9": {
                 "starting_left": 427,
                 "starting_top": 739,
                 "raw_sentence": [
@@ -95,39 +103,60 @@
                     "Amount HKD  "
                 ]
             },
-            "10": {
+            "11": {
                 "starting_left": 52,
                 "starting_top": 781,
                 "raw_sentence": [
                     "1. Mumm and Olmeca menu for Ozone Bar  "
                 ]
             },
-            "11": {
+            "12": {
                 "starting_left": 74,
                 "starting_top": 811,
                 "raw_sentence": [
                     "- artwork, rinting roduction and delivery  "
                 ]
             },
-            "12": {
+            "13": {
                 "starting_left": 75,
                 "starting_top": 841,
                 "raw_sentence": [
                     "- size : 128mm(w) x 190mm(h)  "
                 ]
             },
-            "13": {
+            "14": {
                 "starting_left": 75,
                 "starting_top": 866,
                 "raw_sentence": [
                     "- qty : 150es x 4 versions (600es) (4 artworks )  "
                 ]
             },
-            "15": {
+            "16": {
                 "starting_left": 879,
                 "starting_top": 1246,
                 "raw_sentence": [
                     "Grand  Total  : HKD  "
+                ]
+            },
+            "17": {
+                "starting_left": 52,
+                "starting_top": 1293,
+                "raw_sentence": [
+                    "Payment Terms : Full ayment to be ayable uon job comletion.  "
+                ]
+            },
+            "18": {
+                "starting_left": 48,
+                "starting_top": 1328,
+                "raw_sentence": [
+                    "Total Amount  : Say HKD Five Thousand Three Hundred Dollar(s) Only.  "
+                ]
+            },
+            "19": {
+                "starting_left": 52,
+                "starting_top": 1420,
+                "raw_sentence": [
+                    "Remarks : Cheque should be crossed and made ayable to CIRCUS ONE LTD.  Job is comleted on 23-Se-2019  "
                 ]
             }
         }
@@ -139,43 +168,72 @@
                 "starting_left": 427,
                 "starting_top": 739,
                 "raw_sentence": [
+                    "Descrition ",
+                    "Amount HKD "
+                ]
+            },
+            "1": {
+                "starting_left": 427,
+                "starting_top": 739,
+                "raw_sentence": [
                     "Descrition  ",
                     "Amount HKD  "
                 ]
             },
-            "2": {
+            "3": {
                 "starting_left": 52,
                 "starting_top": 781,
                 "raw_sentence": [
                     "1. Mumm and Olmeca menu for Ozone Bar  "
                 ]
             },
-            "3": {
+            "4": {
                 "starting_left": 74,
                 "starting_top": 811,
                 "raw_sentence": [
                     "- artwork, rinting roduction and delivery  "
                 ]
             },
-            "4": {
+            "5": {
                 "starting_left": 75,
                 "starting_top": 841,
                 "raw_sentence": [
                     "- size : 128mm(w) x 190mm(h)  "
                 ]
             },
-            "5": {
+            "6": {
                 "starting_left": 75,
                 "starting_top": 866,
                 "raw_sentence": [
                     "- qty : 150es x 4 versions (600es) (4 artworks )  "
                 ]
             },
-            "7": {
+            "8": {
                 "starting_left": 879,
                 "starting_top": 1246,
                 "raw_sentence": [
                     "Grand  Total  : HKD  "
+                ]
+            },
+            "9": {
+                "starting_left": 52,
+                "starting_top": 1293,
+                "raw_sentence": [
+                    "Payment Terms : Full ayment to be ayable uon job comletion.  "
+                ]
+            },
+            "10": {
+                "starting_left": 48,
+                "starting_top": 1328,
+                "raw_sentence": [
+                    "Total Amount  : Say HKD Five Thousand Three Hundred Dollar(s) Only.  "
+                ]
+            },
+            "11": {
+                "starting_left": 52,
+                "starting_top": 1420,
+                "raw_sentence": [
+                    "Remarks : Cheque should be crossed and made ayable to CIRCUS ONE LTD.  Job is comleted on 23-Se-2019  "
                 ]
             }
         }

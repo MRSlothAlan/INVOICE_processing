@@ -135,7 +135,10 @@ class SameLine:
                         new_word = ""
                         new_width = 0
                         new_height = 0
+                        new_label = str()
                         # word_num: number of characters
+                        if len(node_list) > 0:
+                            new_label = node_list[0].label
                         for index, node in enumerate(node_list):
                             new_word += str(node.word) + " "
                             # width is a bit tricky
@@ -165,7 +168,8 @@ class SameLine:
                         new_word_num = len(new_word)
                         new_node_final = Node(new_word, new_left, new_top, new_width, new_height, new_word_num)
                         # print(new_node_final.word)
-
+                        # set the label for the word
+                        new_node_final.label = new_label
                         return new_node_final
 
                         # for node in node_list:
@@ -246,9 +250,6 @@ class SameLine:
                         else:
                             final_temp.append(temp_merge_remove_space)
                         # after clustered the labels, split each entry according to colon
-                        """
-                        TO BE IMPLEMENTED
-                        """
                         for node_partition in final_temp:
                             new_node = merge_nodes_to_one(node_partition)
                             merged_nodes_list.append(new_node)

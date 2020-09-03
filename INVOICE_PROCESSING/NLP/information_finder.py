@@ -31,6 +31,7 @@ from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.store_line import SameLine, \
     CopyOfSameLine
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.store_block import SameBlock
 import re
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.const_labels import *
 
 
 def is_date(string, fuzzy=False):
@@ -56,7 +57,8 @@ def find_temp(words_raw_new, resize_temp, resize_ratio=resize_ratio, what="", di
 
     for node in words_raw_new:
         if what == "total":
-            if node.word.lower() == "total" or str(node.word).lower().__contains__('total'):
+            # if node.word.lower() == "total" or str(node.word).lower().__contains__('total'):
+            if node.label == TOTAL_GRAND:
                 # looking for neighbors
                 list_of_neighbors = get_list_of_neighbors(words_raw_new, node)
                 # print([node.word for node in list_of_neighbors])
@@ -83,9 +85,12 @@ def find_temp(words_raw_new, resize_temp, resize_ratio=resize_ratio, what="", di
             If the neighbor has recognizable words, reduce the confidence
             """
             string_to_watch = str(node.word).lower().strip()
+            """
             if (string_to_watch.__contains__('invoice') and string_to_watch.__contains__("no"))\
                     or (string_to_watch.__contains__("no") and not string_to_watch.__contains__("invoice"))\
                     or (string_to_watch.__contains__("invoice") and string_to_watch.__contains__("num")):
+            """
+            if node.label == INVOICE_NUM:
                 if 0 < len(str(node.word).lower().strip().split(' ')) < 3:
                     # looking for neighbors
                     list_of_neighbors = get_list_of_neighbors(words_raw_new, node)
@@ -126,7 +131,8 @@ def find_temp(words_raw_new, resize_temp, resize_ratio=resize_ratio, what="", di
                                                               (255, 0, 0), 2)
                 """
         elif what == "date":
-            if node.word.lower() == "date" or str(node.word).lower().__contains__('date'):
+            # if node.word.lower() == "date" or str(node.word).lower().__contains__('date'):
+            if node.label == INVOICE_DATE:
                 list_of_neighbors = get_list_of_neighbors(words_raw_new, node)
                 # print([node.word for node in list_of_neighbors])
                 for node_nei_con in list_of_neighbors:
@@ -319,19 +325,25 @@ def parse_lines_get_items(content, keywords_list, score, index, rect_regions, wo
         # perform word matching for now
         table_line_items.append(line_node_merged)
         # error, sometimes the line is 'empty'
-        if len(line_node_merged) > 0:
+        """
+         When shall I end the parsing?
+         ..when there are still numbers?
+         ** when there are entries without other kinds of tags
+             e.g. remarks?
+         ** another way: get all the line, excluding those which are extracted as other fields
+         *** In the long term, machine learning is a MUST, not only needed
+         """
+        """
+          if len(line_node_merged) > 0:
             try:
                 if max(levenshtein_ratio_and_distance("total", w, ratio_calc=True)
                        for w in keywords_list_temp) >= 0.8:
-                    break
+                    continue
             except ValueError as e:
                 # you can skip safely
                 pass
+        """
         temp_ptr += 1
-    if LOG_LINE_ITEM:
-        print("Proposed line items (without machine learning)")
-        for line_item in table_line_items:
-            print(line_item)
     return table_line_items
 
 
@@ -381,6 +393,7 @@ def find_line_item_rule_based(words_raw_new, rect_regions, resize_r, image):
     for index, rect in enumerate(rect_regions):
         # [x, y, w, h]
         # extract words from rect region
+        # words_raw_new contains words with labels
         content, label = extract_words(words_raw_new, rect, resize_r)
         # if it is a block, scan it one more time. within that region
         # reason: sometimes OCR missed the words, and it is very true
@@ -551,7 +564,7 @@ def find_line_item_rule_based(words_raw_new, rect_regions, resize_r, image):
         for proposed in ALL_SUGGESTED_LINE_ITEMS:
             print("\n===PROPOSED===")
             for entry in proposed[0]:
-                print([node.word for node in entry])
+                print([(node.word, node.label) for node in entry])
             print("SCORE=", proposed[1])
 
     return ALL_SUGGESTED_LINE_ITEMS
