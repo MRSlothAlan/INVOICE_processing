@@ -1,13 +1,5 @@
 {
-    "total amount_0": {
-        "left": 1318,
-        "top": 1210,
-        "width": 227,
-        "height": 18,
-        "indication": "Subtotal 1,916.00 ",
-        "entry": "Subtotal 1,916.00 "
-    },
-    "invoice_number_1": {
+    "invoice_number_0": {
         "left": 921,
         "top": 96,
         "width": 267,
@@ -15,7 +7,7 @@
         "indication": "NO. ",
         "entry": "CO.REG.NO. : 198201419K GST REG. "
     },
-    "invoice_number_2": {
+    "invoice_number_1": {
         "left": 1216,
         "top": 84,
         "width": 214,
@@ -23,7 +15,7 @@
         "indication": "NO. ",
         "entry": ": M200441192 e@ "
     },
-    "invoice_number_3": {
+    "invoice_number_2": {
         "left": 1073,
         "top": 337,
         "width": 100,
@@ -31,7 +23,7 @@
         "indication": "Invoice No. ",
         "entry": "1C003629 "
     },
-    "invoice_number_4": {
+    "invoice_number_3": {
         "left": 1073,
         "top": 517,
         "width": 66,
@@ -39,7 +31,7 @@
         "indication": "No. ",
         "entry": "30f 4 "
     },
-    "invoice_number_5": {
+    "invoice_number_4": {
         "left": 63,
         "top": 1157,
         "width": 175,
@@ -47,7 +39,7 @@
         "indication": "(NO ",
         "entry": "3.10) INSTALLATION "
     },
-    "date_6": {
+    "date_5": {
         "left": 1073,
         "top": 398,
         "width": 113,
@@ -67,36 +59,26 @@
                 "starting_left": 55,
                 "starting_top": 632,
                 "raw_sentence": [
-                    "No. ",
-                    "Service ",
-                    "Descrition ",
-                    "Price "
-                ]
-            },
-            "1": {
-                "starting_left": 55,
-                "starting_top": 632,
-                "raw_sentence": [
                     "No.  Service  ",
                     "Descrition  ",
                     "Price  "
                 ]
             },
-            "2": {
+            "1": {
                 "starting_left": 889,
                 "starting_top": 690,
                 "raw_sentence": [
                     "MS 165.40 x 3.80 CM  "
                 ]
             },
-            "3": {
+            "2": {
                 "starting_left": 74,
                 "starting_top": 743,
                 "raw_sentence": [
                     "3.5) D UV - PRINT  (NO  MATERIAL) (CM) GLORIFIER - PRINT FOR BACKGROUND VS. 22.00 x 62.00 CM 1  "
                 ]
             },
-            "4": {
+            "3": {
                 "starting_left": 515,
                 "starting_top": 770,
                 "raw_sentence": [
@@ -104,71 +86,71 @@
                     "MS 22.00 x 62.00 CM  "
                 ]
             },
-            "5": {
+            "4": {
                 "starting_left": 74,
                 "starting_top": 819,
                 "raw_sentence": [
                     "3.6) DIE CUT STICKER GOLD SILVER NORMAL (CM) GLORIFIER - SILVER DIE-CUT TEXT -THE VS 11.20 x 2.20 CM 1  "
                 ]
             },
-            "6": {
+            "5": {
                 "starting_left": 515,
                 "starting_top": 847,
                 "raw_sentence": [
-                    "SNOW POLO EDITION  MS 11.20 x 2.20 CM  "
+                    "SNOW  POLO EDITION  MS 11.20 x 2.20 CM  "
                 ]
             },
-            "7": {
+            "6": {
                 "starting_left": 74,
                 "starting_top": 898,
                 "raw_sentence": [
                     "3.7) OD - MOUNTING NORMAL COLORED STICKER GLORIFIER - WHITE BACKING FOR SILVER VS 11.20 x 2.20 CM t  "
                 ]
             },
-            "8": {
+            "7": {
                 "starting_left": 116,
                 "starting_top": 922,
                 "raw_sentence": [
                     "(cm)  ",
-                    "DIE-CUT TEXT - THE SNOW POLO MS 11.20 x 2.20 CM  "
+                    "DIE-CUT TEXT - THE SNOW  POLO MS  11.20 x 2.20 CM  "
                 ]
             },
-            "9": {
+            "8": {
                 "starting_left": 516,
                 "starting_top": 949,
                 "raw_sentence": [
                     "EDITION  "
                 ]
             },
-            "10": {
+            "9": {
                 "starting_left": 74,
                 "starting_top": 1001,
                 "raw_sentence": [
                     "3.8) D UV - PRINT  (NO  MATERIAL) (CM) GLORIFIER - PRINT FOR SNOW VISUAL  -VS. 22.00 x 26.60 CM t  "
                 ]
             },
-            "11": {
+            "10": {
                 "starting_left": 889,
                 "starting_top": 1028,
                 "raw_sentence": [
                     "MS 22.00 x 26.60 CM  "
                 ]
             },
-            "12": {
+            "11": {
                 "starting_left": 74,
                 "starting_top": 1079,
                 "raw_sentence": [
                     "3.9) D UV - PRINT  (NO  MATERIAL) (CM) GLORIFIER - PRINT FOR PLAYERS CUT-OUT VS 11.09 x 12.00 CM 1  "
                 ]
             },
-            "13": {
+            "12": {
                 "starting_left": 889,
                 "starting_top": 1106,
                 "raw_sentence": [
                     "MS 11.09 x 12.00 CM  "
                 ]
             },
-            "14": {
+            "13": {
                 "starting_left": 63,
                 "starting_top": 1157,
                 "raw_sentence": [
@@ -177,21 +159,21 @@
                     "1  "
                 ]
             },
-            "16": {
+            "15": {
                 "starting_left": 1318,
                 "starting_top": 1210,
                 "raw_sentence": [
                     "Subtotal 1,916.00  "
                 ]
             },
-            "17": {
+            "16": {
                 "starting_left": 59,
                 "starting_top": 1268,
                 "raw_sentence": [
                     "4 T4  "
                 ]
             },
-            "18": {
+            "17": {
                 "starting_left": 74,
                 "starting_top": 1298,
                 "raw_sentence": [
@@ -200,35 +182,35 @@
                     "t  "
                 ]
             },
-            "19": {
+            "18": {
                 "starting_left": 74,
                 "starting_top": 1343,
                 "raw_sentence": [
                     "4.2) ID PRINT - STICKER (W LAMI) (CM) TA SHELF - LEFT, FRONT, RIGHT VS 207.60 x 36.80 CM 1  "
                 ]
             },
-            "20": {
+            "19": {
                 "starting_left": 889,
                 "starting_top": 1378,
                 "raw_sentence": [
                     "MS 207.60 x 36.80 CM  "
                 ]
             },
-            "21": {
+            "20": {
                 "starting_left": 74,
                 "starting_top": 1427,
                 "raw_sentence": [
                     "4.3) OD - MOUNTING - PVC FOREX-3MM (CM) 14 SHELF - LEFT, FRONT, RIGHT VS 192.60 x 34.30 CM 1  "
                 ]
             },
-            "22": {
+            "21": {
                 "starting_left": 889,
                 "starting_top": 1455,
                 "raw_sentence": [
                     "MS 192.60 x 34.30 CM  "
                 ]
             },
-            "23": {
+            "22": {
                 "starting_left": 74,
                 "starting_top": 1505,
                 "raw_sentence": [
@@ -236,14 +218,14 @@
                     "VS 74.00 x 142.00 CM 1  "
                 ]
             },
-            "24": {
+            "23": {
                 "starting_left": 889,
                 "starting_top": 1533,
                 "raw_sentence": [
                     "MS 78.00 x 146.00 CM  "
                 ]
             },
-            "25": {
+            "24": {
                 "starting_left": 74,
                 "starting_top": 1582,
                 "raw_sentence": [
@@ -251,35 +233,35 @@
                     "VS 78.00 x 146.00 CM 1  "
                 ]
             },
-            "26": {
+            "25": {
                 "starting_left": 889,
                 "starting_top": 1610,
                 "raw_sentence": [
                     "MS 78.00 x 146.00 CM  "
                 ]
             },
-            "27": {
+            "26": {
                 "starting_left": 74,
                 "starting_top": 1652,
                 "raw_sentence": [
                     "4.6) ID PRINT - STICKER (W LAMI) (CM) RED STICKER WITH WHITE TEXT VS 131.30 x 4.00 CM 1  "
                 ]
             },
-            "28": {
+            "27": {
                 "starting_left": 889,
                 "starting_top": 1687,
                 "raw_sentence": [
                     "MS 131.80 x 4.50 CM  "
                 ]
             },
-            "29": {
+            "28": {
                 "starting_left": 74,
                 "starting_top": 1738,
                 "raw_sentence": [
                     "4.7) D UV- PRINT  (NO  MATERIAL) (CM) GLORIFIER - PRINT FOR BACKGROUND  VS 22.00 x 62.00 CM 1  "
                 ]
             },
-            "30": {
+            "29": {
                 "starting_left": 515,
                 "starting_top": 1765,
                 "raw_sentence": [
@@ -287,78 +269,78 @@
                     "MS 22.00 x 62.00 CM  "
                 ]
             },
-            "31": {
+            "30": {
                 "starting_left": 74,
                 "starting_top": 1814,
                 "raw_sentence": [
                     "4.8) DIE CUT STICKER GOLD SILVER NORMAL (CM) GLORIFIER - SILVER DIE-CUT TEXT -THE VS 11.20 x 2.20 CM 1  "
                 ]
             },
-            "32": {
+            "31": {
                 "starting_left": 515,
-                "starting_top": 1841,
+                "starting_top": 1842,
                 "raw_sentence": [
-                    "SNOW POLO EDITION  MS 11.20 x 2.20 CM  "
+                    "SNOW  POLO EDITION  MS 11.20 x 2.20 CM  "
                 ]
             },
-            "33": {
+            "32": {
                 "starting_left": 74,
                 "starting_top": 1891,
                 "raw_sentence": [
                     "4.9) OD - MOUNTING NORMAL COLORED STICKER GLORIFIER - WHITE BACKING FOR SILVER VS 11.20 x 2.20 CM 1  "
                 ]
             },
-            "34": {
+            "33": {
                 "starting_left": 116,
                 "starting_top": 1917,
                 "raw_sentence": [
                     "(cm)  ",
-                    "DIE-CUT TEXT - THE SNOW POLO MS 11.20 x 2.20 CM  "
+                    "DIE-CUT TEXT - THE SNOW  POLO MS  11.20 x 2.20 CM  "
                 ]
             },
-            "35": {
+            "34": {
                 "starting_left": 516,
                 "starting_top": 1944,
                 "raw_sentence": [
                     "EDITION  "
                 ]
             },
-            "36": {
+            "35": {
                 "starting_left": 63,
                 "starting_top": 1995,
                 "raw_sentence": [
                     "4.10) D UV - PRINT  (NO  MATERIAL) (CM) GLORIFIER - PRINT FOR SNOW VISUAL  -VS. 22.00 x 26.60 CM 1  "
                 ]
             },
-            "37": {
+            "36": {
                 "starting_left": 237,
                 "starting_top": 1995,
                 "raw_sentence": [
                     "(NO  MATERIAL) (CM) GLORIFIER - PRINT FOR SNOW VISUAL  -VS. 22.00 x 26.60 CM 1  "
                 ]
             },
-            "38": {
+            "37": {
                 "starting_left": 889,
                 "starting_top": 2023,
                 "raw_sentence": [
                     "MS 22.00 x 26.60 CM  "
                 ]
             },
-            "39": {
+            "38": {
                 "starting_left": 63,
                 "starting_top": 2073,
                 "raw_sentence": [
                     "4.11) D UV - PRINT  (NO  MATERIAL) (CM) GLORIFIER - PRINT FOR PLAYERS CUT-OUT VS 11.09 x 12.00 CM 1  "
                 ]
             },
-            "40": {
+            "39": {
                 "starting_left": 889,
                 "starting_top": 2101,
                 "raw_sentence": [
                     "MS 11.09 x 12.00 CM  "
                 ]
             },
-            "41": {
+            "40": {
                 "starting_left": 63,
                 "starting_top": 2150,
                 "raw_sentence": [

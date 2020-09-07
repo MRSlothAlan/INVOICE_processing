@@ -1,11 +1,11 @@
 {
     "total amount_0": {
-        "left": 1071,
+        "left": 1136,
         "top": 921,
-        "width": 273,
+        "width": 208,
         "height": 29,
-        "indication": "Total ",
-        "entry": "(HK$) : 2,200 "
+        "indication": "Total (HK$) ",
+        "entry": ": 2,200 "
     },
     "invoice_number_1": {
         "left": 280,
@@ -22,6 +22,14 @@
         "height": 22,
         "indication": "Date ",
         "entry": ": 02 11 2019 "
+    },
+    "po_number_3": {
+        "left": 339,
+        "top": 1199,
+        "width": 236,
+        "height": 20,
+        "indication": "number ",
+        "entry": ": 0737-153597-233 "
     },
     "currency": {
         "type": "Hong Kong Dollar",
@@ -57,10 +65,10 @@
             },
             "3": {
                 "starting_left": 993,
-                "starting_top": 923,
+                "starting_top": 921,
                 "raw_sentence": [
-                    "Total ",
-                    "(HK$) : 2,200 "
+                    "Total (HK$) ",
+                    ": 2,200 "
                 ]
             }
         }
@@ -72,80 +80,73 @@
                 "starting_left": 141,
                 "starting_top": 1096,
                 "raw_sentence": [
-                    "4. TT details : "
-                ]
-            },
-            "1": {
-                "starting_left": 141,
-                "starting_top": 1096,
-                "raw_sentence": [
                     "4. TT details :  "
                 ]
             },
-            "2": {
+            "1": {
                 "starting_left": 142,
                 "starting_top": 1130,
                 "raw_sentence": [
                     "Bank name : 028 Public Bank  "
                 ]
             },
-            "3": {
+            "2": {
                 "starting_left": 141,
                 "starting_top": 1165,
                 "raw_sentence": [
                     "Account name : To Jumer Ltd  "
                 ]
             },
-            "4": {
+            "3": {
                 "starting_left": 141,
                 "starting_top": 1199,
                 "raw_sentence": [
-                    "Account number : 0737-153597-233  "
+                    "Account  number  : 0737-153597-233  "
                 ]
             },
-            "5": {
+            "4": {
                 "starting_left": 142,
                 "starting_top": 1239,
                 "raw_sentence": [
                     "5. Please make cheque ayable to To Jumer Ltd.  "
                 ]
             },
-            "6": {
+            "5": {
                 "starting_left": 885,
                 "starting_top": 1304,
                 "raw_sentence": [
                     "For and on behalf of  "
                 ]
             },
-            "7": {
+            "6": {
                 "starting_left": 884,
                 "starting_top": 1342,
                 "raw_sentence": [
                     "To Jumer Ltd  "
                 ]
             },
-            "10": {
+            "9": {
                 "starting_left": 884,
                 "starting_top": 1621,
                 "raw_sentence": [
                     "Terence Law  "
                 ]
             },
-            "11": {
+            "10": {
                 "starting_left": 147,
                 "starting_top": 2061,
                 "raw_sentence": [
                     "Thank you for your business.  "
                 ]
             },
-            "12": {
+            "11": {
                 "starting_left": 146,
                 "starting_top": 2127,
                 "raw_sentence": [
                     "Room 1903, 19 F, Yue Shing Commercial Building,  "
                 ]
             },
-            "13": {
+            "12": {
                 "starting_left": 147,
                 "starting_top": 2160,
                 "raw_sentence": [

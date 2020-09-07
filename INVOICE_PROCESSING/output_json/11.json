@@ -23,21 +23,21 @@
         "indication": "TOTAL ",
         "entry": ": USD 115,758.68 "
     },
-    "invoice_number_3": {
-        "left": 462,
-        "top": 466,
-        "width": 129,
-        "height": 16,
-        "indication": "Note Number ",
-        "entry": ": DRI9MK047 "
-    },
-    "date_4": {
+    "date_3": {
         "left": 322,
         "top": 326,
         "width": 176,
         "height": 17,
         "indication": "Date ",
         "entry": ": October 31, 2019 "
+    },
+    "po_number_4": {
+        "left": 462,
+        "top": 466,
+        "width": 129,
+        "height": 16,
+        "indication": "Note Number ",
+        "entry": ": DRI9MK047 "
     },
     "currency": {
         "type": "US Dollar",
@@ -51,19 +51,11 @@
                 "starting_left": 270,
                 "starting_top": 551,
                 "raw_sentence": [
-                    "PO ",
-                    "NET AMOUNT(USD. "
-                ]
-            },
-            "1": {
-                "starting_left": 270,
-                "starting_top": 551,
-                "raw_sentence": [
-                    "PO  ",
+                    "PO NO.  ",
                     "NET AMOUNT(USD.  "
                 ]
             },
-            "2": {
+            "1": {
                 "starting_left": 284,
                 "starting_top": 607,
                 "raw_sentence": [
@@ -71,7 +63,7 @@
                     "USD 59,566.94  "
                 ]
             },
-            "3": {
+            "2": {
                 "starting_left": 284,
                 "starting_top": 635,
                 "raw_sentence": [
@@ -79,7 +71,7 @@
                     "USD 12,309.16  "
                 ]
             },
-            "4": {
+            "3": {
                 "starting_left": 284,
                 "starting_top": 663,
                 "raw_sentence": [
@@ -87,7 +79,7 @@
                     "USD 22,329.37  "
                 ]
             },
-            "5": {
+            "4": {
                 "starting_left": 284,
                 "starting_top": 691,
                 "raw_sentence": [
@@ -95,7 +87,7 @@
                     "USD 9,843.35  "
                 ]
             },
-            "6": {
+            "5": {
                 "starting_left": 284,
                 "starting_top": 720,
                 "raw_sentence": [
@@ -103,77 +95,77 @@
                     "USD 11,709.86  "
                 ]
             },
-            "7": {
+            "6": {
                 "starting_left": 1046,
                 "starting_top": 747,
                 "raw_sentence": [
                     "USD 115,758.68  "
                 ]
             },
-            "8": {
+            "7": {
                 "starting_left": 944,
                 "starting_top": 889,
                 "raw_sentence": [
                     "TOTAL  : USD 115,758.68  "
                 ]
             },
-            "9": {
+            "8": {
                 "starting_left": 269,
                 "starting_top": 1031,
                 "raw_sentence": [
                     "Beneficiary : Darin & Co., Ltd.  "
                 ]
             },
-            "10": {
+            "9": {
                 "starting_left": 269,
                 "starting_top": 1060,
                 "raw_sentence": [
                     "Bank Name : Woori Bank, Agujeong-Rodeo Branch  "
                 ]
             },
-            "11": {
+            "10": {
                 "starting_left": 269,
                 "starting_top": 1088,
                 "raw_sentence": [
                     "Address : 660-5, Sinsa-Dong, Gangnam-Gu, Seoul, Korea  "
                 ]
             },
-            "12": {
+            "11": {
                 "starting_left": 269,
                 "starting_top": 1116,
                 "raw_sentence": [
                     "Account : 1081-000-619955  "
                 ]
             },
-            "13": {
+            "12": {
                 "starting_left": 269,
                 "starting_top": 1144,
                 "raw_sentence": [
                     "Bank Swift Code : HVBKKRSEXXX  "
                 ]
             },
-            "14": {
+            "13": {
                 "starting_left": 932,
                 "starting_top": 1340,
                 "raw_sentence": [
                     "YOURS FAITHFULLY,  "
                 ]
             },
-            "15": {
+            "14": {
                 "starting_left": 1131,
                 "starting_top": 1372,
                 "raw_sentence": [
                     "0 &Y  A  "
                 ]
             },
-            "16": {
+            "15": {
                 "starting_left": 1080,
                 "starting_top": 1481,
                 "raw_sentence": [
                     "JOON KIM  "
                 ]
             },
-            "17": {
+            "16": {
                 "starting_left": 1019,
                 "starting_top": 1509,
                 "raw_sentence": [

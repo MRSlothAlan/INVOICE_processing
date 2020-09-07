@@ -35,7 +35,7 @@ PARSE = True
 TEMP_TEST = False
 DL = False
 
-LOG_LINE_ITEM = True
+LOG_LINE_ITEM = False
 
 HEADER_IS_BLOCK = False
 

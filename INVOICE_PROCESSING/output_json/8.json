@@ -27,19 +27,11 @@
                 "starting_left": 48,
                 "starting_top": 325,
                 "raw_sentence": [
-                    "Billing Customer : ",
-                    "Delivery To Shiment Details : "
-                ]
-            },
-            "1": {
-                "starting_left": 48,
-                "starting_top": 325,
-                "raw_sentence": [
                     "Billing Customer :  ",
                     "Delivery To Shiment Details :  "
                 ]
             },
-            "2": {
+            "1": {
                 "starting_left": 69,
                 "starting_top": 356,
                 "raw_sentence": [
@@ -51,7 +43,7 @@
                     "Macau S.A.R  "
                 ]
             },
-            "3": {
+            "2": {
                 "starting_left": 49,
                 "starting_top": 509,
                 "raw_sentence": [
@@ -59,7 +51,7 @@
                     "Contact :  "
                 ]
             },
-            "4": {
+            "3": {
                 "starting_left": 69,
                 "starting_top": 538,
                 "raw_sentence": [
@@ -67,15 +59,15 @@
                     "Jim Liu Martin Wong  "
                 ]
             },
-            "5": {
+            "4": {
                 "starting_left": 48,
                 "starting_top": 571,
                 "raw_sentence": [
                     "Tel. Fax :  ",
-                    "Number :  "
+                    "Number  :  "
                 ]
             },
-            "6": {
+            "5": {
                 "starting_left": 68,
                 "starting_top": 602,
                 "raw_sentence": [
@@ -83,7 +75,7 @@
                     "+853 6380 9529 +853 6677 8077  2381 8922  "
                 ]
             },
-            "7": {
+            "6": {
                 "starting_left": 49,
                 "starting_top": 665,
                 "raw_sentence": [
@@ -92,7 +84,7 @@
                     "TMK  PO#92180088  "
                 ]
             },
-            "9": {
+            "8": {
                 "starting_left": 427,
                 "starting_top": 738,
                 "raw_sentence": [
@@ -100,70 +92,70 @@
                     "Amount HKD  "
                 ]
             },
-            "11": {
+            "10": {
                 "starting_left": 52,
                 "starting_top": 780,
                 "raw_sentence": [
-                    "1. Logistic charge - delivery of Chivas POS from H.K. to Macau  "
+                    "1. Logistic charge - delivery of Chivas  POS from  H.K. to Macau  "
                 ]
             },
-            "12": {
+            "11": {
                 "starting_left": 74,
                 "starting_top": 810,
                 "raw_sentence": [
                     "- ick u and shi on 16-Se-2019  "
                 ]
             },
-            "13": {
+            "12": {
                 "starting_left": 75,
                 "starting_top": 840,
                 "raw_sentence": [
                     "- incl. labor, all local transortation and all documentation  "
                 ]
             },
-            "14": {
+            "13": {
                 "starting_left": 75,
                 "starting_top": 870,
                 "raw_sentence": [
                     "- incl. tasting glass, graduated iette, blending mat, dioma, funnel and  "
                 ]
             },
-            "15": {
+            "14": {
                 "starting_left": 87,
                 "starting_top": 900,
                 "raw_sentence": [
                     "breaker  "
                 ]
             },
-            "16": {
+            "15": {
                 "starting_left": 74,
                 "starting_top": 930,
                 "raw_sentence": [
                     "- qty : 1 carton  "
                 ]
             },
-            "17": {
+            "16": {
                 "starting_left": 879,
                 "starting_top": 1245,
                 "raw_sentence": [
-                    "Grand  Total  : HKD  "
+                    "Grand Total  : HKD  "
                 ]
             },
-            "19": {
+            "18": {
                 "starting_left": 52,
                 "starting_top": 1292,
                 "raw_sentence": [
                     "Payment Terms : Full ayment to be ayable uon job comletion.  "
                 ]
             },
-            "20": {
+            "19": {
                 "starting_left": 48,
                 "starting_top": 1327,
                 "raw_sentence": [
                     "Total Amount  : Say HKD One Thousand Five Hundred Thirty Dollar(s) Only.  "
                 ]
             },
-            "21": {
+            "20": {
                 "starting_left": 52,
                 "starting_top": 1419,
                 "raw_sentence": [
@@ -179,82 +171,74 @@
                 "starting_left": 427,
                 "starting_top": 738,
                 "raw_sentence": [
-                    "Descrition ",
-                    "Amount HKD "
-                ]
-            },
-            "1": {
-                "starting_left": 427,
-                "starting_top": 738,
-                "raw_sentence": [
                     "Descrition  ",
                     "Amount HKD  "
                 ]
             },
-            "3": {
+            "2": {
                 "starting_left": 52,
                 "starting_top": 780,
                 "raw_sentence": [
-                    "1. Logistic charge - delivery of Chivas POS from H.K. to Macau  "
+                    "1. Logistic charge - delivery of Chivas  POS from  H.K. to Macau  "
                 ]
             },
-            "4": {
+            "3": {
                 "starting_left": 74,
                 "starting_top": 810,
                 "raw_sentence": [
                     "- ick u and shi on 16-Se-2019  "
                 ]
             },
-            "5": {
+            "4": {
                 "starting_left": 75,
                 "starting_top": 840,
                 "raw_sentence": [
                     "- incl. labor, all local transortation and all documentation  "
                 ]
             },
-            "6": {
+            "5": {
                 "starting_left": 75,
                 "starting_top": 870,
                 "raw_sentence": [
                     "- incl. tasting glass, graduated iette, blending mat, dioma, funnel and  "
                 ]
             },
-            "7": {
+            "6": {
                 "starting_left": 87,
                 "starting_top": 900,
                 "raw_sentence": [
                     "breaker  "
                 ]
             },
-            "8": {
+            "7": {
                 "starting_left": 74,
                 "starting_top": 930,
                 "raw_sentence": [
                     "- qty : 1 carton  "
                 ]
             },
-            "9": {
+            "8": {
                 "starting_left": 879,
                 "starting_top": 1245,
                 "raw_sentence": [
-                    "Grand  Total  : HKD  "
+                    "Grand Total  : HKD  "
                 ]
             },
-            "11": {
+            "10": {
                 "starting_left": 52,
                 "starting_top": 1292,
                 "raw_sentence": [
                     "Payment Terms : Full ayment to be ayable uon job comletion.  "
                 ]
             },
-            "12": {
+            "11": {
                 "starting_left": 48,
                 "starting_top": 1327,
                 "raw_sentence": [
                     "Total Amount  : Say HKD One Thousand Five Hundred Thirty Dollar(s) Only.  "
                 ]
             },
-            "13": {
+            "12": {
                 "starting_left": 52,
                 "starting_top": 1419,
                 "raw_sentence": [

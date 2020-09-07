@@ -27,19 +27,11 @@
                 "starting_left": 48,
                 "starting_top": 326,
                 "raw_sentence": [
-                    "Billing Customer : ",
-                    "Delivery To Shiment Details : "
-                ]
-            },
-            "1": {
-                "starting_left": 48,
-                "starting_top": 326,
-                "raw_sentence": [
                     "Billing Customer :  ",
                     "Delivery To Shiment Details :  "
                 ]
             },
-            "2": {
+            "1": {
                 "starting_left": 69,
                 "starting_top": 357,
                 "raw_sentence": [
@@ -48,7 +40,7 @@
                     "118 F, The Ritz-Carlton Hong Kong  25 F, Sun Life Tower  15 Canton Road, Harbour City  Tsimshatsui, Kowloon, Hong Kong  "
                 ]
             },
-            "3": {
+            "2": {
                 "starting_left": 49,
                 "starting_top": 510,
                 "raw_sentence": [
@@ -56,7 +48,7 @@
                     "Contact :  "
                 ]
             },
-            "4": {
+            "3": {
                 "starting_left": 49,
                 "starting_top": 510,
                 "raw_sentence": [
@@ -64,22 +56,22 @@
                     "Contact :  Miss Maylis Berger  "
                 ]
             },
-            "5": {
+            "4": {
                 "starting_left": 48,
                 "starting_top": 572,
                 "raw_sentence": [
                     "Tel. Fax :  ",
-                    "Number :  "
+                    "Number  :  "
                 ]
             },
-            "6": {
+            "5": {
                 "starting_left": 68,
                 "starting_top": 603,
                 "raw_sentence": [
                     "2378 7948  2381 8922  "
                 ]
             },
-            "7": {
+            "6": {
                 "starting_left": 49,
                 "starting_top": 666,
                 "raw_sentence": [
@@ -87,7 +79,7 @@
                     "Your Ref. :  "
                 ]
             },
-            "8": {
+            "7": {
                 "starting_left": 69,
                 "starting_top": 693,
                 "raw_sentence": [
@@ -95,7 +87,7 @@
                     "TMK  PO#92180167  "
                 ]
             },
-            "9": {
+            "8": {
                 "starting_left": 427,
                 "starting_top": 739,
                 "raw_sentence": [
@@ -103,56 +95,56 @@
                     "Amount HKD  "
                 ]
             },
-            "11": {
+            "10": {
                 "starting_left": 52,
                 "starting_top": 781,
                 "raw_sentence": [
                     "1. Mumm and Olmeca menu for Ozone Bar  "
                 ]
             },
-            "12": {
+            "11": {
                 "starting_left": 74,
                 "starting_top": 811,
                 "raw_sentence": [
                     "- artwork, rinting roduction and delivery  "
                 ]
             },
-            "13": {
+            "12": {
                 "starting_left": 75,
                 "starting_top": 841,
                 "raw_sentence": [
                     "- size : 128mm(w) x 190mm(h)  "
                 ]
             },
-            "14": {
+            "13": {
                 "starting_left": 75,
                 "starting_top": 866,
                 "raw_sentence": [
                     "- qty : 150es x 4 versions (600es) (4 artworks )  "
                 ]
             },
-            "16": {
+            "15": {
                 "starting_left": 879,
                 "starting_top": 1246,
                 "raw_sentence": [
-                    "Grand  Total  : HKD  "
+                    "Grand Total  : HKD  "
                 ]
             },
-            "17": {
+            "16": {
                 "starting_left": 52,
                 "starting_top": 1293,
                 "raw_sentence": [
                     "Payment Terms : Full ayment to be ayable uon job comletion.  "
                 ]
             },
-            "18": {
+            "17": {
                 "starting_left": 48,
                 "starting_top": 1328,
                 "raw_sentence": [
                     "Total Amount  : Say HKD Five Thousand Three Hundred Dollar(s) Only.  "
                 ]
             },
-            "19": {
+            "18": {
                 "starting_left": 52,
                 "starting_top": 1420,
                 "raw_sentence": [
@@ -168,68 +160,60 @@
                 "starting_left": 427,
                 "starting_top": 739,
                 "raw_sentence": [
-                    "Descrition ",
-                    "Amount HKD "
-                ]
-            },
-            "1": {
-                "starting_left": 427,
-                "starting_top": 739,
-                "raw_sentence": [
                     "Descrition  ",
                     "Amount HKD  "
                 ]
             },
-            "3": {
+            "2": {
                 "starting_left": 52,
                 "starting_top": 781,
                 "raw_sentence": [
                     "1. Mumm and Olmeca menu for Ozone Bar  "
                 ]
             },
-            "4": {
+            "3": {
                 "starting_left": 74,
                 "starting_top": 811,
                 "raw_sentence": [
                     "- artwork, rinting roduction and delivery  "
                 ]
             },
-            "5": {
+            "4": {
                 "starting_left": 75,
                 "starting_top": 841,
                 "raw_sentence": [
                     "- size : 128mm(w) x 190mm(h)  "
                 ]
             },
-            "6": {
+            "5": {
                 "starting_left": 75,
                 "starting_top": 866,
                 "raw_sentence": [
                     "- qty : 150es x 4 versions (600es) (4 artworks )  "
                 ]
             },
-            "8": {
+            "7": {
                 "starting_left": 879,
                 "starting_top": 1246,
                 "raw_sentence": [
-                    "Grand  Total  : HKD  "
+                    "Grand Total  : HKD  "
                 ]
             },
-            "9": {
+            "8": {
                 "starting_left": 52,
                 "starting_top": 1293,
                 "raw_sentence": [
                     "Payment Terms : Full ayment to be ayable uon job comletion.  "
                 ]
             },
-            "10": {
+            "9": {
                 "starting_left": 48,
                 "starting_top": 1328,
                 "raw_sentence": [
                     "Total Amount  : Say HKD Five Thousand Three Hundred Dollar(s) Only.  "
                 ]
             },
-            "11": {
+            "10": {
                 "starting_left": 52,
                 "starting_top": 1420,
                 "raw_sentence": [

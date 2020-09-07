@@ -11,3 +11,11 @@ INVOICE_DATE = "invoice_date"
 VENDOR = "vendor"
 CURRENCY = "currency"
 TOTAL_GRAND = "grand_total"
+PO_NUM = "po_number"
+
+# 03092020: Implement these
+ACCOUNT_NUM = "account_number"
+ACCOUNT_NAME = "account_name"
+REMARKS = "remarks"
+
+

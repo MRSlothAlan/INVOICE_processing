@@ -16,14 +16,6 @@
         "entry": "I-16810 "
     },
     "invoice_number_2": {
-        "left": 1126,
-        "top": 835,
-        "width": 91,
-        "height": 14,
-        "indication": "No. ",
-        "entry": "93195049 "
-    },
-    "invoice_number_3": {
         "left": 571,
         "top": 1441,
         "width": 232,
@@ -31,13 +23,21 @@
         "indication": "No. ",
         "entry": ": 813-069028-838 "
     },
-    "date_4": {
+    "date_3": {
         "left": 182,
         "top": 494,
         "width": 327,
         "height": 28,
         "indication": "Date ",
         "entry": ": 01.11.2019 "
+    },
+    "po_number_4": {
+        "left": 1126,
+        "top": 835,
+        "width": 91,
+        "height": 14,
+        "indication": "PO No. ",
+        "entry": "93195049 "
     },
     "currency": {
         "type": "Hong Kong Dollar",
@@ -52,8 +52,8 @@
                 "starting_top": 732,
                 "raw_sentence": [
                     "DESCRIPTION ",
-                    "Contact PO ",
-                    "No. ",
+                    "Contact ",
+                    "PO No. ",
                     "Details ice il "
                 ]
             },
@@ -64,8 +64,8 @@
                     "Order ",
                     "Order ",
                     "date ",
-                    "Contact PO ",
-                    "No. ",
+                    "Contact ",
+                    "PO No. ",
                     "Details ice il "
                 ]
             },
@@ -101,101 +101,94 @@
                 "starting_left": 177,
                 "starting_top": 1181,
                 "raw_sentence": [
-                    "All remittance charges, commission and bank charges, telegrahic transfer, and any articular country tax charges shall "
-                ]
-            },
-            "1": {
-                "starting_left": 177,
-                "starting_top": 1181,
-                "raw_sentence": [
                     "All remittance charges, commission and bank charges, telegrahic transfer, and any articular country tax charges shall  "
                 ]
             },
-            "2": {
+            "1": {
                 "starting_left": 147,
                 "starting_top": 1213,
                 "raw_sentence": [
-                    "be strictly borne by the  invoice reciient  or remittance arty. (DataSource ays for its own local bank charges.)  "
+                    "be strictly borne by the invoice reciient or remittance arty. (DataSource ays for its own local bank charges.)  "
                 ]
             },
-            "3": {
+            "2": {
                 "starting_left": 147,
                 "starting_top": 1244,
                 "raw_sentence": [
                     "TEERAAR,  SRAM,  RISERRIB  "
                 ]
             },
-            "4": {
+            "3": {
                 "starting_left": 147,
                 "starting_top": 1291,
                 "raw_sentence": [
                     "(DataSource RIES PABEMAIRITAA.  )  "
                 ]
             },
-            "5": {
+            "4": {
                 "starting_left": 146,
                 "starting_top": 1362,
                 "raw_sentence": [
                     "Payment methods : By cheque made ayable to DataSource International Limited OR  "
                 ]
             },
-            "6": {
+            "5": {
                 "starting_left": 365,
                 "starting_top": 1391,
                 "raw_sentence": [
                     "ByTT  "
                 ]
             },
-            "8": {
+            "7": {
                 "starting_left": 457,
                 "starting_top": 1445,
                 "raw_sentence": [
                     "Account  No.  "
                 ]
             },
-            "9": {
+            "8": {
                 "starting_left": 459,
                 "starting_top": 1472,
                 "raw_sentence": [
                     "Bank Name : HSBC  "
                 ]
             },
-            "10": {
+            "9": {
                 "starting_left": 458,
                 "starting_top": 1500,
                 "raw_sentence": [
                     "Swift Code  No.  : HSBCHKHHHKH  "
                 ]
             },
-            "11": {
+            "10": {
                 "starting_left": 459,
                 "starting_top": 1527,
                 "raw_sentence": [
                     "Branch Address : Sho 2A, 2 F, Hoewell Centre, 183 Queens Road East, Wanchai, Hong Kong  "
                 ]
             },
-            "12": {
+            "11": {
                 "starting_left": 458,
                 "starting_top": 1556,
                 "raw_sentence": [
                     "Currency : Above account accets HKD, USD, EUR or CNY  "
                 ]
             },
-            "13": {
+            "12": {
                 "starting_left": 146,
                 "starting_top": 1610,
                 "raw_sentence": [
                     "Remarks :  "
                 ]
             },
-            "14": {
+            "13": {
                 "starting_left": 141,
                 "starting_top": 1662,
                 "raw_sentence": [
                     "Thank you for your business,  "
                 ]
             },
-            "15": {
+            "14": {
                 "starting_left": 1351,
                 "starting_top": 2131,
                 "raw_sentence": [

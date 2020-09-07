@@ -1,29 +1,5 @@
 {
     "total amount_0": {
-        "left": 1313,
-        "top": 1023,
-        "width": 104,
-        "height": 21,
-        "indication": "Sub-total : $11,253.00 ",
-        "entry": "$11,253.00 "
-    },
-    "total amount_1": {
-        "left": 1106,
-        "top": 1167,
-        "width": 311,
-        "height": 29,
-        "indication": "Sub-total : $11,253.00 ",
-        "entry": "Sub-total : $11,253.00 "
-    },
-    "total amount_2": {
-        "left": 1117,
-        "top": 1202,
-        "width": 285,
-        "height": 21,
-        "indication": "Sub-total : $11,253.00 ",
-        "entry": "7% GST $787.71 "
-    },
-    "total amount_3": {
         "left": 1117,
         "top": 1202,
         "width": 285,
@@ -31,7 +7,7 @@
         "indication": "TOTAL ",
         "entry": "7% GST $787.71 "
     },
-    "total amount_4": {
+    "total amount_1": {
         "left": 1181,
         "top": 1233,
         "width": 240,
@@ -39,7 +15,7 @@
         "indication": "TOTAL ",
         "entry": ": $12,040.71 "
     },
-    "invoice_number_5": {
+    "invoice_number_2": {
         "left": 1135,
         "top": 407,
         "width": 286,
@@ -47,15 +23,7 @@
         "indication": "Invoice No ",
         "entry": ": 201910423 "
     },
-    "invoice_number_6": {
-        "left": 97,
-        "top": 1055,
-        "width": 190,
-        "height": 15,
-        "indication": "No ",
-        "entry": ": 93195036 "
-    },
-    "invoice_number_7": {
+    "invoice_number_3": {
         "left": 196,
         "top": 1413,
         "width": 135,
@@ -63,13 +31,29 @@
         "indication": "No ",
         "entry": ": 1193137151 "
     },
-    "date_8": {
+    "date_4": {
         "left": 1151,
         "top": 437,
         "width": 264,
         "height": 16,
         "indication": "Date ",
         "entry": ": 09-Oct-19 "
+    },
+    "po_number_5": {
+        "left": 97,
+        "top": 1055,
+        "width": 190,
+        "height": 15,
+        "indication": "PO No ",
+        "entry": ": 93195036 "
+    },
+    "po_number_6": {
+        "left": 196,
+        "top": 1413,
+        "width": 135,
+        "height": 15,
+        "indication": "PromoPower Pte ",
+        "entry": ": 1193137151 "
     },
     "currency": {
         "type": "Portuguese Escudo",
@@ -120,8 +104,7 @@
                 "starting_left": 44,
                 "starting_top": 1055,
                 "raw_sentence": [
-                    "PO ",
-                    "No ",
+                    "PO No ",
                     ": 93195036 "
                 ]
             },

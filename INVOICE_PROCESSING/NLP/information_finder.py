@@ -22,6 +22,7 @@ from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.word_parser.parse_words impo
 
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING import constants
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.constants import LOG_LINE_ITEM
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.const_labels import *
 """
 Now just for testing, will modify it soon
 """
@@ -56,7 +57,7 @@ def find_temp(words_raw_new, resize_temp, resize_ratio=resize_ratio, what="", di
     all_results = list()
 
     for node in words_raw_new:
-        if what == "total":
+        if what == TOTAL_GRAND:
             # if node.word.lower() == "total" or str(node.word).lower().__contains__('total'):
             if node.label == TOTAL_GRAND:
                 # looking for neighbors
@@ -78,7 +79,7 @@ def find_temp(words_raw_new, resize_temp, resize_ratio=resize_ratio, what="", di
                                                               (0, 0, 255), 2)
                             all_results.append(["total amount", node_nei_con, node])
 
-        elif what == "invoice_no":
+        elif what == INVOICE_NUM:
             """
             possible patterns: invoice no, invoice number, No.:
             Weighting: add more weighting to words on right and bottom left
@@ -130,7 +131,7 @@ def find_temp(words_raw_new, resize_temp, resize_ratio=resize_ratio, what="", di
                                                                int(node_nei_con.center_y * resize_ratio)),
                                                               (255, 0, 0), 2)
                 """
-        elif what == "date":
+        elif what == INVOICE_DATE:
             # if node.word.lower() == "date" or str(node.word).lower().__contains__('date'):
             if node.label == INVOICE_DATE:
                 list_of_neighbors = get_list_of_neighbors(words_raw_new, node)
@@ -162,6 +163,29 @@ def find_temp(words_raw_new, resize_temp, resize_ratio=resize_ratio, what="", di
                                            (255, 0, 0), 2)
 
                         all_results.append(["date", node_nei_con, node])
+        elif what == PO_NUM:
+            if node.label == PO_NUM:
+                if 0 < len(str(node.word).lower().strip().split(' ')) < 3:
+                    # looking for neighbors
+                    list_of_neighbors = get_list_of_neighbors(words_raw_new, node)
+                    # print([node.word for node in list_of_neighbors])
+                    for node_nei_con in list_of_neighbors:
+                        words = node_nei_con.word.split(" ")
+                        count_valid_words = 0
+                        for word in words:
+                            if not str(word).__contains__(":"):
+                                try:
+                                    if dict.check(word):
+                                        count_valid_words += 1
+                                except ValueError as e:
+                                    pass
+                        if count_valid_words <= 1 and any(char.isdigit() for char in node_nei_con.word):
+                            resize_temp = cv2.line(resize_temp, (int(node.center_x * resize_ratio),
+                                                                 int(node.center_y * resize_ratio)),
+                                                   (int(node_nei_con.center_x * resize_ratio),
+                                                    int(node_nei_con.center_y * resize_ratio)),
+                                                   (0, 100, 100), 2)
+                            all_results.append(["po_number", node_nei_con, node])
 
     return resize_temp, all_results
 
@@ -193,7 +217,7 @@ def is_total_amount_grand(node_nei_con, node):
 
 def find_information_rule_based(words_raw_new, image, resize_ratio, dictionary):
     all_results_collect = list()
-    entries_to_find = ["total", "invoice_no", "date"]
+    entries_to_find = [TOTAL_GRAND, INVOICE_NUM, INVOICE_DATE, PO_NUM]
     for entry in entries_to_find:
         image, all_results = find_temp(words_raw_new, image, resize_ratio, what=entry, dict=dictionary)
         all_results_collect += all_results
@@ -313,7 +337,6 @@ def parse_lines_get_items(content, keywords_list, score, index, rect_regions, wo
         if LOG_LINE_ITEM:
             # this works like a charm :-)
             print("\nPOSSIBLE HEADER(LINE):{}, SCORE:{}\n".format(keywords_list, score))
-            table_line_items.append(content)
     # append the header first
     # since this is a LINE, that means line items are those lines below it.
     temp_ptr = index

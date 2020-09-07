@@ -40,12 +40,12 @@
         "entry": "1 job 1720 $ 1,720.00 i "
     },
     "total amount_5": {
-        "left": 1095,
-        "top": 1773,
-        "width": 299,
+        "left": 1143,
+        "top": 1774,
+        "width": 251,
         "height": 23,
-        "indication": "Total ",
-        "entry": ": $ 129,720.00 "
+        "indication": "Total : ",
+        "entry": "$ 129,720.00 "
     },
     "date_6": {
         "left": 381,
@@ -54,6 +54,14 @@
         "height": 22,
         "indication": "date ",
         "entry": ": July 2019 "
+    },
+    "po_number_7": {
+        "left": 893,
+        "top": 308,
+        "width": 171,
+        "height": 24,
+        "indication": "PO ",
+        "entry": ": 83195045 "
     },
     "currency": {
         "type": "undefined",
@@ -67,54 +75,46 @@
                 "starting_left": 75,
                 "starting_top": 530,
                 "raw_sentence": [
-                    "DESCRIPTION ",
-                    "TY UNIT AMOUNT (HK "
-                ]
-            },
-            "1": {
-                "starting_left": 75,
-                "starting_top": 530,
-                "raw_sentence": [
                     "DESCRIPTION  ",
                     "TY UNIT AMOUNT (HK  "
                 ]
             },
-            "3": {
+            "2": {
                 "starting_left": 74,
                 "starting_top": 589,
                 "raw_sentence": [
                     "Re : Ballantines counter at Pu Dong Airort SH S2  "
                 ]
             },
-            "4": {
+            "3": {
                 "starting_left": 72,
                 "starting_top": 617,
                 "raw_sentence": [
                     "Tentative comletion  date  : July 2019  "
                 ]
             },
-            "5": {
+            "4": {
                 "starting_left": 72,
                 "starting_top": 646,
                 "raw_sentence": [
                     "Total  area : N.A.  "
                 ]
             },
-            "6": {
+            "5": {
                 "starting_left": 72,
                 "starting_top": 703,
                 "raw_sentence": [
                     "A  Preliminary  "
                 ]
             },
-            "7": {
+            "6": {
                 "starting_left": 74,
                 "starting_top": 732,
                 "raw_sentence": [
                     "1. Drawing submission  "
                 ]
             },
-            "8": {
+            "7": {
                 "starting_left": 74,
                 "starting_top": 761,
                 "raw_sentence": [
@@ -122,28 +122,28 @@
                     "1 job 1170 $ 1,170.00  "
                 ]
             },
-            "9": {
+            "8": {
                 "starting_left": 1005,
                 "starting_top": 824,
                 "raw_sentence": [
                     "sub  total  : $ 1,170.00  "
                 ]
             },
-            "10": {
+            "9": {
                 "starting_left": 176,
                 "starting_top": 877,
                 "raw_sentence": [
                     "re P i  "
                 ]
             },
-            "11": {
+            "10": {
                 "starting_left": 72,
                 "starting_top": 934,
                 "raw_sentence": [
                     "Location : S2  "
                 ]
             },
-            "12": {
+            "11": {
                 "starting_left": 73,
                 "starting_top": 963,
                 "raw_sentence": [
@@ -151,14 +151,14 @@
                     "1LM 35778 $ 35,778.0  "
                 ]
             },
-            "13": {
+            "12": {
                 "starting_left": 71,
                 "starting_top": 992,
                 "raw_sentence": [
                     "size : 1000W500D2350H  "
                 ]
             },
-            "14": {
+            "13": {
                 "starting_left": 72,
                 "starting_top": 1049,
                 "raw_sentence": [
@@ -166,7 +166,7 @@
                     "1 job  $ 38,115.00  "
                 ]
             },
-            "15": {
+            "14": {
                 "starting_left": 71,
                 "starting_top": 1106,
                 "raw_sentence": [
@@ -174,7 +174,7 @@
                     "1LM 16380 $ 16,380.0  "
                 ]
             },
-            "16": {
+            "15": {
                 "starting_left": 71,
                 "starting_top": 1164,
                 "raw_sentence": [
@@ -182,7 +182,7 @@
                     "3 cs 1209 $$ 3,627.00  size : 400  "
                 ]
             },
-            "17": {
+            "16": {
                 "starting_left": 69,
                 "starting_top": 1250,
                 "raw_sentence": [
@@ -190,28 +190,28 @@
                     "2 jobs 5200 $ 10,400.00  "
                 ]
             },
-            "18": {
+            "17": {
                 "starting_left": 69,
                 "starting_top": 1279,
                 "raw_sentence": [
                     "size : 230W205D318H  "
                 ]
             },
-            "19": {
+            "18": {
                 "starting_left": 1002,
                 "starting_top": 1313,
                 "raw_sentence": [
                     "sub  total  : $ 104,300.00  "
                 ]
             },
-            "20": {
+            "19": {
                 "starting_left": 86,
                 "starting_top": 1365,
                 "raw_sentence": [
                     "I ion  "
                 ]
             },
-            "23": {
+            "22": {
                 "starting_left": 70,
                 "starting_top": 1422,
                 "raw_sentence": [
@@ -221,7 +221,7 @@
                     "1 job  $ 11,500.00 :  ar  4. Permit alication for Airort  ",
                     "1 job  $ 500.00 ie  sub  total  : $ 24,250.00 e  Remarks : Dislay items, glorifier and visual outut rovide by client.  ",
                     "e  x  55  ",
-                    "a  Total  : $ 129,720.00  tH  Terms & Conditions  1. Payment within 30 days  ",
+                    "a  Total :  $ 129,720.00  tH  Terms & Conditions  1. Payment within 30 days  ",
                     "a  Interest of 3% er month will hi d on Over : ccounts.  ",
                     "oO  &  reared by  ",
                     "a  at  ak  ie  MFR  E.& : 0.E :  ",

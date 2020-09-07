@@ -100,3 +100,10 @@ POSSIBLE_INVOICE_NO_WORDS = [
     "invoice no.",
     "invoice no"
 ]
+
+POSSIBLE_PO_NO_WORDS = [
+    "po no.",
+    "po#",
+    "po no",
+    "po number"
+]

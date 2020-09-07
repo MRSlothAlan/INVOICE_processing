@@ -87,6 +87,78 @@
         "indication": "Date ",
         "entry": ": 21 10 2019 "
     },
+    "po_number_11": {
+        "left": 1175,
+        "top": 162,
+        "width": 272,
+        "height": 79,
+        "indication": "Number ",
+        "entry": "yay f4 "
+    },
+    "po_number_12": {
+        "left": 1350,
+        "top": 346,
+        "width": 160,
+        "height": 16,
+        "indication": "Number ",
+        "entry": ": 630261488 "
+    },
+    "po_number_13": {
+        "left": 1318,
+        "top": 407,
+        "width": 191,
+        "height": 16,
+        "indication": "Number ",
+        "entry": ": 2846193243 "
+    },
+    "po_number_14": {
+        "left": 263,
+        "top": 477,
+        "width": 143,
+        "height": 14,
+        "indication": "Number ",
+        "entry": ": +85223786900 "
+    },
+    "po_number_15": {
+        "left": 1135,
+        "top": 1245,
+        "width": 172,
+        "height": 16,
+        "indication": "Number ",
+        "entry": ": 630261488 "
+    },
+    "po_number_16": {
+        "left": 1098,
+        "top": 1335,
+        "width": 220,
+        "height": 16,
+        "indication": "Number ",
+        "entry": ": 2846193243 "
+    },
+    "po_number_17": {
+        "left": 1175,
+        "top": 1601,
+        "width": 189,
+        "height": 15,
+        "indication": "Number ",
+        "entry": "D00222534 "
+    },
+    "po_number_18": {
+        "left": 1114,
+        "top": 1811,
+        "width": 177,
+        "height": 16,
+        "indication": "Number ",
+        "entry": ": 630261488 "
+    },
+    "po_number_19": {
+        "left": 1082,
+        "top": 1901,
+        "width": 221,
+        "height": 17,
+        "indication": "Number ",
+        "entry": ": 2846193243 "
+    },
     "currency": {
         "type": "Hong Kong Dollar",
         "country": "HONG KONG",

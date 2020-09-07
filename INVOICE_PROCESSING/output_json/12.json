@@ -4,26 +4,18 @@
         "top": 1027,
         "width": 475,
         "height": 21,
-        "indication": "TOTAL ",
+        "indication": "TOTAL AMOUNT ",
         "entry": "ae @se2 CHARGE KRW 4,400 "
     },
     "total amount_1": {
-        "left": 1142,
-        "top": 1050,
-        "width": 250,
-        "height": 35,
-        "indication": "TOTAL ",
-        "entry": "AMOUNT KRW 54, 400 "
-    },
-    "total amount_2": {
         "left": 914,
         "top": 1134,
         "width": 480,
         "height": 46,
-        "indication": "TOTAL ",
+        "indication": "TOTAL AMOUNT ",
         "entry": "Ji AMI CARD AMOUNT KRW 5A, 400, "
     },
-    "invoice_number_3": {
+    "invoice_number_2": {
         "left": 917,
         "top": 999,
         "width": 121,
@@ -31,7 +23,7 @@
         "indication": "NO. ",
         "entry": "S28 vse "
     },
-    "invoice_number_4": {
+    "invoice_number_3": {
         "left": 1209,
         "top": 1175,
         "width": 144,
@@ -81,7 +73,8 @@
                 "starting_left": 232,
                 "starting_top": 1025,
                 "raw_sentence": [
-                    "HEE (Reservation "
+                    "HEE (Reservation ",
+                    "KRW 54, 400 "
                 ]
             },
             "5": {
@@ -90,15 +83,15 @@
                 "raw_sentence": [
                     " ykavns ",
                     "Br Fal ",
-                    "TOTAL ",
-                    "AMOUNT KRW 54, 400 "
+                    "TOTAL AMOUNT "
                 ]
             },
             "6": {
                 "starting_left": 231,
                 "starting_top": 1046,
                 "raw_sentence": [
-                    "ag ne ricket No 152626310 "
+                    "ag ne ricket No 152626310 ",
+                    "KRW 54, 400 "
                 ]
             },
             "7": {
@@ -106,8 +99,7 @@
                 "starting_top": 1078,
                 "raw_sentence": [
                     "nerary ",
-                    "TOTAL ",
-                    "AMOUNT KRW 54, 400 "
+                    "KRW 54, 400 "
                 ]
             },
             "8": {

@@ -31,6 +31,14 @@
         "indication": "Date ",
         "entry": ": 1 Nov, 19 "
     },
+    "po_number_4": {
+        "left": 303,
+        "top": 1580,
+        "width": 287,
+        "height": 39,
+        "indication": "PO# ",
+        "entry": "93195214 "
+    },
     "currency": {
         "type": "Hong Kong Dollar",
         "country": "HONG KONG",
@@ -43,33 +51,25 @@
                 "starting_left": 116,
                 "starting_top": 656,
                 "raw_sentence": [
-                    "Descrition ",
-                    "Price "
-                ]
-            },
-            "1": {
-                "starting_left": 116,
-                "starting_top": 656,
-                "raw_sentence": [
                     "Descrition  ",
                     "Price  "
                 ]
             },
-            "2": {
+            "1": {
                 "starting_left": 202,
                 "starting_top": 812,
                 "raw_sentence": [
                     "October  Artwork  Fee  "
                 ]
             },
-            "3": {
+            "2": {
                 "starting_left": 201,
                 "starting_top": 924,
                 "raw_sentence": [
                     "RS21 Lost blend Cal online Preorder 4 AWs  HK$2400  "
                 ]
             },
-            "4": {
+            "3": {
                 "starting_left": 199,
                 "starting_top": 997,
                 "raw_sentence": [
@@ -77,7 +77,7 @@
                     "HK$3600  "
                 ]
             },
-            "5": {
+            "4": {
                 "starting_left": 199,
                 "starting_top": 1071,
                 "raw_sentence": [
@@ -85,7 +85,7 @@
                     "HK$1800  "
                 ]
             },
-            "6": {
+            "5": {
                 "starting_left": 176,
                 "starting_top": 1144,
                 "raw_sentence": [
@@ -93,7 +93,7 @@
                     "HK$2400  "
                 ]
             },
-            "7": {
+            "6": {
                 "starting_left": 176,
                 "starting_top": 1218,
                 "raw_sentence": [
@@ -101,7 +101,7 @@
                     "HK$600  "
                 ]
             },
-            "8": {
+            "7": {
                 "starting_left": 199,
                 "starting_top": 1291,
                 "raw_sentence": [
@@ -109,7 +109,7 @@
                     "HK$1200  "
                 ]
             },
-            "9": {
+            "8": {
                 "starting_left": 201,
                 "starting_top": 1365,
                 "raw_sentence": [
@@ -117,7 +117,7 @@
                     "HK$600  "
                 ]
             },
-            "10": {
+            "9": {
                 "starting_left": 201,
                 "starting_top": 1438,
                 "raw_sentence": [
@@ -125,30 +125,30 @@
                     "HK$600  "
                 ]
             },
-            "11": {
+            "10": {
                 "starting_left": 674,
                 "starting_top": 1566,
                 "raw_sentence": [
-                    "Quotati : 14683  PO# 93195214  "
+                    "Quotati : 14683  PO#  93195214  "
                 ]
             },
-            "12": {
+            "11": {
                 "starting_left": 675,
                 "starting_top": 1618,
                 "raw_sentence": [
                     "Date  : 1 Nov, 19  "
                 ]
             },
-            "13": {
+            "12": {
                 "starting_left": 128,
                 "starting_top": 1767,
                 "raw_sentence": [
                     "Please make chegue ayable to UNION-A WORKSHOP LIMITED  ",
                     "Total  tou malt shoen if the job Is ut on hold tor over 3 months  ",
-                    "HK$1 3200  If full ayment is not received within 30 days of the  date  of this Invoice a 20% surcharge will aly  "
+                    "HK$1 3200  If full ayment is not received within 30 days of the  date  of this  Invoice a  20% surcharge will aly  "
                 ]
             },
-            "14": {
+            "13": {
                 "starting_left": 867,
                 "starting_top": 1947,
                 "raw_sentence": [
