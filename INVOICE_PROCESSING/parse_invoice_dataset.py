@@ -186,7 +186,6 @@ def parse_main():
                     pickle.dump(data_to_save, processed_f)
                 processed_f.close()
 
-
         # need to merge some nodes which are closed together
         # word model will be applied here
         height, width, color = image.shape

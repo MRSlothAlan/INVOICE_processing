@@ -27,6 +27,7 @@ print('\nGraph Nodes: ', G.nodes.data())
 # Plot the graph
 nx.draw(G, with_labels=True, font_weight='bold')
 plt.show()
+
 # Get the Adjacency Matrix (A) and Node Features Matrix (X) as numpy array
 A = np.array(nx.attr_matrix(G, node_attr='name')[0])
 X = np.array(nx.attr_matrix(G, node_attr='name')[1])
