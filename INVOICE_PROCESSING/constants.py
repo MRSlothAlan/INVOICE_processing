@@ -31,9 +31,11 @@ DEBUG = True
 SHOW_IMAGE = False
 SHOW_SUB_IMAGE = False
 DEBUG_DETAILED = False
-PARSE = True
+PARSE = False
 TEMP_TEST = False
-DL = False
+DL = True
+GCN = True
+AUTO_ALIGN = False
 
 LOG_LINE_ITEM = False
 

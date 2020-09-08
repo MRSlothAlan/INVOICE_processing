@@ -145,6 +145,7 @@ def find_temp(words_raw_new, resize_temp, resize_ratio=resize_ratio, what="", di
                         for node_add in additional_nodes:
                             to_parse = str(node_add.word).replace(':', '').strip(' ')
                             if is_date(to_parse):
+                                node_add.label = "date"
                                 resize_temp = cv2.line(resize_temp, (int(node.center_x * resize_ratio),
                                                                      int(node.center_y * resize_ratio)),
                                                        (int(node_add.center_x * resize_ratio),

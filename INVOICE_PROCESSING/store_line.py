@@ -305,6 +305,9 @@ class SameLine:
                             min_distance = temp_dist
                             node_with_id.right_node_id = node.id
                             node_with_id.right_node_ptr = node
+                            # 8/9/2020: save the temporary distance
+                            # will calculate the relative distance later
+                            node_with_id.right_node_dis = temp_dist
 
         return min_distance, node_with_id
 
@@ -348,6 +351,7 @@ class SameLine:
         if node_with_id.right_node_id is 0 and key_same_line >= 0:
             node_with_id.right_node_id = node_with_id.id
             node_with_id.right_node_ptr = None
+            node_with_id.right_node_dis = 0
 
         if min_distance == 999999:
             min_distance = 0
@@ -384,6 +388,7 @@ class SameLine:
                             min_distance = temp_dist
                             node_with_id.left_node_id = node.id
                             node_with_id.left_node_ptr = node
+                            node_with_id.left_node_dis = temp_dist
                             saved_i = index
         if saved_i is not -1:
             pass
@@ -431,6 +436,7 @@ class SameLine:
         if node_with_id.left_node_id == 0 and key_same_line >= 0:
             node_with_id.left_node_id = node_with_id.id
             node_with_id.left_node_ptr = None
+            node_with_id.left_node_dis = 0
         if min_distance == 999999:
             min_distance = 0
         return min_distance
@@ -472,6 +478,7 @@ class SameLine:
                             min_distance = temp_dist
                             node_with_id.bottom_node_id = bottom_node_with_id.id
                             node_with_id.bottom_node_ptr = bottom_node_with_id
+                            node_with_id.bottom_node_dis = temp_dist
 
                 if saved_i is not -1:
                     pass
@@ -480,6 +487,7 @@ class SameLine:
             # scan all rows. OCR is not always available to cluster text
             node_with_id.bottom_node_id = node_with_id.id
             node_with_id.bottom_node_ptr = None
+            node_with_id.bottom_node_dis = 0
         if min_distance == 999999:
             min_distance = 0
         return min_distance
@@ -512,10 +520,12 @@ class SameLine:
                             node_with_id.top_node_id = top_node_with_id.id
                             # 02092020 update: linked structure
                             node_with_id.top_node_ptr = top_node_with_id
+                            node_with_id.top_node_dis = temp_dist
 
         if node_with_id.top_node_id is 0 and init_key_top > 0:
             node_with_id.top_node_id = node_with_id.id
             node_with_id.top_node_ptr = None
+            node_with_id.top_node_dis = 0
         if min_distance == 999999:
             min_distance = 0
         return min_distance

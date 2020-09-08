@@ -6,29 +6,20 @@ Now only support english invoices, just to simplify things.
 if not english: OCR slow
 """
 import pytesseract
-from pathlib import Path
-import cv2
-import numpy as np
 from tqdm import tqdm
-import re
-from copy import copy
 
-import pandas as pd
-import string
-from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.word_node import Node
-from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.store_hierarchy import InvoiceHierarchy
-from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.store_line import SameLine, CopyOfSameLine
-from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.store_block import SameBlock
-from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.constants import *
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.opencv_image_operations import resize_with_ratio, \
     draw_rectangle_text_with_ratio, pre_process_images_before_scanning, auto_align_image
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.information_finder import find_information_rule_based, \
     find_line_item_rule_based
-from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.AI.Neural_network.feature_extraction.graph_construction import *
-from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.ALGO.minimum_spanning_tree import GraphLineWeights, generate_mst_graph
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.AI.GNN.feature_extraction.graph_construction import *
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.ALGO.region_proposal import *
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.OCR_operation import *
-
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.AI.GNN.word_feature_calculation import *
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.AI.GNN.feature_extraction.node_label_matrix import *
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.AI.GNN.feature_extraction.basic_gcn_operation import *
+import os
+import pickle
 
 def parse_main():
     """
@@ -43,31 +34,54 @@ def parse_main():
     wv.vocab
     wv.most_similar(positive=["invoice"], topn=5)
     """
+    if not DL:
+        image_files = get_image_files()
+    elif DL:
+        if GCN:
+            print("=== The script now generate data set for GCN training ===")
+            image_data_set_dir = Path.cwd().parents[1] / "0_RAW_DATASETS/all_raw_images"
+            label_data_set_dir = Path.cwd().parents[1] / "0_RAW_DATASETS/all_raw_images_labels"
+            processed_dir = Path.cwd() / "AI/GNN/processed_GCN"
 
-    image_files = get_image_files()
+            if not os.path.exists(str(processed_dir)):
+                os.makedirs(str(processed_dir))
+            class_list = load_class_list(label_data_set_dir=label_data_set_dir)
+            # remember to save this class_dict for further usage
+
+            image_files = listdir(str(label_data_set_dir))
+    else:
+        image_files = get_image_files()
 
     # load csv of currency, save as dictionary
     currency_dict = get_currency_csv()
     pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
 
-    for image_name in tqdm(image_files):
+    for index, image_name in enumerate(tqdm(image_files)):
 
         print("\n---------------------------------------------\n"
               "processing {}".format(image_name),
               "\n---------------------------------------------\n")
+
         image_path = str(dataset_dir / image_name)
+        if DL:
+            if GCN:
+                label_file_name = image_name.rsplit('.', 1)[0] + ".xml"
+                processed_data_set_dir = image_name.rsplit('.', 1)[0] + ".txt"
+                image_name = image_name.rsplit('.', 1)[0] + ".jpg"
+
+                image_path = str(image_data_set_dir / image_name)
         image = cv2.imread(image_path, 1)
 
-        # info = pytesseract.image_to_data(image, lang="chi_tra", output_type='dict')
-        # assume all english
         image_pil = pre_process_images_before_scanning(image)
         image = np.array(image_pil)
         # to OpenCV format
         image = image[:, :, ::-1].copy()
         # align image
-        print("auto align image...")
-        image = auto_align_image(img=image)
-        print("done")
+
+        if AUTO_ALIGN:
+            print("auto align image...")
+            image = auto_align_image(img=image)
+            print("done")
 
         resize = resize_with_ratio(image, resize_ratio)
         resize_region = resize.copy()
@@ -76,30 +90,23 @@ def parse_main():
         resize_function = resize.copy()
         resize_mst = resize.copy()
 
-        print("propose regions")
-        # try to pre-process image, generate regions
-        """
-        format of entry:
-        [x, y, w, h]
-        """
-        rect_regions = region_proposal(image)
+        if PARSE:
+            print("propose regions")
+            # try to pre-process image, generate regions
+            """
+            format of entry:
+            [x, y, w, h]
+            """
+            rect_regions = region_proposal(image)
 
-        if SHOW_IMAGE:
-            for rect in rect_regions:
-                cv2.rectangle(resize_region, (rect[0], rect[1]),
-                              (rect[0] + rect[2], rect[1] + rect[3]), (255, 0, 0), 3)
-            cv2.imshow("regions", resize_region)
-        print("finish")
+            if SHOW_IMAGE:
+                for rect in rect_regions:
+                    cv2.rectangle(resize_region, (rect[0], rect[1]),
+                                  (rect[0] + rect[2], rect[1] + rect[3]), (255, 0, 0), 3)
+                cv2.imshow("regions", resize_region)
+            print("finish")
 
-        # kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (2, 2))
-        # image_erode = cv2.erode(image, kernel, iterations=1)
-        # thicken black lines
-        # info = pytesseract.image_to_data(image_erode, output_type='dict')
         info = pytesseract.image_to_data(image, output_type='dict')
-        # proposed method: merge two ocr results, in order to get the BEST info
-        # problem: may not necessary at all
-        # info_original = pytesseract.image_to_data(image, output_type='dict')
-
         image_copy = image.copy()
 
         """ index defined: 
@@ -108,11 +115,9 @@ def parse_main():
          """
         words_raw, same_line, same_block = ocr_to_standard_data(info)
         # used for node connections
-        same_line_copy = copy(same_line)
+        same_line_copy = same_line
         # same_line_copy = same_line
-        print("generate graph for individual words (detailed)")
-        glw_detailed = same_line_copy.generate_graph()
-        print("Done")
+
         # get total number of nodes
         total_number_of_nodes = len(words_raw) - 1
         """
@@ -124,7 +129,64 @@ def parse_main():
             resize_mst = mst.draw_mst_on_graph(words_raw, resize_mst, resize_ratio)
             cv2.imshow("MST", resize_mst)
         """
-        resize_temp = same_line_copy.draw_graph(words_raw, resize_temp, resize_ratio)
+        if DEBUG:
+            if SHOW_IMAGE or SHOW_SUB_IMAGE:
+                resize_temp = same_line_copy.draw_graph(words_raw, resize_temp, resize_ratio)
+        if DL:
+            # 08092020: need to consider node distance in invoice. All data in processed must be rewritten
+            print("generate graph for individual words (detailed)")
+            glw_detailed = same_line_copy.generate_graph()
+            print("Done")
+            if GCN:
+                # if processed_data_set_dir not in set(listdir(processed_dir)):
+                """
+                08092020
+                === graph convolution network ===
+                the functions below generates the 
+                """
+                # N = number of nodes
+                print("=== GENERATE FEATURES FOR GCN ===")
+                """
+                binary label matrix
+                size = N * E (size of labels)
+                """
+                print("     generate node label matrix")
+
+                gcn_node_label = node_label_matrix(word_node=same_line.return_raw_node(),
+                                                   classes=class_list,
+                                                   label_data_set_dir=label_data_set_dir,
+                                                   label_file_name=label_file_name)
+                print("     SHAPE=", len(gcn_node_label))
+                """
+                adjacency matrix
+                size = N * N
+                """
+                print("     generate adjacency matrix...")
+                height, width, color = image.shape
+                gcn_adj_matrix = adjacency_matrix_basic(word_nodes=same_line.return_raw_node(), height=height, width=width)
+                print("     SHAPE=", np.array(gcn_adj_matrix).shape)
+
+                """
+                return a list of node - feature list
+                size = N * 59
+                [[node_feature], [node-feature], [], ...]
+                """
+                print("     generate node feature list...")
+                # a dictionary
+                gcn_node_feature = feature_calculation(same_line=same_line_copy, image=image)
+                print("     SHAPE=", len(gcn_node_feature))
+                # save all features to a file
+                CLASS_LIST_LEN = len(class_list)
+                NODE_SIZE = len(gcn_node_label)
+                FEATURE_LEN = len(gcn_node_feature[0])
+
+                print(CLASS_LIST_LEN, NODE_SIZE, FEATURE_LEN)
+                data_to_save = [gcn_node_label, gcn_adj_matrix, gcn_node_feature, CLASS_LIST_LEN, NODE_SIZE, FEATURE_LEN]
+                with open(str(processed_dir / processed_data_set_dir), "wb") as processed_f:
+                    pickle.dump(data_to_save, processed_f)
+                processed_f.close()
+
+
         # need to merge some nodes which are closed together
         # word model will be applied here
         height, width, color = image.shape
@@ -150,12 +212,6 @@ def parse_main():
         # draw the results
         # 20082020: logic error, need to get a list of raw, MERGED tokens
         resize_copy = same_line.draw_graph(words_raw_new, resize_copy, resize_ratio)
-        import enchant
-        d = enchant.Dict("en_US")
-
-        # check specific entries only
-        image, all_results = find_information_rule_based(words_raw_new, resize_function, resize_ratio, d)
-        all_line_items = find_line_item_rule_based(words_raw_new, rect_regions, resize_ratio, image_copy)
 
         json_name = output_json_dir / str(image_name[:-4] + ".json")
 
@@ -165,11 +221,6 @@ def parse_main():
         same_line.write_to_file(file_name)
         """
 
-        # generate data set!
-        # may not needed
-        if DL:
-            adjacency_matrix_basic(words_raw_new)
-
         if DEBUG:
             if SHOW_IMAGE or SHOW_SUB_IMAGE:
                 # cv2.imshow("image", resize)
@@ -178,6 +229,12 @@ def parse_main():
                 cv2.waitKey(0)
 
         if PARSE:
+            import enchant
+            d = enchant.Dict("en_US")
+
+            # check specific entries only
+            image, all_results = find_information_rule_based(words_raw_new, resize_function, resize_ratio, d)
+            all_line_items = find_line_item_rule_based(words_raw_new, rect_regions, resize_ratio, image_copy)
             # with the node structure, you can tag stuff easily.
             results, currency = same_line_copy.use_parser_re(currency_dict)
             if currency is not None:

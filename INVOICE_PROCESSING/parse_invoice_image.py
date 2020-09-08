@@ -12,25 +12,20 @@ Now only support english invoices, just to simplify things.
 if not english: OCR slow
 """
 import pytesseract
-from pathlib import Path
 import cv2
-import numpy as np
-from tqdm import tqdm
 import re
 from copy import copy
 
-import pandas as pd
-import string
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.word_node import Node
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.store_hierarchy import InvoiceHierarchy
-from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.store_line import SameLine, CopyOfSameLine
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.store_line import SameLine
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.store_block import SameBlock
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.constants import *
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.opencv_image_operations import resize_with_ratio, \
     draw_rectangle_text_with_ratio, pre_process_images_before_scanning, auto_align_image
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.information_finder import find_information_rule_based
-from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.AI.Neural_network.feature_extraction.graph_construction import *
-from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.ALGO.minimum_spanning_tree import GraphLineWeights, generate_mst_graph
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.AI.GNN.feature_extraction.graph_construction import *
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.ALGO.minimum_spanning_tree import generate_mst_graph
 
 
 def parse_main(img, image_name):
@@ -180,10 +175,6 @@ def parse_main(img, image_name):
     same_line.write_to_file(file_name)
     """
     # cluster regions
-
-    # generate dataset!
-    if DL:
-        adjacency_matrix_basic(words_raw_new)
 
     if DEBUG:
         if SHOW_IMAGE:

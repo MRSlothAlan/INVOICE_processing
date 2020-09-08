@@ -20,9 +20,13 @@ class Node:
         self.center_x = 0
         self.center_y = 0
         self.top_node_id = 0
+        self.top_node_dis = 0.0
         self.right_node_id = 0
+        self.right_node_dis = 0.0
         self.bottom_node_id = 0
+        self.bottom_node_dis = 0.0
         self.left_node_id = 0
+        self.left_node_dis = 0.0
         # I should have used linked structure before
         self.top_node_ptr = None
         self.left_node_ptr = None
