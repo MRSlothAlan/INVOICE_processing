@@ -15,6 +15,7 @@ import time
 from concurrent import futures
 
 
+
 class WordFeature:
     def __init__(self):
         self.WIDTH = 0
@@ -65,12 +66,14 @@ class WordFeature:
             boolean features
             (isdate, isalphabetic, isnumeric, iscurrency, mix)
         """
+
         final_feature_vector_list = list()
         width = self.WIDTH
         height = self.HEIGHT
         dim = self.DIM
 
         for node in node_batches:
+
             boolean_feature = [0] * 5
             if self.is_date(node.word):
                 boolean_feature[0] = 1
@@ -96,6 +99,7 @@ class WordFeature:
             relative distance to the nearest neighbors
             [left, top, right, bottom]
             """
+
             numeric_features = [0.0] * 4
 
             for index, feat in enumerate(numeric_features):
@@ -120,10 +124,12 @@ class WordFeature:
             text feature representation
             convert into a meaningful representation
             """
+
             word_vector_feature = self.word_vector_generation(node.word, dim)
             # yield the final feature vector for processing
             final_feature_vector = boolean_feature + numeric_features + word_vector_feature
             temp_data_tuple = (node.id, final_feature_vector)
+
             final_feature_vector_list.append(temp_data_tuple)
 
         return final_feature_vector_list
@@ -154,15 +160,16 @@ class WordFeature:
             # set the global constant in order to use process pool executor
             start = time.time()
             # try to implement parallel processing in the code
-            batch_size = 10
+            batch_size = 20
+
             node_batches = [word_node[i: i + batch_size] for i in range(0, len(word_node), batch_size)]
+
             all_feature_vectors = list()
+
             with futures.ProcessPoolExecutor(max_workers=5) as pool:
-                for feature_vectors in pool.map(self.feature_of_node, node_batches):
+                for feature_vectors in pool.map(self.feature_of_node, node_batches, timeout=15):
                     all_feature_vectors.append(feature_vectors)
-            # final_feature_vector = feature_of_node(node, width, height, dim)
-            # feature_matrix[node.id] = list()
-            # feature_matrix[node.id] = final_feature_vector
+
             end = time.time()
             print("         feature production requires: {}".format(abs(start - end)))
             # convert batch feature vectors into dict

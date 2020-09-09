@@ -28,13 +28,13 @@ resize_ratio = 0.3
 ignore_char = [" ", "", None, "\n", "\t", "   ", "  "]
 
 DEBUG = True
-SHOW_IMAGE = False
-SHOW_SUB_IMAGE = False
+SHOW_IMAGE = True
+SHOW_SUB_IMAGE = True
 DEBUG_DETAILED = False
-PARSE = False
+PARSE = True
 TEMP_TEST = False
-DL = True
-GCN = True
+DL = False
+GCN = False
 AUTO_ALIGN = False
 TIMER = True
 

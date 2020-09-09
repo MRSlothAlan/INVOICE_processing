@@ -104,6 +104,7 @@ def testing_model():
 
     # then, use this dense output, merge with other features.
 
+
     """
         model = keras.Model(inputs=[image_input, location_input, word_encoding_input],
                         outputs=[node_labels])

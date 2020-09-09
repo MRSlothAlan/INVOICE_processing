@@ -49,8 +49,9 @@ def parse_main():
                 os.makedirs(str(processed_dir))
             class_list = load_class_list(label_data_set_dir=label_data_set_dir)
             # remember to save this class_dict for further usage
-
-            image_files = listdir(str(label_data_set_dir))
+            image_files_temp = listdir(str(label_data_set_dir))
+            image_files = [i for i in image_files_temp if
+                            str(i).rsplit('.', 1)[1] != "txt"]
     else:
         image_files = get_image_files()
 
@@ -73,6 +74,7 @@ def parse_main():
                 image_name = image_name.rsplit('.', 1)[0] + ".jpg"
 
                 image_path = str(image_data_set_dir / image_name)
+
         image = cv2.imread(image_path, 1)
 
         image_pil = pre_process_images_before_scanning(image)

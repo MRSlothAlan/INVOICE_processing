@@ -26,7 +26,7 @@ print('Graph Info:\n', nx.info(G))
 print('\nGraph Nodes: ', G.nodes.data())
 # Plot the graph
 nx.draw(G, with_labels=True, font_weight='bold')
-plt.show()
+# plt.show()
 
 # Get the Adjacency Matrix (A) and Node Features Matrix (X) as numpy array
 A = np.array(nx.attr_matrix(G, node_attr='name')[0])
@@ -54,7 +54,7 @@ G_self_loops.add_edges_from(self_loops)
 # Check the edges of G_self_loops after adding the self loops
 print('Edges of G with self-loops:\n', G_self_loops.edges)
 nx.draw(G_self_loops, with_labels=True, font_weight='bold')
-plt.show()
+# plt.show()
 
 # Get the Adjacency Matrix (A) and Node Features Matrix (X) of added self-lopps graph
 A_hat = np.array(nx.attr_matrix(G_self_loops, node_attr='name')[0])
@@ -135,7 +135,7 @@ def plot_features(H2):
         str = "{}".format(i)
         plt.annotate(str, (row[0],row[1]),fontsize=18, fontweight='bold')
 
-    plt.show()
+    # plt.show()
 
 
 plot_features(H2)

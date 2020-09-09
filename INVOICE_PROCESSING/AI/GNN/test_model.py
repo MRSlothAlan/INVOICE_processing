@@ -28,11 +28,14 @@ def GCN_model(CLASS_LEN):
 
     # the GCN layer
     gcn_1 = GCN_layer(NODE_SIZE=None)(inputs=[node_adj_matrix_input, node_feature_input])
+    gcn_2 = GCN_layer(NODE_SIZE=None)(inputs=gcn_1)
+    gcn_3 = GCN_layer(NODE_SIZE=None)(inputs=gcn_2)
+    gcn_4 = GCN_layer(NODE_SIZE=None)(inputs=gcn_3)
     # shape = N * ~25 (length of classes)
-    node_labels = layers.Dense(CLASS_LEN, batch_size=None, activation="relu", name="Classifier")(gcn_1[1])
+    node_labels = layers.Dense(CLASS_LEN, batch_size=None, activation="relu", name="Classifier")(gcn_4[1])
 
     model = keras.Model([node_feature_input, node_adj_matrix_input],
-                        [node_labels])
+                        node_labels)
     return model
 
 
