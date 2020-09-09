@@ -117,6 +117,7 @@ H1 = gcn(A,X,W0)
 H2 = gcn(A,H1,W1)
 print('Features Representation from GCN output:\n', H2)
 
+
 def plot_features(H2):
     #Plot the features representation
     x = H2[:,0]

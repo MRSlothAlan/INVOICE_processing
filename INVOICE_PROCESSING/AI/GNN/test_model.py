@@ -7,7 +7,7 @@ from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.AI.GNN.test_model_layer import G
 from tensorflow.keras.utils import plot_model
 from tensorflow.keras.optimizers import SGD
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.AI.GNN.model_constant import *
-
+from keras_gcn import GraphConv
 
 # there is no uniform matrix size,
 # therefore a Dense layer should be applied at the first place
@@ -26,13 +26,19 @@ def GCN_model(CLASS_LEN):
 
     node_size = GraphOperator()(node_adj_matrix_input)
 
-    # the GCN layer
+    # the GCN layer, custome
+    """
     gcn_1 = GCN_layer(NODE_SIZE=None)(inputs=[node_adj_matrix_input, node_feature_input])
     gcn_2 = GCN_layer(NODE_SIZE=None)(inputs=gcn_1)
     gcn_3 = GCN_layer(NODE_SIZE=None)(inputs=gcn_2)
     gcn_4 = GCN_layer(NODE_SIZE=None)(inputs=gcn_3)
+    """
+    # implementation made by others
+    conv_layer = GraphConv(units=CLASS_LEN, step_num=2,)([node_feature_input, node_adj_matrix_input])
+
     # shape = N * ~25 (length of classes)
-    node_labels = layers.Dense(CLASS_LEN, batch_size=None, activation="relu", name="Classifier")(gcn_4[1])
+    # gcn_4[1]
+    node_labels = layers.Dense(CLASS_LEN, batch_size=None, activation="relu", name="Classifier")(conv_layer)
 
     model = keras.Model([node_feature_input, node_adj_matrix_input],
                         node_labels)

@@ -4,6 +4,7 @@ import numpy as np
 from scipy.linalg import fractional_matrix_power
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.AI.GNN.model_constant import *
 from scipy.linalg import eigh
+from keras_gcn import GraphConv
 
 
 class GraphOperator(Layer):
