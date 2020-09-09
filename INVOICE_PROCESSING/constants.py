@@ -36,6 +36,7 @@ TEMP_TEST = False
 DL = True
 GCN = True
 AUTO_ALIGN = False
+TIMER = True
 
 LOG_LINE_ITEM = False
 

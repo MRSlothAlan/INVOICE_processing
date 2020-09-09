@@ -2,9 +2,7 @@ import tensorflow as tf
 from tensorflow.keras.layers import Layer
 import numpy as np
 from scipy.linalg import fractional_matrix_power
-
-# a constant
-FEATURE_LENGTH = 59
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.AI.GNN.model_constant import *
 
 
 class GraphOperator(Layer):

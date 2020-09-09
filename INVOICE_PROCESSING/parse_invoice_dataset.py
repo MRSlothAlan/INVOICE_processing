@@ -20,6 +20,8 @@ from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.AI.GNN.feature_extraction.node_l
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.AI.GNN.feature_extraction.basic_gcn_operation import *
 import os
 import pickle
+import time
+
 
 def parse_main():
     """
@@ -62,6 +64,7 @@ def parse_main():
               "processing {}".format(image_name),
               "\n---------------------------------------------\n")
 
+        start = time.time()
         image_path = str(dataset_dir / image_name)
         if DL:
             if GCN:
@@ -90,25 +93,18 @@ def parse_main():
         resize_function = resize.copy()
         resize_mst = resize.copy()
 
-        if PARSE:
-            print("propose regions")
-            # try to pre-process image, generate regions
-            """
-            format of entry:
-            [x, y, w, h]
-            """
-            rect_regions = region_proposal(image)
+        end = time.time()
+        if TIMER:
+            print("load images and pre-process, time: {}".format(abs(start - end)))
 
-            if SHOW_IMAGE:
-                for rect in rect_regions:
-                    cv2.rectangle(resize_region, (rect[0], rect[1]),
-                                  (rect[0] + rect[2], rect[1] + rect[3]), (255, 0, 0), 3)
-                cv2.imshow("regions", resize_region)
-            print("finish")
-
+        start = time.time()
         info = pytesseract.image_to_data(image, output_type='dict')
         image_copy = image.copy()
+        end = time.time()
+        if TIMER:
+            print("OCR image, time: {}".format(abs(start - end)))
 
+        start = time.time()
         """ index defined: 
          level, page_num, block_num, par_num
          line_num, word_num, left, top, width, height, conf, text
@@ -132,7 +128,11 @@ def parse_main():
         if DEBUG:
             if SHOW_IMAGE or SHOW_SUB_IMAGE:
                 resize_temp = same_line_copy.draw_graph(words_raw, resize_temp, resize_ratio)
+        end = time.time()
+        if TIMER:
+            print("Process OCR data, time: {}".format(abs(start - end)))
         if DL:
+            start = time.time()
             # 08092020: need to consider node distance in invoice. All data in processed must be rewritten
             print("generate graph for individual words (detailed)")
             glw_detailed = same_line_copy.generate_graph()
@@ -150,6 +150,7 @@ def parse_main():
                 binary label matrix
                 size = N * E (size of labels)
                 """
+                len_set = set()
                 print("     generate node label matrix")
 
                 gcn_node_label = node_label_matrix(word_node=same_line.return_raw_node(),
@@ -157,6 +158,9 @@ def parse_main():
                                                    label_data_set_dir=label_data_set_dir,
                                                    label_file_name=label_file_name)
                 print("     SHAPE=", len(gcn_node_label))
+                for key in gcn_node_label:
+                    len_set.add(len(gcn_node_label[key]))
+                print("     {}".format(len_set))
                 """
                 adjacency matrix
                 size = N * N
@@ -173,18 +177,26 @@ def parse_main():
                 """
                 print("     generate node feature list...")
                 # a dictionary
-                gcn_node_feature = feature_calculation(same_line=same_line_copy, image=image)
+                wf = WordFeature()
+                gcn_node_feature = wf.feature_calculation(same_line_copy.return_raw_node(), image=image)
                 print("     SHAPE=", len(gcn_node_feature))
+                len_set = set()
+                for key in gcn_node_feature:
+                    len_set.add(len(gcn_node_feature[key]))
+                print("     {}".format(len_set))
+
                 # save all features to a file
                 CLASS_LIST_LEN = len(class_list)
                 NODE_SIZE = len(gcn_node_label)
                 FEATURE_LEN = len(gcn_node_feature[0])
 
-                print(CLASS_LIST_LEN, NODE_SIZE, FEATURE_LEN)
                 data_to_save = [gcn_node_label, gcn_adj_matrix, gcn_node_feature, CLASS_LIST_LEN, NODE_SIZE, FEATURE_LEN]
                 with open(str(processed_dir / processed_data_set_dir), "wb") as processed_f:
                     pickle.dump(data_to_save, processed_f)
                 processed_f.close()
+                end = time.time()
+                if TIMER:
+                    print("produced GCN data, time: {}".format(abs(start - end)))
 
         # need to merge some nodes which are closed together
         # word model will be applied here
@@ -228,6 +240,21 @@ def parse_main():
                 cv2.waitKey(0)
 
         if PARSE:
+            print("propose regions")
+            # try to pre-process image, generate regions
+            """
+            format of entry:
+            [x, y, w, h]
+            """
+            rect_regions = region_proposal(image)
+
+            if SHOW_IMAGE:
+                for rect in rect_regions:
+                    cv2.rectangle(resize_region, (rect[0], rect[1]),
+                                  (rect[0] + rect[2], rect[1] + rect[3]), (255, 0, 0), 3)
+                cv2.imshow("regions", resize_region)
+            print("finish")
+
             import enchant
             d = enchant.Dict("en_US")
 

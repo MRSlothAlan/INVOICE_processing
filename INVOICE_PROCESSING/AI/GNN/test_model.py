@@ -6,11 +6,11 @@ from tensorflow.keras import layers
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.AI.GNN.test_model_layer import GCN_layer, GraphOperator
 from tensorflow.keras.utils import plot_model
 from tensorflow.keras.optimizers import SGD
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.AI.GNN.model_constant import *
 
 
 # there is no uniform matrix size,
 # therefore a Dense layer should be applied at the first place
-FEATURE_LENGTH = 59
 
 
 def GCN_model(CLASS_LEN):

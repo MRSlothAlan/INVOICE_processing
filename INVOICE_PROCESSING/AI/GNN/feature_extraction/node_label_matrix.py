@@ -43,6 +43,7 @@ def node_label_matrix(word_node, classes=list(), label_data_set_dir="", label_fi
     """
     node_label_matrix_dict = dict()
     length = len(classes)
+    print("TOTAL NUMBER OF RAW NODE: {}".format(len(word_node)))
 
     name, boxes, labels_xml = read_content(str(label_data_set_dir / label_file_name))
     # efficiently check whether nodes are in bounding boxes?
