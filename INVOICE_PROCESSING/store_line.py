@@ -107,11 +107,14 @@ class SameLine:
     def merge_nearby_token(self, width):
         threshold_merge = int(width * (1 / 7))
         words_raw_new = list()
+        ALL_RAW_COLON_SEPARATED_ENTRY = list()
 
         for key in self.storage:
             for key_line in self.storage[key]:
                 # idea: if the left neighbor is within a distance of 200, merge them
                 merged_nodes_list = list()
+                # 16092020
+                merged_nodes_list_entry = list()
                 current_index = 0
                 max_length = len(self.storage[key][key_line])
                 while current_index < max_length:
@@ -155,6 +158,11 @@ class SameLine:
                         :param node_list:
                         :return:
                         """
+                        """
+                        16092020: return a dictionary of colon separated entries
+                        """
+                        colon_separated_entry_dict = list()
+
                         # no need to set new id, it is handled in the next part of the workflow
                         new_left = Node(node_list[0]).left.__int__(node_list[0].left)
                         new_top = min([node.top for node in node_list])
@@ -162,6 +170,8 @@ class SameLine:
                         new_width = 0
                         new_height = 0
                         new_label = str()
+                        new_node_colon_splited = Node(node_list[0]).isEntryColonSplited
+
                         # word_num: number of characters
                         if len(node_list) > 0:
                             new_label = node_list[0].label
@@ -190,6 +200,10 @@ class SameLine:
                         # print(new_node_final.word)
                         # set the label for the word
                         new_node_final.label = new_label
+                        """
+                        16092020: also consider entry?
+                        """
+                        new_node_final.isEntryColonSplited = new_node_colon_splited
                         return new_node_final
 
                         # for node in node_list:
@@ -268,9 +282,11 @@ class SameLine:
                             or to simply put, extract all possible entries with :
                             """
                             # final parsed? group entries with colon
-                            print("Original: ", [node.word for node in temp], " width: ", width)
+                            if DEBUG:
+                                if DEBUG_DETAILED:
+                                    print("Original: ", [node.word for node in temp], " width: ", width)
                             thresh_nei = abs(width / 85)
-                            print(thresh_nei)
+
                             groupped = list()
                             groupped_for_display = list()
 
@@ -279,16 +295,15 @@ class SameLine:
                                     temp_ptr = index - 1
                                     temp_group = list()
                                     KEEP_CHECKIN = True
-                                    print("===Merging===")
+
                                     while temp_ptr >= 0 and KEEP_CHECKIN:
                                         temp_group.insert(0, temp[temp_ptr])
+                                        temp[temp_ptr].isEntryColonSplited = True
                                         # if is neighbor, merge them
                                         if temp_ptr > 0:
-                                            print(temp[temp_ptr].left - \
-                                                    (temp[temp_ptr - 1].left + temp[temp_ptr - 1].width))
+
                                             if temp[temp_ptr].left - \
                                                     (temp[temp_ptr - 1].left + temp[temp_ptr - 1].width) <= thresh_nei:
-                                                print(temp[temp_ptr].word)
                                                 temp_ptr -= 1
                                             else:
                                                 temp_ptr -= 1
@@ -299,14 +314,58 @@ class SameLine:
                                             break
                                     groupped.append(temp_group)
                                     groupped_for_display.append([node.word for node in temp_group])
-                            print(groupped_for_display)
-                            print("\nFINAL RESULTS: ", final_TEMP)
-                            return final_parsed
+                            # now, append to the raw colon entries dict, for writing to json later
+                            trace_index = 1
+                            entry_index = 0
+                            final_entry_display = list()
+                            final_entry = list()
+
+                            if len(groupped) > 0:
+                                while trace_index < len(temp):
+                                    if temp[trace_index].isEntryColonSplited == False and \
+                                            temp[trace_index - 1].isEntryColonSplited == True:
+                                        item = list()
+                                        item_display = list()
+                                        while temp[trace_index].isEntryColonSplited == False:
+                                            item.append(temp[trace_index])
+                                            item_display.append(temp[trace_index].word)
+                                            trace_index += 1
+                                            if trace_index >= len(temp):
+                                                break
+                                        pair_display = list()
+                                        pair_display.append(groupped_for_display[entry_index])
+                                        pair_display.append(item_display)
+                                        final_entry_display.append(pair_display)
+
+                                        pair = list()
+                                        pair.append(groupped[entry_index])
+                                        pair.append(item)
+                                        final_entry.append(pair)
+
+                                        entry_index += 1
+                                    trace_index += 1
+
+                            if DEBUG:
+                                if DEBUG_DETAILED:
+                                    print(groupped_for_display)
+                                    print(final_entry_display)
+                                    print("FINAL RESULTS: ", final_TEMP)
+                            return final_parsed, final_entry
 
                         # print([(n.word, n.label) for n in temp_merge_remove_space])
                         final_temp = list()
                         if len(temp_merge_remove_space) > 1:
-                            final_temp = partition_nodes(temp_merge_remove_space)
+                            final_temp, final_entry_temp = partition_nodes(temp_merge_remove_space)
+                            """
+                            16092020: append all raw colon pairs for anything, use it for training? or just parse it
+                            """
+
+                            for node_partition_entry in final_entry_temp:
+                                # it is in a pair of [[name], [entry]]
+                                for each_partition in node_partition_entry:
+                                    new_node_entry = merge_nodes_to_one(each_partition)
+                                    merged_nodes_list_entry.append(new_node_entry)
+                            ALL_RAW_COLON_SEPARATED_ENTRY.append(merged_nodes_list_entry)
                         else:
                             final_temp.append(temp_merge_remove_space)
                         # after clustered the labels, split each entry according to colon
@@ -325,7 +384,7 @@ class SameLine:
                 # print([([node.word for node in part]) for part in line_with_merged_nodes])
                 self.storage[key][key_line] = merged_nodes_list
 
-        return words_raw_new
+        return words_raw_new, ALL_RAW_COLON_SEPARATED_ENTRY
 
     def euclidean_distance_right(self, node1=Node(), node2=Node()):
         return math.sqrt((pow((node1.center_y - node2.center_y), 2) + pow((node1.center_x - node2.left), 2)))

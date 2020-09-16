@@ -83,7 +83,7 @@ def get_currency_csv():
 
 # format [[left, top, width, height, 'invoice_number', original_word, entry]]
 # format ['HONG KONG', 'Hong Kong Dollar']
-def save_as_json(json_path, results, line_items, currency, currency_info):
+def save_as_json(json_path, results, line_items, currency, currency_info, raw_colon_separated_entries):
     dictionary_json = dict()
     for index, result in enumerate(results):
         name = result[4] + "_" + str(index)
@@ -124,6 +124,25 @@ def save_as_json(json_path, results, line_items, currency, currency_info):
         dictionary_json["currency"]["type"] = "undefined"
         dictionary_json["currency"]["country"] = "undefined"
         dictionary_json["currency"]["abbreviated"] = "undefined"
+
+    """
+    16092020: also append the raw colon entries
+    """
+    dictionary_json["raw_colon_entries"] = dict()
+    for index_r, entry_row in enumerate(raw_colon_separated_entries):
+        if len(entry_row) > 0:
+            entry = list()
+            value = list()
+            for node in entry_row:
+                if str(node.word).__contains__(':'):
+                    value.append(node)
+                else:
+                    entry.append(node)
+            for index_i, node_e in enumerate(entry):
+                dictionary_json["raw_colon_entries"][node_e.word] = value[index_i].word
+
+
+        # dictionary_json["raw_colon_entries"]
 
     json_object = json.dumps(dictionary_json, indent=4)
     with open(json_path, "w", encoding='utf-8') as json_f:

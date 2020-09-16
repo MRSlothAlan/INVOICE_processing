@@ -187,5 +187,12 @@
                 ]
             }
         }
+    },
+    "raw_colon_entries": {
+        "Invoice Number ": ": HKGIRO1499303 ",
+        "Account Number ": ": 967925172 ",
+        "Invoice Date ": ": 13 11 2019 ",
+        "Number of Pages ": ": 2 of 2 ",
+        "Total ": ": 37.50 3 7,189.00 "
     }
 }

@@ -418,5 +418,26 @@
                 ]
             }
         }
+    },
+    "raw_colon_entries": {
+        "To ": ": Pernod Ricard Hong Kong Limited ",
+        "Invoice No. ": ": IF-HK-4964 ",
+        "SC No. ": ": 4964 ",
+        "Your PO No. ": ": ",
+        "Vendor No. ": ": ",
+        "Invoice Date ": ": 2 Se 2019 ",
+        "Attn ": ": Hamish Millar ",
+        "Insection Date ": ": ",
+        "Shi Date ": ": ",
+        "Arrival Date ": ": ",
+        "Fax ": ": ",
+        "Due Date ": ": 1 Nov 2019 ",
+        "VAT No ": ": 113505 ",
+        "Bank Name ": ": HSBC ",
+        "Swift Code ": ":  HSBCHKHHHKH ",
+        "Address ": ": 1 Queens Road, Central, HK ",
+        "Alc Name ": ": Asian Sourcing Link Ltd ",
+        "Account# ": ": 809-092273-838 ",
+        "Tel ": ": (852) 2866-0272 "
     }
 }

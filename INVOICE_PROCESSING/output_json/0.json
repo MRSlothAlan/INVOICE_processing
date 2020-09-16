@@ -270,5 +270,30 @@
                 ]
             }
         }
+    },
+    "raw_colon_entries": {
+        "Account Number ": ": 630261488 ",
+        "Invoice Number ": ": D00222534 ",
+        "HWB Number ": ": 2846193243 ",
+        "Date ": ": 21 10 2019 ",
+        "Attn ": ": MS DEBBIE HO ",
+        "Contact Number ": ": +85223786900 ",
+        "Payment Due Date ": ": 28 10 2019 ",
+        "Please Reimburse the Total Charges Shown Below To ": ": DHL  EXPRESS (HONG KONG) LIMITED ",
+        "Origin ": ": SIN ",
+        "Pieces ": ": 1 ",
+        "Contents ": ": MARTELL CORDON BLEU COGNAC ",
+        "Destination ": ": HKG ",
+        "Weight ": ": 12.60 ",
+        "Assessed Value ": ": ",
+        "Arrival Date ": ": ",
+        "Payment Terms ": ": 7 Days ",
+        "Total Payable ": ": HKD ",
+        "Stam ": ": ",
+        "Cardholder name ": ": ",
+        "Total Amount HKD ": ": 4,401.50 ",
+        "Exiry date ": ": ",
+        "Comany Signature Stam ": ": ",
+        "Title ": ": "
     }
 }

@@ -253,5 +253,14 @@
                 ]
             }
         }
+    },
+    "raw_colon_entries": {
+        "AeA account No.) ": ": CN943646901093+4%++ 0 ",
+        "Aroval Code) ": ": 30013018 ",
+        "(Merchant No.) ": ": 1491784 ",
+        "(Fare Amount) ": ": 39600 ",
+        "Charge Amount) ": ": 4000 ",
+        "Charge) ": ": 4400 ",
+        "All (Agent) ": ": 13 "
     }
 }

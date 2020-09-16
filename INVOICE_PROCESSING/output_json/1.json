@@ -770,5 +770,35 @@
                 ]
             }
         }
+    },
+    "raw_colon_entries": {
+        "Tel ": ": ",
+        "To ": ": Pernod Ricard Hong Kong Ltd ",
+        "No. ": ": V2019264-FF ",
+        "Date ": ": 04 November 2019 ",
+        "Sales Person ": ": Foster Fung ",
+        "Attn ": ": Account Payable ",
+        "Mobile ": ": 9809 5798 ",
+        "Fax ": ": ",
+        "E-mail ": ": ff@ditoc.hk ",
+        "Email ": ": ",
+        "Vendor name ": ": Aldo Mensa Limited ",
+        "Vendor code ": ": 18057 ",
+        "PRATR PO number ": ": #92195310, #92195311 ",
+        "Re ": ": MXO+RS21 ",
+        "(16 ": ": 9 redesigned into 1280 x 960) ",
+        "RE ": ": RMT2-PRERWHR ",
+        "Grand Total ": ": $49,000.00 ",
+        "Currency ": ": ",
+        "Payment Methode ": ": ",
+        "or via Bank Transfer ": ": ",
+        "Beneficiary Name ": ": ALDO MENSA Limited ( Account Holders Name) ",
+        "Beneficiary Address ": ": Unit 1801, 18 F Wayson Commercial Building, 28 Connaught Road West, Hong Kong ",
+        "Bank Name ": ": ICBC (ASIA) Limited ",
+        "Bank Address ": ": 1 F, 9 Queens Road, Central, Hong Kong ",
+        "Bank Account Number ": ": 701-010-03010-4 ",
+        "Swift Code ": ": 701) ",
+        "General Terms & Conditions ": ": ",
+        "Others ": ": "
     }
 }

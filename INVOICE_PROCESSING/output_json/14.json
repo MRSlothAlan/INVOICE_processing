@@ -350,5 +350,10 @@
                 ]
             }
         }
+    },
+    "raw_colon_entries": {
+        "CO.REG.NO. ": ": M200441192 e@ ",
+        "Customer No. ": ": PRHK-SG ",
+        "ATTN ": ": ADRIAN DCOSTA "
     }
 }

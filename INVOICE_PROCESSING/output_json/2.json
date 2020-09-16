@@ -157,5 +157,15 @@
                 ]
             }
         }
+    },
+    "raw_colon_entries": {
+        "Tel ": ": 25906351 ",
+        "Fax ": ": 25906810 ",
+        "Agency ": ": Pernod Ricard Hong Kong Limited ",
+        "Attention ": ": Fanny Wong ",
+        "Client  Product ": ": Artwork ",
+        "From ": ": Astley Ho ",
+        "Date ": ": 1 Nov, 19 ",
+        "Quotati ": ": 14683 "
     }
 }

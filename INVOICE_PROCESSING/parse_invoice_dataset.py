@@ -207,7 +207,7 @@ def parse_main():
         # word model will be applied here
         height, width, color = image.shape
         # need to update the merging method
-        words_raw_new = same_line.merge_nearby_token(width)
+        words_raw_new, all_raw_colon_separated_entry = same_line.merge_nearby_token(width)
 
         """
         16092020:
@@ -296,14 +296,14 @@ def parse_main():
                                 node_origin.word,
                                 node_entry.word])
                 # print(label, node_entry.word, node_origin.word)
-            """
-            Append line items here
-            """
+
             cv2.waitKey(0)
             try:
-                save_as_json(json_name, results, all_line_items, currency, currency_dict[currency.upper()])
+                save_as_json(json_name, results, all_line_items, currency, currency_dict[currency.upper()],
+                             raw_colon_separated_entries=all_raw_colon_separated_entry)
             except AttributeError as e:
-                save_as_json(json_name, results, all_line_items, currency=None, currency_info=None)
+                save_as_json(json_name, results, all_line_items, currency=None, currency_info=None,
+                             raw_colon_separated_entries=all_raw_colon_separated_entry)
 
 
 if __name__ == '__main__':
