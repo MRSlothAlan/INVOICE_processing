@@ -78,6 +78,32 @@ class SameLine:
                                        self.storage[key][key_line][-1]])
         return processed_line
 
+    def merge_token_version_two(self, width):
+        """
+        In this version, goal:
+            Effectively separate colon and data
+            e.g. raw line: "invoice number: 123        date:15092020     payment due date:15092020"
+
+            expected segmented entry:
+            "invoice number", ": 123", "date", ":15092020", "payment due date", ":15092020"
+
+            AFTER segmentation, assign labels based on RE / POS
+
+        Please keep the time complexity within O(N)
+
+        Problem:
+            segmented words may not be a phrase with single meaning
+            for that, a word model is needed
+        Algo:
+            for a given line
+
+        :param width:
+        :return:
+        """
+        return NotImplementedError()
+
+
+
     def merge_nearby_token(self, width):
         threshold_merge = int(width * (1 / 7))
         words_raw_new = list()
@@ -158,12 +184,6 @@ class SameLine:
                             # top point is new_top
                             # I just check max top for now
                             new_height = max(Node(node).height.__int__(node.height), new_height)
-                            """
-                                                        if (abs(Node(node).top.__int__(node.top) +
-                                    Node(node).height.__int__(node.height)) > new_height):
-                                new_height = abs(Node(node).top.__int__(node.top) +
-                                    Node(node).height.__int__(node.height))
-                            """
 
                         new_word_num = len(new_word)
                         new_node_final = Node(new_word, new_left, new_top, new_width, new_height, new_word_num)
@@ -239,12 +259,52 @@ class SameLine:
                                     final_TEMP.append([current_node.word])
                                     index += 1
 
-                            # print("\nFINAL RESULTS: ", final_TEMP)
+                            """
+                            16092020: Final results process?
+                            Sometimes, the node is like this:
+                            ['..', 'HWB', 'Number', ':...']
+                            Add stuff BEFORE Number. only pick nearest words
+                            final: ['..', 'HWB Number', ':...']
+                            or to simply put, extract all possible entries with :
+                            """
+                            # final parsed? group entries with colon
+                            print("Original: ", [node.word for node in temp], " width: ", width)
+                            thresh_nei = abs(width / 85)
+                            print(thresh_nei)
+                            groupped = list()
+                            groupped_for_display = list()
+
+                            for index, node in enumerate(temp):
+                                if str(node.word).__contains__(":"):
+                                    temp_ptr = index - 1
+                                    temp_group = list()
+                                    KEEP_CHECKIN = True
+                                    print("===Merging===")
+                                    while temp_ptr >= 0 and KEEP_CHECKIN:
+                                        temp_group.insert(0, temp[temp_ptr])
+                                        # if is neighbor, merge them
+                                        if temp_ptr > 0:
+                                            print(temp[temp_ptr].left - \
+                                                    (temp[temp_ptr - 1].left + temp[temp_ptr - 1].width))
+                                            if temp[temp_ptr].left - \
+                                                    (temp[temp_ptr - 1].left + temp[temp_ptr - 1].width) <= thresh_nei:
+                                                print(temp[temp_ptr].word)
+                                                temp_ptr -= 1
+                                            else:
+                                                temp_ptr -= 1
+                                                KEEP_CHECKIN = False
+                                        else:
+                                            KEEP_CHECKIN = False
+                                        if temp_ptr < 0:
+                                            break
+                                    groupped.append(temp_group)
+                                    groupped_for_display.append([node.word for node in temp_group])
+                            print(groupped_for_display)
+                            print("\nFINAL RESULTS: ", final_TEMP)
                             return final_parsed
 
                         # print([(n.word, n.label) for n in temp_merge_remove_space])
                         final_temp = list()
-
                         if len(temp_merge_remove_space) > 1:
                             final_temp = partition_nodes(temp_merge_remove_space)
                         else:
@@ -253,6 +313,7 @@ class SameLine:
                         for node_partition in final_temp:
                             new_node = merge_nodes_to_one(node_partition)
                             merged_nodes_list.append(new_node)
+                            # add new node
                             words_raw_new.append(new_node)
 
                         # new_node = merge_nodes_to_one(temp_merge_remove_space)
@@ -263,6 +324,7 @@ class SameLine:
                 # print([(node.word, node.left, node.id) for node in self.storage[key][key_line]])
                 # print([([node.word for node in part]) for part in line_with_merged_nodes])
                 self.storage[key][key_line] = merged_nodes_list
+
         return words_raw_new
 
     def euclidean_distance_right(self, node1=Node(), node2=Node()):

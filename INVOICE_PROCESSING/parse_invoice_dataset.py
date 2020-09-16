@@ -4,6 +4,8 @@ Use this to parse the invoice and generate data sets
 
 Now only support english invoices, just to simplify things.
 if not english: OCR slow
+
+Only for Development
 """
 import pytesseract
 from tqdm import tqdm
@@ -18,6 +20,7 @@ from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.OCR_operation import *
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.AI.GNN.word_feature_calculation import *
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.AI.GNN.feature_extraction.node_label_matrix import *
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.AI.GNN.feature_extraction.basic_gcn_operation import *
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.word_parser.keyword_extraction import *
 import os
 import pickle
 import time
@@ -203,7 +206,15 @@ def parse_main():
         # need to merge some nodes which are closed together
         # word model will be applied here
         height, width, color = image.shape
+        # need to update the merging method
         words_raw_new = same_line.merge_nearby_token(width)
+
+        """
+        16092020:
+        try to extract keywords!
+        """
+        # keyword_extraction(words_raw_new)
+
         # for node in words_raw_new:
         # print(node.word)
         # need to plot a graph to check

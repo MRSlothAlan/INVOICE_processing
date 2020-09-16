@@ -34,6 +34,9 @@ class Node:
         self.bottom_node_ptr = None
         # add a label field for the label of the node
         self.label = ""
+        # 16092020: an approach to get colon-split entries
+        # assume reading from left to right
+        self.isEntryColonSplited = False
         # add a POS field for the tag
         self.POS_tag = ""
 
