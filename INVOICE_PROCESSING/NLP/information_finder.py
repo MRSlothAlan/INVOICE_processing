@@ -187,7 +187,9 @@ def find_temp(words_raw_new, resize_temp, resize_ratio=resize_ratio, what="", di
                                                     int(node_nei_con.center_y * resize_ratio)),
                                                    (0, 100, 100), 2)
                             all_results.append(["po_number", node_nei_con, node])
-
+        elif what == ACCOUNT_NAME:
+            # find bank account name
+            pass
     return resize_temp, all_results
 
 

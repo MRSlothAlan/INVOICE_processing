@@ -239,7 +239,6 @@ def parse_main():
                 # cv2.imshow("image", resize)
                 cv2.imshow("graph", resize_copy)
                 cv2.imshow("original graph", resize_temp)
-                cv2.waitKey(0)
 
         if PARSE:
             print("propose regions")
@@ -289,6 +288,7 @@ def parse_main():
             """
             Append line items here
             """
+            cv2.waitKey(0)
             try:
                 save_as_json(json_name, results, all_line_items, currency, currency_dict[currency.upper()])
             except AttributeError as e:

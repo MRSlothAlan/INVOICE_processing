@@ -21,8 +21,8 @@ def process_file():
     file = request.files['file']
     filename = secure_filename(file.filename)
     img = cv2.imdecode(numpy.fromstring(request.files['file'].read(), numpy.uint8), cv2.IMREAD_UNCHANGED)
-    json_object = parse_main(img=img, image_name=filename)
-    return json_object
+    parse_main(img=img, image_name=filename)
+    return "done"
 
 
 if __name__ == "__main__":
