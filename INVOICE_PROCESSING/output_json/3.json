@@ -24,17 +24,17 @@
         "entry": ": HKGIRO1499303 "
     },
     "date_3": {
-        "left": 255,
+        "left": 254,
         "top": 143,
-        "width": 272,
+        "width": 273,
         "height": 16,
         "indication": "Date ",
         "entry": ": 13 11 2019 "
     },
     "po_number_4": {
-        "left": 297,
+        "left": 291,
         "top": 120,
-        "width": 230,
+        "width": 236,
         "height": 16,
         "indication": "Number ",
         "entry": ": 967925172 "
@@ -48,8 +48,8 @@
         "confidence": 0.8482142857142856,
         "raw_content": {
             "0": {
-                "starting_left": 41,
-                "starting_top": 246,
+                "starting_left": 45,
+                "starting_top": 250,
                 "raw_sentence": [
                     "Air Waybill Shiers Shiment Origin Consignor ",
                     "Destination Consignee ",
@@ -152,7 +152,8 @@
                 "starting_top": 592,
                 "raw_sentence": [
                     "A Customer Actual Weight ",
-                    "V Customer Volumetric Weight B DHL Actual Weight +W DHL Volumetric Weight "
+                    "V Customer Volumetric Weight ",
+                    "B DHL Actual Weight W DHL Volumetric Weight "
                 ]
             },
             "11": {

@@ -1,13 +1,5 @@
 {
     "invoice_number_0": {
-        "left": 125,
-        "top": 67,
-        "width": 64,
-        "height": 66,
-        "indication": "No. ",
-        "entry": "9 "
-    },
-    "invoice_number_1": {
         "left": 167,
         "top": 265,
         "width": 256,
@@ -140,27 +132,6 @@
                 "raw_sentence": [
                     "Grand Total  : HKD  "
                 ]
-            },
-            "18": {
-                "starting_left": 52,
-                "starting_top": 1292,
-                "raw_sentence": [
-                    "Payment Terms : Full ayment to be ayable uon job comletion.  "
-                ]
-            },
-            "19": {
-                "starting_left": 48,
-                "starting_top": 1327,
-                "raw_sentence": [
-                    "Total Amount  : Say HKD One Thousand Five Hundred Thirty Dollar(s) Only.  "
-                ]
-            },
-            "20": {
-                "starting_left": 52,
-                "starting_top": 1419,
-                "raw_sentence": [
-                    "Remarks : Cheque should be crossed and made ayable to CIRCUS ONE LTD.  Job is comleted on 16-Se-2019.  "
-                ]
             }
         }
     },
@@ -222,27 +193,6 @@
                 "starting_top": 1245,
                 "raw_sentence": [
                     "Grand Total  : HKD  "
-                ]
-            },
-            "10": {
-                "starting_left": 52,
-                "starting_top": 1292,
-                "raw_sentence": [
-                    "Payment Terms : Full ayment to be ayable uon job comletion.  "
-                ]
-            },
-            "11": {
-                "starting_left": 48,
-                "starting_top": 1327,
-                "raw_sentence": [
-                    "Total Amount  : Say HKD One Thousand Five Hundred Thirty Dollar(s) Only.  "
-                ]
-            },
-            "12": {
-                "starting_left": 52,
-                "starting_top": 1419,
-                "raw_sentence": [
-                    "Remarks : Cheque should be crossed and made ayable to CIRCUS ONE LTD.  Job is comleted on 16-Se-2019.  "
                 ]
             }
         }

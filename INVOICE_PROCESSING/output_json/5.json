@@ -1,11 +1,11 @@
 {
     "total amount_0": {
-        "left": 737,
-        "top": 769,
-        "width": 286,
+        "left": 865,
+        "top": 771,
+        "width": 158,
         "height": 18,
         "indication": "Total Amount ",
-        "entry": "1 91,620.5800 USD "
+        "entry": "91,620.5800 USD "
     },
     "total amount_1": {
         "left": 132,
@@ -105,7 +105,7 @@
                 "starting_left": 118,
                 "starting_top": 518,
                 "raw_sentence": [
-                    "Tel  ",
+                    "Tei  ",
                     "Shi  :  "
                 ]
             },
@@ -140,12 +140,11 @@
             },
             "10": {
                 "starting_left": 130,
-                "starting_top": 720,
+                "starting_top": 719,
                 "raw_sentence": [
                     "# Descrition  ",
-                    "Quantity Unit Price  ",
-                    "Amounts  Korea - Slit delivery costs  ",
-                    "1 91,620.5800 USD  ",
+                    "Quantity Unit Price Unit Amounts  Korea - Slit delivery costs  ",
+                    "91,620.5800 USD  ",
                     "91,620.58 USD  "
                 ]
             },
@@ -153,81 +152,17 @@
                 "starting_left": 131,
                 "starting_top": 835,
                 "raw_sentence": [
-                    "SalesEmloyee SerenaNoel-Wilson  00  ",
-                    "nnn eenennnnnennnnnnne  "
+                    "SalesEmloyee SerenaNoel-Wilson  0  ",
+                    "nnn nenennnneennnnnne  "
                 ]
             },
             "12": {
-                "starting_left": 1194,
+                "starting_left": 1197,
                 "starting_top": 850,
                 "raw_sentence": [
-                    "nnn eenennnnnennnnnnne  Remarks IF-HK-4964  ",
+                    "nnn nenennnneennnnnne  Remarks IF-HK-4964  ",
                     "Total Amount  ",
                     "91,620.58 USD  "
-                ]
-            },
-            "13": {
-                "starting_left": 898,
-                "starting_top": 928,
-                "raw_sentence": [
-                    "Discount  "
-                ]
-            },
-            "15": {
-                "starting_left": 898,
-                "starting_top": 990,
-                "raw_sentence": [
-                    "Less Down Payment  "
-                ]
-            },
-            "17": {
-                "starting_left": 897,
-                "starting_top": 1053,
-                "raw_sentence": [
-                    "Total Amount Due  91,620.58 USD  "
-                ]
-            },
-            "18": {
-                "starting_left": 108,
-                "starting_top": 1578,
-                "raw_sentence": [
-                    "E&O.E.  "
-                ]
-            },
-            "20": {
-                "starting_left": 107,
-                "starting_top": 1663,
-                "raw_sentence": [
-                    "Bank Name : HSBC  "
-                ]
-            },
-            "21": {
-                "starting_left": 106,
-                "starting_top": 1701,
-                "raw_sentence": [
-                    "Swift Code :  HSBCHKHHHKH  "
-                ]
-            },
-            "23": {
-                "starting_left": 106,
-                "starting_top": 1776,
-                "raw_sentence": [
-                    "Alc Name : Asian Sourcing Link Ltd  "
-                ]
-            },
-            "24": {
-                "starting_left": 106,
-                "starting_top": 1814,
-                "raw_sentence": [
-                    "Account# : 809-092273-838  "
-                ]
-            },
-            "25": {
-                "starting_left": 106,
-                "starting_top": 1887,
-                "raw_sentence": [
-                    "26th Floor, 88 Hing Fat Street, Causeway Bay, Hong Kong. Tel : (852) 2866-6565, Fax : (852) 2866-0272  ",
-                    "1 1  "
                 ]
             }
         }
@@ -269,7 +204,7 @@
                 "starting_left": 118,
                 "starting_top": 518,
                 "raw_sentence": [
-                    "Tel  ",
+                    "Tei  ",
                     "Shi  :  "
                 ]
             },
@@ -304,12 +239,11 @@
             },
             "9": {
                 "starting_left": 130,
-                "starting_top": 720,
+                "starting_top": 719,
                 "raw_sentence": [
                     "# Descrition  ",
-                    "Quantity Unit Price  ",
-                    "Amounts  Korea - Slit delivery costs  ",
-                    "1 91,620.5800 USD  ",
+                    "Quantity Unit Price Unit Amounts  Korea - Slit delivery costs  ",
+                    "91,620.5800 USD  ",
                     "91,620.58 USD  "
                 ]
             },
@@ -317,81 +251,17 @@
                 "starting_left": 131,
                 "starting_top": 835,
                 "raw_sentence": [
-                    "SalesEmloyee SerenaNoel-Wilson  00  ",
-                    "nnn eenennnnnennnnnnne  "
+                    "SalesEmloyee SerenaNoel-Wilson  0  ",
+                    "nnn nenennnneennnnnne  "
                 ]
             },
             "11": {
-                "starting_left": 1194,
+                "starting_left": 1197,
                 "starting_top": 850,
                 "raw_sentence": [
-                    "nnn eenennnnnennnnnnne  Remarks IF-HK-4964  ",
+                    "nnn nenennnneennnnnne  Remarks IF-HK-4964  ",
                     "Total Amount  ",
                     "91,620.58 USD  "
-                ]
-            },
-            "12": {
-                "starting_left": 898,
-                "starting_top": 928,
-                "raw_sentence": [
-                    "Discount  "
-                ]
-            },
-            "14": {
-                "starting_left": 898,
-                "starting_top": 990,
-                "raw_sentence": [
-                    "Less Down Payment  "
-                ]
-            },
-            "16": {
-                "starting_left": 897,
-                "starting_top": 1053,
-                "raw_sentence": [
-                    "Total Amount Due  91,620.58 USD  "
-                ]
-            },
-            "17": {
-                "starting_left": 108,
-                "starting_top": 1578,
-                "raw_sentence": [
-                    "E&O.E.  "
-                ]
-            },
-            "19": {
-                "starting_left": 107,
-                "starting_top": 1663,
-                "raw_sentence": [
-                    "Bank Name : HSBC  "
-                ]
-            },
-            "20": {
-                "starting_left": 106,
-                "starting_top": 1701,
-                "raw_sentence": [
-                    "Swift Code :  HSBCHKHHHKH  "
-                ]
-            },
-            "22": {
-                "starting_left": 106,
-                "starting_top": 1776,
-                "raw_sentence": [
-                    "Alc Name : Asian Sourcing Link Ltd  "
-                ]
-            },
-            "23": {
-                "starting_left": 106,
-                "starting_top": 1814,
-                "raw_sentence": [
-                    "Account# : 809-092273-838  "
-                ]
-            },
-            "24": {
-                "starting_left": 106,
-                "starting_top": 1887,
-                "raw_sentence": [
-                    "26th Floor, 88 Hing Fat Street, Causeway Bay, Hong Kong. Tel : (852) 2866-6565, Fax : (852) 2866-0272  ",
-                    "1 1  "
                 ]
             }
         }
@@ -401,19 +271,20 @@
         "raw_content": {
             "0": {
                 "starting_left": 130,
-                "starting_top": 720,
+                "starting_top": 719,
                 "raw_sentence": [
                     "# Descrition ",
+                    "Quantity Unit Price Unit Amounts ",
                     "Quantity Unit Price ",
                     "Amounts "
                 ]
             },
             "1": {
                 "starting_left": 170,
-                "starting_top": 770,
+                "starting_top": 769,
                 "raw_sentence": [
                     "Korea - Slit delivery costs ",
-                    "1 91,620.5800 USD ",
+                    "91,620.5800 USD ",
                     "91,620.58 USD "
                 ]
             }
@@ -434,7 +305,7 @@
         "Due Date ": " 1 Nov 2019 ",
         "VAT No ": " 113505 ",
         "Bank Name ": " HSBC ",
-        "Swift Code ": "  HSBCHKHHHKH ",
+        "Swift Code ": " .HSBCHKHHHKH ",
         "Address ": " 1 Queens Road, Central, HK ",
         "Alc Name ": " Asian Sourcing Link Ltd ",
         "Account# ": " 809-092273-838 ",

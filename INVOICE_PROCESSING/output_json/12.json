@@ -5,262 +5,32 @@
         "width": 475,
         "height": 21,
         "indication": "TOTAL AMOUNT ",
-        "entry": "ae @se2 CHARGE KRW 4,400 "
+        "entry": "RR BSS FUEL SURCHARGE KRW 4,400 "
     },
     "total amount_1": {
-        "left": 914,
-        "top": 1134,
-        "width": 480,
-        "height": 46,
+        "left": 1244,
+        "top": 1055,
+        "width": 148,
+        "height": 37,
         "indication": "TOTAL AMOUNT ",
-        "entry": "Ji AMI CARD AMOUNT KRW 5A, 400, "
+        "entry": "KRW 54, 400 "
     },
-    "invoice_number_2": {
-        "left": 917,
-        "top": 999,
-        "width": 121,
-        "height": 21,
-        "indication": "NO. ",
-        "entry": "S28 vse "
-    },
-    "invoice_number_3": {
-        "left": 1209,
-        "top": 1175,
-        "width": 144,
-        "height": 20,
-        "indication": "NO ",
-        "entry": "D4 5646 Gio "
+    "total amount_2": {
+        "left": 914,
+        "top": 1128,
+        "width": 480,
+        "height": 48,
+        "indication": "TOTAL AMOUNT ",
+        "entry": "Ji BMI CORD AMOUNT KR 454, 400 "
     },
     "currency": {
         "type": "Won",
         "country": "KOREA (THE REPUBLIC OF)",
         "abbreviated": "krw"
     },
-    "table_proposed_0": {
-        "confidence": 0.8308624708624709,
-        "raw_content": {
-            "0": {
-                "starting_left": 217,
-                "starting_top": 864,
-                "raw_sentence": [
-                    "PUSSIG7A AIR Ragan SUE a "
-                ]
-            },
-            "1": {
-                "starting_left": 234,
-                "starting_top": 909,
-                "raw_sentence": [
-                    "AeA account No.) : CN943646901093+4%++ 0 ",
-                    "Ysu gio "
-                ]
-            },
-            "2": {
-                "starting_left": 234,
-                "starting_top": 932,
-                "raw_sentence": [
-                    "Solus Aroval Code) : 30013018 "
-                ]
-            },
-            "3": {
-                "starting_left": 233,
-                "starting_top": 952,
-                "raw_sentence": [
-                    "JHB S (Merchant No.) : 1491784 ",
-                    "2 @ FARE KRW 46, 000 "
-                ]
-            },
-            "4": {
-                "starting_left": 232,
-                "starting_top": 1025,
-                "raw_sentence": [
-                    "HEE (Reservation ",
-                    "KRW 54, 400 "
-                ]
-            },
-            "5": {
-                "starting_left": 508,
-                "starting_top": 1032,
-                "raw_sentence": [
-                    " ykavns ",
-                    "Br Fal ",
-                    "TOTAL AMOUNT "
-                ]
-            },
-            "6": {
-                "starting_left": 231,
-                "starting_top": 1046,
-                "raw_sentence": [
-                    "ag ne ricket No 152626310 ",
-                    "KRW 54, 400 "
-                ]
-            },
-            "7": {
-                "starting_left": 332,
-                "starting_top": 1078,
-                "raw_sentence": [
-                    "nerary ",
-                    "KRW 54, 400 "
-                ]
-            },
-            "8": {
-                "starting_left": 231,
-                "starting_top": 1064,
-                "raw_sentence": [
-                    "8 ene ey "
-                ]
-            },
-            "9": {
-                "starting_left": 252,
-                "starting_top": 1163,
-                "raw_sentence": [
-                    "+739 (Fare Amount) : 39600 ",
-                    "Jl CARE "
-                ]
-            },
-            "10": {
-                "starting_left": 229,
-                "starting_top": 1157,
-                "raw_sentence": [
-                    "Sora atlets Charge Amount) : 4000 ",
-                    "NO ",
-                    "D4 5646 Gio "
-                ]
-            },
-            "11": {
-                "starting_left": 228,
-                "starting_top": 1189,
-                "raw_sentence": [
-                    "THUse hue Charge) : 4400 ",
-                    "KB "
-                ]
-            },
-            "12": {
-                "starting_left": 330,
-                "starting_top": 1278,
-                "raw_sentence": [
-                    "Al 4800 ",
-                    "TOH B42 PLACE OF Ss) E 17395464 aA "
-                ]
-            },
-            "13": {
-                "starting_left": 238,
-                "starting_top": 1297,
-                "raw_sentence": [
-                    "(Total Amount) ",
-                    "TOH B42 PLACE OF Ss) E 17395464 aA "
-                ]
-            },
-            "14": {
-                "starting_left": 225,
-                "starting_top": 1366,
-                "raw_sentence": [
-                    "All (Agent) : 13 "
-                ]
-            },
-            "15": {
-                "starting_left": 921,
-                "starting_top": 888,
-                "raw_sentence": [
-                    "TICKET ",
-                    "NO. ",
-                    "Na) :  ",
-                    "2g "
-                ]
-            },
-            "16": {
-                "starting_left": 921,
-                "starting_top": 915,
-                "raw_sentence": [
-                    "1808523198955 Ely ise 46, 000 "
-                ]
-            },
-            "17": {
-                "starting_left": 917,
-                "starting_top": 999,
-                "raw_sentence": [
-                    "S28 vse "
-                ]
-            },
-            "18": {
-                "starting_left": 1246,
-                "starting_top": 1010,
-                "raw_sentence": [
-                    "KRW 4,000 "
-                ]
-            },
-            "19": {
-                "starting_left": 917,
-                "starting_top": 1027,
-                "raw_sentence": [
-                    "ae @se2 CHARGE KRW 4,400 "
-                ]
-            },
-            "20": {
-                "starting_left": 914,
-                "starting_top": 1134,
-                "raw_sentence": [
-                    "Ji AMI CARD AMOUNT KRW 5A, 400, "
-                ]
-            },
-            "21": {
-                "starting_left": 911,
-                "starting_top": 1193,
-                "raw_sentence": [
-                    "Ft SR CARD Tye ",
-                    "D4 5646 Gio "
-                ]
-            },
-            "22": {
-                "starting_left": 910,
-                "starting_top": 1222,
-                "raw_sentence": [
-                    "Bf) HS APPROVAL "
-                ]
-            },
-            "23": {
-                "starting_left": 1320,
-                "starting_top": 1235,
-                "raw_sentence": [
-                    "300130 "
-                ]
-            },
-            "24": {
-                "starting_left": 924,
-                "starting_top": 1250,
-                "raw_sentence": [
-                    "fH DiZF INSTALLMENT JO Montin(s) "
-                ]
-            },
-            "25": {
-                "starting_left": 909,
-                "starting_top": 1331,
-                "raw_sentence": [
-                    "TH BT SATE OF ISSUE 2019 10 27 "
-                ]
-            },
-            "26": {
-                "starting_left": 1185,
-                "starting_top": 1398,
-                "raw_sentence": [
-                    "AKIGIOH AY "
-                ]
-            },
-            "27": {
-                "starting_left": 899,
-                "starting_top": 1453,
-                "raw_sentence": [
-                    "HO 1 Ot qa y  "
-                ]
-            }
-        }
-    },
     "raw_colon_entries": {
-        "AeA account No.) ": " CN943646901093+4%++ 0 ",
-        "Aroval Code) ": " 30013018 ",
-        "(Merchant No.) ": " 1491784 ",
-        "(Fare Amount) ": " 39600 ",
-        "Charge Amount) ": " 4000 ",
-        "Charge) ": " 4400 ",
-        "All (Agent) ": " 13 "
+        "a ": " ",
+        "O12 ": " 1666- vent.aitinlons ote ",
+        "Ala (Agent) ": " 13 "
     }
 }

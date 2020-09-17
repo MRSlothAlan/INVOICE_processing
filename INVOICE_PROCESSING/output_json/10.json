@@ -133,55 +133,6 @@
                 "raw_sentence": [
                     "Total amount  7,135.00 USD  "
                 ]
-            },
-            "13": {
-                "starting_left": 190,
-                "starting_top": 1800,
-                "raw_sentence": [
-                    "GST : 00%  "
-                ]
-            },
-            "14": {
-                "starting_left": 190,
-                "starting_top": 1830,
-                "raw_sentence": [
-                    "GST : 17%  "
-                ]
-            },
-            "16": {
-                "starting_left": 869,
-                "starting_top": 2057,
-                "raw_sentence": [
-                    "Account  SWIFT  Bank name & address  Bank account name  "
-                ]
-            },
-            "17": {
-                "starting_left": 869,
-                "starting_top": 2057,
-                "raw_sentence": [
-                    "Account  SWIFT  152-529111-001 (SGD) HSBCSGSGXXX  Bank name & address  The Hongkong and Shanghai  Bank account name  Heinemann Asia Pacific Pte. Ltd.  "
-                ]
-            },
-            "18": {
-                "starting_left": 866,
-                "starting_top": 2078,
-                "raw_sentence": [
-                    "152-529111-001 (SGD) HSBCSGSGXXX  260-693569-178 (USD)  The Hongkong and Shanghai  Banking Cororation Limited  "
-                ]
-            },
-            "19": {
-                "starting_left": 868,
-                "starting_top": 2121,
-                "raw_sentence": [
-                    "260-693569-180 (EUR)  Banking Cororation Limited  "
-                ]
-            },
-            "20": {
-                "starting_left": 868,
-                "starting_top": 2121,
-                "raw_sentence": [
-                    "260-693569-180 (EUR)  Singaore 049320  "
-                ]
             }
         }
     },

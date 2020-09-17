@@ -34,12 +34,20 @@
     "total amount_4": {
         "left": 871,
         "top": 1427,
-        "width": 648,
-        "height": 22,
+        "width": 526,
+        "height": 21,
         "indication": "total ",
-        "entry": "1 job 1720 $ 1,720.00 i "
+        "entry": "1 job 1720 $ 1,720.00 "
     },
     "total amount_5": {
+        "left": 1104,
+        "top": 1658,
+        "width": 291,
+        "height": 21,
+        "indication": "total ",
+        "entry": ": $ 24,250.00 "
+    },
+    "total amount_6": {
         "left": 1143,
         "top": 1774,
         "width": 251,
@@ -47,7 +55,7 @@
         "indication": "Total : ",
         "entry": "$ 129,720.00 "
     },
-    "date_6": {
+    "date_7": {
         "left": 381,
         "top": 619,
         "width": 123,
@@ -55,7 +63,7 @@
         "indication": "date ",
         "entry": ": July 2019 "
     },
-    "po_number_7": {
+    "po_number_8": {
         "left": 893,
         "top": 308,
         "width": 171,
@@ -76,7 +84,7 @@
                 "starting_top": 530,
                 "raw_sentence": [
                     "DESCRIPTION  ",
-                    "TY UNIT AMOUNT (HK  "
+                    "TY : UNIT AMOUNT (HK  "
                 ]
             },
             "2": {
@@ -99,151 +107,21 @@
                 "raw_sentence": [
                     "Total  area : N.A.  "
                 ]
-            },
-            "5": {
-                "starting_left": 72,
-                "starting_top": 703,
-                "raw_sentence": [
-                    "A  Preliminary  "
-                ]
-            },
-            "6": {
-                "starting_left": 74,
-                "starting_top": 732,
-                "raw_sentence": [
-                    "1. Drawing submission  "
-                ]
-            },
-            "7": {
-                "starting_left": 74,
-                "starting_top": 761,
-                "raw_sentence": [
-                    ": Backwall  ",
-                    "1 job 1170 $ 1,170.00  "
-                ]
-            },
-            "8": {
-                "starting_left": 1005,
-                "starting_top": 824,
-                "raw_sentence": [
-                    "sub  total  : $ 1,170.00  "
-                ]
-            },
-            "9": {
-                "starting_left": 176,
-                "starting_top": 877,
-                "raw_sentence": [
-                    "re P i  "
-                ]
-            },
-            "10": {
-                "starting_left": 72,
-                "starting_top": 934,
-                "raw_sentence": [
-                    "Location : S2  "
-                ]
-            },
-            "11": {
-                "starting_left": 73,
-                "starting_top": 963,
-                "raw_sentence": [
-                    "1a. Wall bay roduction (Defend & Attack)  ",
-                    "1LM 35778 $ 35,778.0  "
-                ]
-            },
-            "12": {
-                "starting_left": 71,
-                "starting_top": 992,
-                "raw_sentence": [
-                    "size : 1000W500D2350H  "
-                ]
-            },
-            "13": {
-                "starting_left": 72,
-                "starting_top": 1049,
-                "raw_sentence": [
-                    "1b. Vislay with installation  ",
-                    "1 job  $ 38,115.00  "
-                ]
-            },
-            "14": {
-                "starting_left": 71,
-                "starting_top": 1106,
-                "raw_sentence": [
-                    "2. Lighting fee  ",
-                    "1LM 16380 $ 16,380.0  "
-                ]
-            },
-            "15": {
-                "starting_left": 71,
-                "starting_top": 1164,
-                "raw_sentence": [
-                    "3 Shelf talker budget  ",
-                    "3 cs 1209 $$ 3,627.00  size : 400  "
-                ]
-            },
-            "16": {
-                "starting_left": 69,
-                "starting_top": 1250,
-                "raw_sentence": [
-                    "4. Glorifier  ",
-                    "2 jobs 5200 $ 10,400.00  "
-                ]
-            },
-            "17": {
-                "starting_left": 69,
-                "starting_top": 1279,
-                "raw_sentence": [
-                    "size : 230W205D318H  "
-                ]
-            },
-            "18": {
-                "starting_left": 1002,
-                "starting_top": 1313,
-                "raw_sentence": [
-                    "sub  total  : $ 104,300.00  "
-                ]
-            },
-            "19": {
-                "starting_left": 86,
-                "starting_top": 1365,
-                "raw_sentence": [
-                    "I ion  "
-                ]
-            },
-            "22": {
-                "starting_left": 70,
-                "starting_top": 1422,
-                "raw_sentence": [
-                    "1. Site measurement  ",
-                    "1 job 1720 $ 1,720.00 i  oO  2. Labour to install  ",
-                    "1 job  $ 10,530.00  3. Truck delivery from DG to SH  ",
-                    "1 job  $ 11,500.00 :  ar  4. Permit alication for Airort  ",
-                    "1 job  $ 500.00 ie  sub  total  : $ 24,250.00 e  Remarks : Dislay items, glorifier and visual outut rovide by client.  ",
-                    "e  x  55  ",
-                    "a  Total :  $ 129,720.00  tH  Terms & Conditions  1. Payment within 30 days  ",
-                    "a  Interest of 3% er month will hi d on Over : ccounts.  ",
-                    "oO  &  reared by  ",
-                    "a  at  ak  ie  MFR  E.& : 0.E :  ",
-                    "FUSION DESIGN INTERNATIONAL LIMITED  ",
-                    "debt  "
-                ]
             }
         }
     },
     "raw_colon_entries": {
         "PO ": " 83195045 ",
         "Attn ": " accounts-ayable.ssc@ernod-ricard.com ",
+        "TY ": " UNIT AMOUNT (HK ",
         "Re ": " Ballantines counter at Pu Dong Airort SH S2 ",
         "Tentative comletion date ": " July 2019 ",
         "Total area ": " N.A. ",
-        "sub total ": " $ 24,250.00 e ",
+        "sub total ": " $ 24,250.00 ",
         "Location ": " S2 ",
         "size ": " 230W205D318H ",
-        "11,500.00 ": " ",
         "Remarks ": " Dislay items, glorifier and visual outut rovide by client. ",
         "Total ": " $ 129,720.00 ",
-        "Over ": " ccounts. ",
-        "E.& ": " "
+        "Over ": " ccounts. "
     }
 }

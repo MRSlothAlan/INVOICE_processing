@@ -107,6 +107,8 @@ def region_proposal(image):
     :return:
     """
     image_processed = blur_images(image)
+    cv2.imshow("i", image_processed)
+    cv2.waitKey(0)
     list_rect = propose_regions(image_processed)
     return list_rect
 

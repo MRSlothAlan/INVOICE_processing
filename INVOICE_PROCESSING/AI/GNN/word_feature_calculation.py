@@ -165,6 +165,8 @@ class WordFeature:
             node_batches = [word_node[i: i + batch_size] for i in range(0, len(word_node), batch_size)]
 
             all_feature_vectors = list()
+            # set recursion limit to higher
+            sys.setrecursionlimit(0x100000)
 
             with futures.ProcessPoolExecutor(max_workers=5) as pool:
                 for feature_vectors in pool.map(self.feature_of_node, node_batches, timeout=15):

@@ -19,7 +19,7 @@ def GCN_model(CLASS_LEN):
     :param CLASS_LEN:
     :return:
     """
-    # typically, the shape is N * 59
+    # typically, the shape is N * 109
     node_feature_input = keras.Input(shape=(None, FEATURE_LENGTH), batch_size=None)
     # shape = N * N
     node_adj_matrix_input = keras.Input(shape=(None, None), batch_size=None)
@@ -46,7 +46,8 @@ def GCN_model(CLASS_LEN):
 
 
 def retrieve_model():
-    model = GCN_model(CLASS_LEN=25)
+
+    model = GCN_model(CLASS_LEN=45)
     opt = SGD(lr=0.001, momentum=0.9)
     model.compile(optimizer=opt,
                   loss=keras.losses.CategoricalCrossentropy(),

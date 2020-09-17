@@ -16,25 +16,17 @@
         "entry": "4862 "
     },
     "date_2": {
-        "left": 955,
-        "top": 541,
-        "width": 157,
-        "height": 25,
-        "indication": "Date ",
-        "entry": ": 5 Nov, 19 "
-    },
-    "date_3": {
-        "left": 739,
+        "left": 773,
         "top": 1618,
-        "width": 172,
+        "width": 138,
         "height": 24,
         "indication": "Date ",
-        "entry": ": 1 Nov, 19 "
+        "entry": "-1 Nov, 19 "
     },
-    "po_number_4": {
+    "po_number_3": {
         "left": 303,
         "top": 1580,
-        "width": 287,
+        "width": 288,
         "height": 39,
         "indication": "PO# ",
         "entry": "93195214 "
@@ -49,7 +41,7 @@
         "raw_content": {
             "0": {
                 "starting_left": 116,
-                "starting_top": 656,
+                "starting_top": 661,
                 "raw_sentence": [
                     "Descrition  ",
                     "Price  "
@@ -64,7 +56,7 @@
             },
             "2": {
                 "starting_left": 201,
-                "starting_top": 924,
+                "starting_top": 923,
                 "raw_sentence": [
                     "RS21 Lost blend Cal online Preorder 4 AWs  HK$2400  "
                 ]
@@ -79,7 +71,7 @@
             },
             "4": {
                 "starting_left": 199,
-                "starting_top": 1071,
+                "starting_top": 1070,
                 "raw_sentence": [
                     "Abs EOY & TCM Nov Dec 3AWs  ",
                     "HK$1800  "
@@ -95,7 +87,7 @@
             },
             "6": {
                 "starting_left": 176,
-                "starting_top": 1218,
+                "starting_top": 1217,
                 "raw_sentence": [
                     "e MY EOY Tchi Tentcard  ",
                     "HK$600  "
@@ -111,7 +103,7 @@
             },
             "8": {
                 "starting_left": 201,
-                "starting_top": 1365,
+                "starting_top": 1364,
                 "raw_sentence": [
                     "MT EOY endca HKIA AW  ",
                     "HK$600  "
@@ -129,43 +121,34 @@
                 "starting_left": 674,
                 "starting_top": 1566,
                 "raw_sentence": [
-                    "Quotati : 14683  PO#  93195214  "
+                    "Quotation no : 14683  PO#  93195214  "
                 ]
             },
             "11": {
                 "starting_left": 675,
                 "starting_top": 1618,
                 "raw_sentence": [
-                    "Date  : 1 Nov, 19  "
+                    "Date  -1 Nov, 19  "
                 ]
             },
             "12": {
                 "starting_left": 128,
-                "starting_top": 1767,
+                "starting_top": 1766,
                 "raw_sentence": [
-                    "Please make chegue ayable to UNION-A WORKSHOP LIMITED  ",
-                    "Total  tou malt shoen if the job Is ut on hold tor over 3 months  ",
-                    "HK$1 3200  If full ayment is not received within 30 days of the  date  of this  Invoice a  20% surcharge will aly  "
-                ]
-            },
-            "13": {
-                "starting_left": 867,
-                "starting_top": 1947,
-                "raw_sentence": [
-                    "Fe  Aroved by  ",
-                    "AuthonaahREINUR  sfrvacenuhovoserorenhuaderors  "
+                    "Please make chegue ayable to  UNION-A WORKSHOP LiMiTED  ",
+                    "Total  Thank You For Your Business  50% of  total  will be charged if the job is ut on hold for over 3 months  ",
+                    "HK$1 3200  If full ayment Is not received within 30 days of the  date  of this  invoice a  20% surcharge will aly  "
                 ]
             }
         }
     },
     "raw_colon_entries": {
-        "Tel ": " 25906351 ",
-        "Fax ": " 25906810 ",
         "Agency ": " Pernod Ricard Hong Kong Limited ",
         "Attention ": " Fanny Wong ",
         "Client  Product ": " Artwork ",
         "From ": " Astley Ho ",
-        "Date ": " 1 Nov, 19 ",
-        "Quotati ": " 14683 "
+        "Tel ": " 25906351 ",
+        "Fax ": " 25906810 ",
+        "Quotation no ": " 14683 "
     }
 }

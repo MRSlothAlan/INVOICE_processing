@@ -1,0 +1,97 @@
+{
+    "total amount_0": {
+        "left": 691,
+        "top": 1338,
+        "width": 710,
+        "height": 31,
+        "indication": "Total HKD ",
+        "entry": "2 Xx HKD 50.00 HKD 100.00 "
+    },
+    "total amount_1": {
+        "left": 1287,
+        "top": 1462,
+        "width": 105,
+        "height": 21,
+        "indication": "Total HKD ",
+        "entry": "40,438.00 "
+    },
+    "invoice_number_2": {
+        "left": 1236,
+        "top": 655,
+        "width": 128,
+        "height": 18,
+        "indication": "Invoice number ",
+        "entry": "8111802184 "
+    },
+    "invoice_number_3": {
+        "left": 1237,
+        "top": 747,
+        "width": 109,
+        "height": 23,
+        "indication": "no. ",
+        "entry": "16-Se-18 "
+    },
+    "invoice_number_4": {
+        "left": 1234,
+        "top": 842,
+        "width": 44,
+        "height": 22,
+        "indication": "no. ",
+        "entry": "2 (in "
+    },
+    "po_number_5": {
+        "left": 1236,
+        "top": 686,
+        "width": 143,
+        "height": 17,
+        "indication": "Number ",
+        "entry": "CNH2000066 "
+    },
+    "po_number_6": {
+        "left": 1236,
+        "top": 812,
+        "width": 223,
+        "height": 17,
+        "indication": "Number ",
+        "entry": "67443053-0000318A "
+    },
+    "currency": {
+        "type": "Hong Kong Dollar",
+        "country": "HONG KONG",
+        "abbreviated": "hkd"
+    },
+    "table_proposed_0": {
+        "confidence": 0.8636363636363635,
+        "raw_content": {
+            "0": {
+                "starting_left": 909,
+                "starting_top": 832,
+                "raw_sentence": [
+                    "Page(s) ",
+                    "2 (in total) "
+                ]
+            }
+        }
+    },
+    "table_proposed_1": {
+        "confidence": 0.800187921322375,
+        "raw_content": {
+            "0": {
+                "starting_left": 51,
+                "starting_top": 881,
+                "raw_sentence": [
+                    "Flight",
+                    "LY075 ",
+                    "Our ref FR-CNK-1808-0001 "
+                ]
+            }
+        }
+    },
+    "raw_colon_entries": {
+        "LOCAL DELIVERY ": " HKD 200 PLT X 43 ",
+        "Beneficiary name ": " ",
+        "Bank Name ": " ",
+        "SWIFT ": " ",
+        "Account number ": " "
+    }
+}

@@ -61,7 +61,7 @@
         "abbreviated": "pte"
     },
     "table_proposed_0": {
-        "confidence": 0.8305555555555556,
+        "confidence": 0.8264880952380952,
         "raw_content": {
             "0": {
                 "starting_left": 458,
@@ -117,19 +117,13 @@
             },
             "7": {
                 "starting_left": 46,
-                "starting_top": 1130,
+                "starting_top": 1142,
                 "raw_sentence": [
-                    "ERE LAST ITEM fRR EEE "
-                ]
-            },
-            "8": {
-                "starting_left": 1106,
-                "starting_top": 1167,
-                "raw_sentence": [
+                    "ERE LAST TEM # ORE EE ",
                     "Sub-total : $11,253.00 "
                 ]
             },
-            "9": {
+            "8": {
                 "starting_left": 1117,
                 "starting_top": 1202,
                 "raw_sentence": [
@@ -144,7 +138,7 @@
         "Invoice Date ": " 09-Oct-19 ",
         "Address ": " Pernod Ricard Hong Kong Limited ",
         "Terms ": " ",
-        "Date Due ": " 08-Nov-19 ",
+        "Date Due ": " ",
         "Sales Re ": " Geok Khing ",
         "Tel No ": " +852 3975 9726 ",
         "Mobile No ": " +852 2376 2392 ",

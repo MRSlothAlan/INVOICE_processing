@@ -80,10 +80,13 @@ def parse_main():
 
         image = cv2.imread(image_path, 1)
 
-        image_pil = pre_process_images_before_scanning(image)
-        image = np.array(image_pil)
+        """
+        17092020: try not to do any preprocessing
+        """
+        # image_pil = pre_process_images_before_scanning(image)
+        # image = np.array(image_pil)
         # to OpenCV format
-        image = image[:, :, ::-1].copy()
+        # image = image[:, :, ::-1].copy()
         # align image
 
         if AUTO_ALIGN:
@@ -115,6 +118,7 @@ def parse_main():
          line_num, word_num, left, top, width, height, conf, text
          """
         words_raw, same_line, same_block = ocr_to_standard_data(info)
+
         # used for node connections
         same_line_copy = same_line
         # same_line_copy = same_line
@@ -177,13 +181,19 @@ def parse_main():
 
                 """
                 return a list of node - feature list
-                size = N * 59
+                size = N * 109
                 [[node_feature], [node-feature], [], ...]
                 """
                 print("     generate node feature list...")
                 # a dictionary
                 wf = WordFeature()
+                raw = same_line_copy.return_raw_node()
                 gcn_node_feature = wf.feature_calculation(same_line_copy.return_raw_node(), image=image)
+                if DEBUG:
+                    if DEBUG_DETAILED:
+                        for index, feature in enumerate(gcn_node_feature):
+                            print(raw[index].word)
+                            print(gcn_node_feature[feature])
                 print("     SHAPE=", len(gcn_node_feature))
                 len_set = set()
                 for key in gcn_node_feature:
@@ -232,6 +242,7 @@ def parse_main():
         print("generate graph of merged nodes")
         same_line.generate_graph()
         print("Done")
+
         # each node now has the connection data
         # draw the results
         # 20082020: logic error, need to get a list of raw, MERGED tokens
@@ -272,7 +283,8 @@ def parse_main():
 
             # check specific entries only
             image, all_results = find_information_rule_based(words_raw_new, resize_function, resize_ratio, d)
-            all_line_items = find_line_item_rule_based(words_raw_new, rect_regions, resize_ratio, image_copy)
+            # may also need to pass raw nodes in order to split the content
+            all_line_items = find_line_item_rule_based(words_raw_new, words_raw, rect_regions, resize_ratio, image_copy)
             # with the node structure, you can tag stuff easily.
             results, currency = same_line_copy.use_parser_re(currency_dict)
             if currency is not None:

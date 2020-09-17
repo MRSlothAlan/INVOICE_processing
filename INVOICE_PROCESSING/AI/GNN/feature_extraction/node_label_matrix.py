@@ -55,6 +55,8 @@ def node_label_matrix(word_node, classes=list(), label_data_set_dir="", label_fi
             # [xmin, ymin, xmax, ymax]
             for index_n, node in enumerate(word_node):
                 if box[0] < node.center_x < box[2] and box[1] < node.center_y < box[3]:
+
+                    # print(node.word, labels_xml[index])
                     # set the label of the node
                     # using a one-hot encoding way
                     one_hot_class = [0] * length

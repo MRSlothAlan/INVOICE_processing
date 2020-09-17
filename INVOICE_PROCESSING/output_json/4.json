@@ -45,56 +45,6 @@
         "abbreviated": "hkd"
     },
     "table_proposed_0": {
-        "confidence": 0.8333333333333334,
-        "raw_content": {
-            "0": {
-                "starting_left": 722,
-                "starting_top": 732,
-                "raw_sentence": [
-                    "DESCRIPTION ",
-                    "Contact ",
-                    "PO No. ",
-                    "Details ice il "
-                ]
-            },
-            "1": {
-                "starting_left": 146,
-                "starting_top": 762,
-                "raw_sentence": [
-                    "Order ",
-                    "Order ",
-                    "date ",
-                    "Contact ",
-                    "PO No. ",
-                    "Details ice il "
-                ]
-            },
-            "2": {
-                "starting_left": 150,
-                "starting_top": 808,
-                "raw_sentence": [
-                    "O-32517 - DFS MOWS Translation ",
-                    "02.09.2019 Fanny Wong Q25241-01 "
-                ]
-            },
-            "3": {
-                "starting_left": 1126,
-                "starting_top": 835,
-                "raw_sentence": [
-                    "93195049 "
-                ]
-            },
-            "4": {
-                "starting_left": 1033,
-                "starting_top": 883,
-                "raw_sentence": [
-                    "TOTAL (HKD) ",
-                    "948.00 "
-                ]
-            }
-        }
-    },
-    "table_proposed_1": {
         "confidence": 0.855,
         "raw_content": {
             "0": {
@@ -102,97 +52,6 @@
                 "starting_top": 1181,
                 "raw_sentence": [
                     "All remittance charges, commission and bank charges, telegrahic transfer, and any articular country tax charges shall  "
-                ]
-            },
-            "1": {
-                "starting_left": 147,
-                "starting_top": 1213,
-                "raw_sentence": [
-                    "be strictly borne by the invoice reciient or remittance arty. (DataSource ays for its own local bank charges.)  "
-                ]
-            },
-            "2": {
-                "starting_left": 147,
-                "starting_top": 1244,
-                "raw_sentence": [
-                    "TEERAAR,  SRAM,  RISERRIB  "
-                ]
-            },
-            "3": {
-                "starting_left": 147,
-                "starting_top": 1291,
-                "raw_sentence": [
-                    "(DataSource RIES PABEMAIRITAA.  )  "
-                ]
-            },
-            "4": {
-                "starting_left": 146,
-                "starting_top": 1362,
-                "raw_sentence": [
-                    "Payment methods : By cheque made ayable to DataSource International Limited OR  "
-                ]
-            },
-            "5": {
-                "starting_left": 365,
-                "starting_top": 1391,
-                "raw_sentence": [
-                    "ByTT  "
-                ]
-            },
-            "7": {
-                "starting_left": 457,
-                "starting_top": 1445,
-                "raw_sentence": [
-                    "Account  No.  "
-                ]
-            },
-            "8": {
-                "starting_left": 459,
-                "starting_top": 1472,
-                "raw_sentence": [
-                    "Bank Name : HSBC  "
-                ]
-            },
-            "9": {
-                "starting_left": 458,
-                "starting_top": 1500,
-                "raw_sentence": [
-                    "Swift Code  No.  : HSBCHKHHHKH  "
-                ]
-            },
-            "10": {
-                "starting_left": 459,
-                "starting_top": 1527,
-                "raw_sentence": [
-                    "Branch Address : Sho 2A, 2 F, Hoewell Centre, 183 Queens Road East, Wanchai, Hong Kong  "
-                ]
-            },
-            "11": {
-                "starting_left": 458,
-                "starting_top": 1556,
-                "raw_sentence": [
-                    "Currency : Above account accets HKD, USD, EUR or CNY  "
-                ]
-            },
-            "12": {
-                "starting_left": 146,
-                "starting_top": 1610,
-                "raw_sentence": [
-                    "Remarks :  "
-                ]
-            },
-            "13": {
-                "starting_left": 141,
-                "starting_top": 1662,
-                "raw_sentence": [
-                    "Thank you for your business,  "
-                ]
-            },
-            "14": {
-                "starting_left": 1351,
-                "starting_top": 2131,
-                "raw_sentence": [
-                    "Page lof1  "
                 ]
             }
         }
@@ -206,9 +65,9 @@
         "Comany ": " Pernod Ricard Hong Kong Limited ",
         "Address ": " 12 F, Sun Life Tower, 15 Canton Road, Harbour City, Tsimshatsui,Kowloon, HongKong ",
         "Attention ": " Fanny Wong ",
-        "IMPORTANT ": " It is imerative that this invoice no. -16810 be quoted when ayment is made so we are able to match ",
-        "BESIA ": " BRE OBS An ",
-        "eR ": " -esio , LE KE, ",
+        "IMPORTANT ": " It is imerative that this invoice no. +-16810 be quoted when ayment is made so we are able to match ",
+        "BES ": " BR ",
+        "Ras Bt at 3S SSR ": " 16810, LARA, ",
         "Payment methods ": " By cheque made ayable to DataSource International Limited OR ",
         "Account Holder ": " DataSource International Limited ",
         "Account No. ": " 813-069028-838 ",

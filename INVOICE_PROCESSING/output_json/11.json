@@ -16,9 +16,9 @@
         "entry": "USD 115,758.68 "
     },
     "total amount_2": {
-        "left": 1004,
-        "top": 889,
-        "width": 240,
+        "left": 1013,
+        "top": 890,
+        "width": 231,
         "height": 17,
         "indication": "TOTAL ",
         "entry": ": USD 115,758.68 "
@@ -52,7 +52,7 @@
                 "starting_top": 551,
                 "raw_sentence": [
                     "PO NO.  ",
-                    "NET AMOUNT(USD.  "
+                    "NET AMOUNT(USD)  "
                 ]
             },
             "1": {
@@ -108,69 +108,6 @@
                 "raw_sentence": [
                     "TOTAL  : USD 115,758.68  "
                 ]
-            },
-            "8": {
-                "starting_left": 269,
-                "starting_top": 1031,
-                "raw_sentence": [
-                    "Beneficiary : Darin & Co., Ltd.  "
-                ]
-            },
-            "9": {
-                "starting_left": 269,
-                "starting_top": 1060,
-                "raw_sentence": [
-                    "Bank Name : Woori Bank, Agujeong-Rodeo Branch  "
-                ]
-            },
-            "10": {
-                "starting_left": 269,
-                "starting_top": 1088,
-                "raw_sentence": [
-                    "Address : 660-5, Sinsa-Dong, Gangnam-Gu, Seoul, Korea  "
-                ]
-            },
-            "11": {
-                "starting_left": 269,
-                "starting_top": 1116,
-                "raw_sentence": [
-                    "Account : 1081-000-619955  "
-                ]
-            },
-            "12": {
-                "starting_left": 269,
-                "starting_top": 1144,
-                "raw_sentence": [
-                    "Bank Swift Code : HVBKKRSEXXX  "
-                ]
-            },
-            "13": {
-                "starting_left": 932,
-                "starting_top": 1340,
-                "raw_sentence": [
-                    "YOURS FAITHFULLY,  "
-                ]
-            },
-            "14": {
-                "starting_left": 1131,
-                "starting_top": 1372,
-                "raw_sentence": [
-                    "0 &Y  A  "
-                ]
-            },
-            "15": {
-                "starting_left": 1080,
-                "starting_top": 1481,
-                "raw_sentence": [
-                    "JOON KIM  "
-                ]
-            },
-            "16": {
-                "starting_left": 1019,
-                "starting_top": 1509,
-                "raw_sentence": [
-                    "MANAGING DIRECTOR  "
-                ]
             }
         }
     },
@@ -178,6 +115,7 @@
         "Date ": " October 31, 2019 ",
         "Attn ": " Mr. Simon van Moes ",
         "Tel ": " (852)2378 7926 ",
+        "Fax ": " (852)2735 6534 ",
         "Debit Note Number ": " DRI9MK047 ",
         "FX rate ": " 1133.75 ",
         "TOTAL ": " USD 115,758.68 ",

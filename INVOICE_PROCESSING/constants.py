@@ -39,7 +39,7 @@ GCN = False
 AUTO_ALIGN = True
 TIMER = True
 
-LOG_LINE_ITEM = False
+LOG_LINE_ITEM = True
 
 HEADER_IS_BLOCK = False
 

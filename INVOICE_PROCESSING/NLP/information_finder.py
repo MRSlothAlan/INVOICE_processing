@@ -343,14 +343,26 @@ def parse_lines_get_items(content, keywords_list, score, index, rect_regions, wo
     # append the header first
     # since this is a LINE, that means line items are those lines below it.
     temp_ptr = index
-    while temp_ptr < len(rect_regions):
+    TO_CONTINUE = True
+
+    while temp_ptr < len(rect_regions) and TO_CONTINUE:
+        """
+        may need to also parse the raw node in order to put them into different columns
+        """
         content_temp, label = extract_words(words_raw_new, rect_regions[temp_ptr], resize_r)
+
         line_node_merged = merge_nearby_node_info_process(content_temp, width)
         keywords_list_temp = generate_raw_words(content_temp)
         # check whether any word(s) within the row has the label 'total'
         # perform word matching for now
+        # print([node.word for node in line_node_merged])
+        for node in line_node_merged:
+            if str(node.word).lower().__contains__("total") or \
+                str(node.word).lower().__contains__("remark") or \
+                str(node.word).lower().__contains__("bank"):
+                TO_CONTINUE = False
+
         table_line_items.append(line_node_merged)
-        # error, sometimes the line is 'empty'
         """
          When shall I end the parsing?
          ..when there are still numbers?
@@ -397,7 +409,45 @@ def is_header_only(all_lines_in_block_raw):
         return False
 
 
-def find_line_item_rule_based(words_raw_new, rect_regions, resize_r, image):
+def find_line_item_rule_based_new(words_raw, rect_regions, resize_r):
+    """
+    Goal: get line items based on possible headers
+    :param words_raw:
+    :param rect_regions:
+    :return:
+    """
+    ALL_SUGGESTED_LINE_ITEM_LIST = list()
+    """
+    Loop through the rectangles, get contents inside.
+    
+    Possibilities:
+        1. the table is a bunch of lines only
+        2. the entire table / region is bounded in a rectangle
+        3. the header is a block within a rectangle, the line items are lines
+    Possible problems:
+        1. the original OCR words do not have good quality, re-parse that region again?
+            I DON'T THINK I NEED TO RE-PARSE SINCE IT DOESN'T MAKE A HUGE DIFFERENCE ANYWAY
+    
+    Method:
+        for each rect, parse the content
+            if rect is 'line' and is header:
+                for lines below it
+                    parse lines below til some keywords are matched
+            else if rect is 'block' and contains header words:
+                if it is a header:
+                    parse lines below til some keywords are matched
+                else:
+                    segment the contents inside into different rows
+                    detect each row:
+                        if row == header
+                            parse lines below til some keywords are matched
+    """
+    for index_r, rect in enumerate(rect_regions):
+        content, label = extract_words(words_raw, rect, resize_r)
+
+
+
+def find_line_item_rule_based(words_raw_new, words_raw, rect_regions, resize_r, image):
     """
     find line items based on rectangular regions and keywords
     :param words_raw_new:
@@ -420,7 +470,10 @@ def find_line_item_rule_based(words_raw_new, rect_regions, resize_r, image):
         # [x, y, w, h]
         # extract words from rect region
         # words_raw_new contains words with labels
+
+        # content, label = extract_words(words_raw_new, rect, resize_r)
         content, label = extract_words(words_raw_new, rect, resize_r)
+
         # if it is a block, scan it one more time. within that region
         # reason: sometimes OCR missed the words, and it is very true
         if label == "block":
@@ -428,6 +481,7 @@ def find_line_item_rule_based(words_raw_new, rect_regions, resize_r, image):
             # this keyword list contains the original contents
             # can be used to find linked rows again!
             keywords_list = generate_raw_words(content)
+
             bool, score = is_table_header(keywords_list)
             if bool:
                 if LOG_LINE_ITEM:
@@ -459,9 +513,9 @@ def find_line_item_rule_based(words_raw_new, rect_regions, resize_r, image):
 
                     resize = cv2.resize(crop_img, (int(w * resize_r), int(h * resize_r)))
                     # before parse again, check the words and see whether the block contains headers
-                    # parsing takes time
                     # parse again
                     height, width, color = crop_img.shape
+                    # necessary?
                     info_detailed = pytesseract.image_to_data(crop_img, output_type='dict')
                     words_raw, same_line, same_block = ocr_to_standard_data(info_detailed)
                     same_line.generate_graph()
@@ -476,8 +530,16 @@ def find_line_item_rule_based(words_raw_new, rect_regions, resize_r, image):
                     if LOG_LINE_ITEM:
                         print("Newly parsed words: ", [n.word for n in new_raw])
 
-                    all_lines_in_block = get_linked_rows(new_raw)
-                    all_lines_in_block_raw = get_linked_rows(content)
+                    """
+                    new approach for getting line items in blocks:
+                    get all the nodes within the rectangle
+                    link them in rows
+                    
+                    
+                    """
+
+                    all_lines_in_block = get_linked_rows(new_raw) # contains raw nodes
+                    all_lines_in_block_raw = get_linked_rows(content) #
                     """
                     based on all lines, get those which are line items
                     it really depends on OCR, really
@@ -501,6 +563,7 @@ def find_line_item_rule_based(words_raw_new, rect_regions, resize_r, image):
                             print([n.word for n in line_raw])
                     if LOG_LINE_ITEM:
                         print("\nUPDATE THE ORIGINAL ROWS")
+                    print(all_lines_in_block_raw)
                     for index_r, line_raw in enumerate(all_lines_in_block_raw):
                         # for each line, compare to that in newly parsed content
                         line_raw_list = [n.word for n in line_raw]
@@ -536,6 +599,7 @@ def find_line_item_rule_based(words_raw_new, rect_regions, resize_r, image):
                                     print("New: {}".format([node.word for node in all_lines_in_block_raw[index_r]]))
                     # after update the block content, make judgement
                     # To-do: sometimes the block is only the header itself, need to parse the lines
+
                     if is_header_only(all_lines_in_block_raw):
                         constants.HEADER_IS_BLOCK = True
 
