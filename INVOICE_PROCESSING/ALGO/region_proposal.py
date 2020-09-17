@@ -16,6 +16,9 @@ def blur_images(image):
     """
     gray_scale = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     h, w = gray_scale.shape
+    """
+    17092020: YOU NEED TO RESIZE, OTHERWISE IT IS TOO SLOW TO PARSE EACH PIXEL
+    """
     gray_resize = cv2.resize(gray_scale, (int(w * resize_ratio), int(h * resize_ratio)))
     ori_resize = cv2.resize(image, (int(w * resize_ratio), int(h * resize_ratio)))
 
@@ -107,8 +110,6 @@ def region_proposal(image):
     :return:
     """
     image_processed = blur_images(image)
-    cv2.imshow("i", image_processed)
-    cv2.waitKey(0)
     list_rect = propose_regions(image_processed)
     return list_rect
 

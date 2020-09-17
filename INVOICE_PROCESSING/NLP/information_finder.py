@@ -23,6 +23,8 @@ from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.word_parser.parse_words impo
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING import constants
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.constants import LOG_LINE_ITEM
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.const_labels import *
+from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.depreciated import deprecated
+
 """
 Now just for testing, will modify it soon
 """
@@ -444,9 +446,35 @@ def find_line_item_rule_based_new(words_raw, rect_regions, resize_r):
     """
     for index_r, rect in enumerate(rect_regions):
         content, label = extract_words(words_raw, rect, resize_r)
+        keywords_list = generate_raw_words(content)
+        if label == "line":
+            bool, score = is_table_header(keywords_list)
+            if bool:
+                print([node.line_no for node in content])
+                print("     found a header")
+                print("     ", keywords_list)
+                print("SCORE: ", score)
+                pass
+        elif label == "block":
+            bool, score = is_table_header(keywords_list)
+            if bool:
+                print([node.line_no for node in content])
+                print("     found a block which is a header / contains a header")
+                """
+                segment the content into lines
+                """
+
+                """
+                is the block a header or a complete table?
+                """
 
 
+                print("     ", keywords_list)
+                print("SCORE: ", score)
+                pass
 
+
+@deprecated
 def find_line_item_rule_based(words_raw_new, words_raw, rect_regions, resize_r, image):
     """
     find line items based on rectangular regions and keywords
@@ -563,7 +591,6 @@ def find_line_item_rule_based(words_raw_new, words_raw, rect_regions, resize_r, 
                             print([n.word for n in line_raw])
                     if LOG_LINE_ITEM:
                         print("\nUPDATE THE ORIGINAL ROWS")
-                    print(all_lines_in_block_raw)
                     for index_r, line_raw in enumerate(all_lines_in_block_raw):
                         # for each line, compare to that in newly parsed content
                         line_raw_list = [n.word for n in line_raw]

@@ -39,6 +39,8 @@ class Node:
         self.isEntryColonSplited = False
         # add a POS field for the tag
         self.POS_tag = ""
+        # save the line number. it is needed in parsing rows haha :-)
+        self.line_no = 0
 
     def print_info(self):
         print(self.word)

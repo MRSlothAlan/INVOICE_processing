@@ -70,6 +70,7 @@ class InvoiceHierarchy:
                             store_line.append_new_line_token(line_number=global_line_count,
                                                              sub_line_number=sub_line_index,
                                                              token=word_node)
+                            word_node.line_no = index_line
                             node_words_only.append(word_node)
         return node_words_only, store_line, store_block
 

@@ -13,7 +13,7 @@ from tqdm import tqdm
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.opencv_image_operations import resize_with_ratio, \
     draw_rectangle_text_with_ratio, pre_process_images_before_scanning, auto_align_image
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.information_finder import find_information_rule_based, \
-    find_line_item_rule_based
+    find_line_item_rule_based, find_line_item_rule_based_new
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.AI.GNN.feature_extraction.graph_construction import *
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.ALGO.region_proposal import *
 from GRAPH_AND_TEXT_FEATURES.INVOICE_PROCESSING.NLP.OCR_operation import *
@@ -285,6 +285,7 @@ def parse_main():
             image, all_results = find_information_rule_based(words_raw_new, resize_function, resize_ratio, d)
             # may also need to pass raw nodes in order to split the content
             all_line_items = find_line_item_rule_based(words_raw_new, words_raw, rect_regions, resize_ratio, image_copy)
+            find_line_item_rule_based_new(words_raw, rect_regions, resize_ratio)
             # with the node structure, you can tag stuff easily.
             results, currency = same_line_copy.use_parser_re(currency_dict)
             if currency is not None:
