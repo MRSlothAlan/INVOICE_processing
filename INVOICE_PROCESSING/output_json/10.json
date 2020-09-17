@@ -186,13 +186,13 @@
         }
     },
     "raw_colon_entries": {
-        "Phone ": ": +65 6671 7529 ",
-        "Fax ": ": +65 6225 0262 ",
-        "E-Mail ": ": Accounts@heinemann.com.sg ",
-        "htt ": ":   www.heinemann.com.sg ",
-        "Comany Reg. No. ": ": 201000986C. ",
-        "GST Reg. No. ": ": 201000986C ",
-        "According to our agreement your account will be debited for the following activities ": ": ",
-        "GST ": ": 17% "
+        "Phone ": " +65 6671 7529 ",
+        "Fax ": " +65 6225 0262 ",
+        "E-Mail ": " Accounts@heinemann.com.sg ",
+        "htt ": "   www.heinemann.com.sg ",
+        "Comany Reg. No. ": " 201000986C. ",
+        "GST Reg. No. ": " 201000986C ",
+        "According to our agreement your account will be debited for the following activities ": " ",
+        "GST ": " 17% "
     }
 }

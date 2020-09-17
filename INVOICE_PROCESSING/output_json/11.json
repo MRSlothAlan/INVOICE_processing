@@ -175,16 +175,16 @@
         }
     },
     "raw_colon_entries": {
-        "Date ": ": October 31, 2019 ",
-        "Attn ": ": Mr. Simon van Moes ",
-        "Tel ": ": (852)2378 7926 ",
-        "Debit Note Number ": ": DRI9MK047 ",
-        "FX rate ": ": 1133.75 ",
-        "TOTAL ": ": USD 115,758.68 ",
-        "Beneficiary ": ": Darin & Co., Ltd. ",
-        "Bank Name ": ": Woori Bank, Agujeong-Rodeo Branch ",
-        "Address ": ": 660-5, Sinsa-Dong, Gangnam-Gu, Seoul, Korea ",
-        "Account ": ": 1081-000-619955 ",
-        "Bank Swift Code ": ": HVBKKRSEXXX "
+        "Date ": " October 31, 2019 ",
+        "Attn ": " Mr. Simon van Moes ",
+        "Tel ": " (852)2378 7926 ",
+        "Debit Note Number ": " DRI9MK047 ",
+        "FX rate ": " 1133.75 ",
+        "TOTAL ": " USD 115,758.68 ",
+        "Beneficiary ": " Darin & Co., Ltd. ",
+        "Bank Name ": " Woori Bank, Agujeong-Rodeo Branch ",
+        "Address ": " 660-5, Sinsa-Dong, Gangnam-Gu, Seoul, Korea ",
+        "Account ": " 1081-000-619955 ",
+        "Bank Swift Code ": " HVBKKRSEXXX "
     }
 }

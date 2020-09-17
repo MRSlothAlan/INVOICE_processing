@@ -156,21 +156,21 @@
         }
     },
     "raw_colon_entries": {
-        "Invoice No. ": ": IN191102-D02 ",
-        "Quotation No. ": ": ",
-        "Date ": ": 02 11 2019 ",
-        "To ": ": Pernod Ricard Asia Duty Free Limited ",
-        "From ": ": Terence Law ",
-        "Attn ": ": Maylis Berger ",
-        "Tel ": ": ",
-        "Mobile ": ": 5606-1666 ",
-        "Fax ": ": ",
-        "Email ": ": maylis.berger@ernodricard.com ",
-        "Address ": ": 12 F, Sun Life Tower, 15 Canton Road, Harbour City, TST, HK ",
-        "Total (HK$) ": ": 2,200 ",
-        "4. TT details ": ": ",
-        "Bank name ": ": 028 Public Bank ",
-        "Account name ": ": To Jumer Ltd ",
-        "Account number ": ": 0737-153597-233 "
+        "Invoice No. ": " IN191102-D02 ",
+        "Quotation No. ": " ",
+        "Date ": " 02 11 2019 ",
+        "To ": " Pernod Ricard Asia Duty Free Limited ",
+        "From ": " Terence Law ",
+        "Attn ": " Maylis Berger ",
+        "Tel ": " ",
+        "Mobile ": " 5606-1666 ",
+        "Fax ": " ",
+        "Email ": " maylis.berger@ernodricard.com ",
+        "Address ": " 12 F, Sun Life Tower, 15 Canton Road, Harbour City, TST, HK ",
+        "Total (HK$) ": " 2,200 ",
+        "4. TT details ": " ",
+        "Bank name ": " 028 Public Bank ",
+        "Account name ": " To Jumer Ltd ",
+        "Account number ": " 0737-153597-233 "
     }
 }

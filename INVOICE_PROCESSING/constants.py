@@ -6,6 +6,7 @@ import json
 import gensim
 import gensim.downloader as api
 import numpy as np
+import re
 
 """
 Characters allowed for data set generation
@@ -139,7 +140,7 @@ def save_as_json(json_path, results, line_items, currency, currency_info, raw_co
                 else:
                     entry.append(node)
             for index_i, node_e in enumerate(entry):
-                dictionary_json["raw_colon_entries"][node_e.word] = value[index_i].word
+                dictionary_json["raw_colon_entries"][node_e.word] = re.sub(':', '', str(value[index_i].word))
 
 
         # dictionary_json["raw_colon_entries"]
