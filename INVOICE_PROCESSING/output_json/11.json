@@ -51,62 +51,77 @@
                 "starting_left": 270,
                 "starting_top": 551,
                 "raw_sentence": [
-                    "PO NO.  ",
-                    "NET AMOUNT(USD)  "
+                    "PO NO. ",
+                    "NET AMOUNT(USD) "
                 ]
             },
             "1": {
                 "starting_left": 284,
                 "starting_top": 607,
                 "raw_sentence": [
-                    "76195059 Promoters Salary in Se - LOTTE  ",
-                    "USD 59,566.94  "
+                    "76195059 Promoters Salary in Se - LOTTE ",
+                    "USD 59,566.94 "
                 ]
             },
             "2": {
                 "starting_left": 284,
                 "starting_top": 635,
                 "raw_sentence": [
-                    "76195060 Promoters Salary in Se - Shinsegae  ",
-                    "USD 12,309.16  "
+                    "76195060 Promoters Salary in Se - Shinsegae ",
+                    "USD 12,309.16 "
                 ]
             },
             "3": {
                 "starting_left": 284,
                 "starting_top": 663,
                 "raw_sentence": [
-                    "76195061 Promoters Salary in Se - Shilla  ",
-                    "USD 22,329.37  "
+                    "76195061 Promoters Salary in Se - Shilla ",
+                    "USD 22,329.37 "
                 ]
             },
             "4": {
                 "starting_left": 284,
                 "starting_top": 691,
                 "raw_sentence": [
-                    "76195062 Promoters Salary in Se - Entas  ",
-                    "USD 9,843.35  "
+                    "76195062 Promoters Salary in Se - Entas ",
+                    "USD 9,843.35 "
                 ]
             },
             "5": {
                 "starting_left": 284,
                 "starting_top": 720,
                 "raw_sentence": [
-                    "76195063 Promoters Salary in Se - SMDF  ",
-                    "USD 11,709.86  "
+                    "76195063 Promoters Salary in Se - SMDF ",
+                    "USD 11,709.86 "
                 ]
             },
             "6": {
                 "starting_left": 1046,
                 "starting_top": 747,
                 "raw_sentence": [
-                    "USD 115,758.68  "
+                    "USD 115,758.68 "
                 ]
             },
             "7": {
                 "starting_left": 944,
                 "starting_top": 889,
                 "raw_sentence": [
-                    "TOTAL  : USD 115,758.68  "
+                    "TOTAL ",
+                    ": USD 115,758.68 "
+                ]
+            },
+            "8": {
+                "starting_left": 269,
+                "starting_top": 1031,
+                "raw_sentence": [
+                    "Beneficiary : Darin & Co., Ltd. "
+                ]
+            },
+            "9": {
+                "starting_left": 269,
+                "starting_top": 1060,
+                "raw_sentence": [
+                    "Bank Name : Woori Bank, Agujeong-Rodeo Branch "
                 ]
             }
         }

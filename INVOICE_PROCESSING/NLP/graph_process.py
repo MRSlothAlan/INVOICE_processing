@@ -62,12 +62,15 @@ def merge_nearby_node_info_process(node_line, width):
     :return:
     """
     # merge based on label, distance
-    thresh_distance = int(width / 7)
+    thresh_distance = int(width / 320)
     index = 0
     result = list()
     # do not skip the last one
     while index < len(node_line):
         curr_index = index
+        """
+        plan: for the word, if the gap is less than 5, merge them
+        """
         temp_word_num = node_line[index].word_num
         temp_str = node_line[index].word + " "
 
@@ -77,7 +80,7 @@ def merge_nearby_node_info_process(node_line, width):
             while index < len(node_line) and node_line[index + 1].left - \
                     node_line[index].left - node_line[index].width < \
                     thresh_distance:
-                temp_width += node_line[index + 1].width
+                temp_width += node_line[index + 1].width + thresh_distance
                 temp_word_num += node_line[index + 1].word_num + 1
                 temp_str += node_line[index + 1].word + " "
                 index += 1
@@ -95,5 +98,6 @@ def merge_nearby_node_info_process(node_line, width):
                            sub_word_num=0)
         result.append(merged_node)
         index += 1
+
     return result
 

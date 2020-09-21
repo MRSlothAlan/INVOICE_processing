@@ -45,7 +45,12 @@
                 "raw_sentence": [
                     "Item descrition ",
                     "Qty Unit Price ",
-                    "Price "
+                    "Price ",
+                    "Item ",
+                    "Qty ",
+                    " ",
+                    "Unit ",
+                    "Total "
                 ]
             },
             "1": {
@@ -60,7 +65,12 @@
                 "starting_top": 805,
                 "raw_sentence": [
                     "Catering fee for glassware cleaning ",
-                    "2,200 "
+                    "2,200 ",
+                    "Catering ",
+                    "fee ",
+                    "for ",
+                    "glassware ",
+                    "cleaning "
                 ]
             },
             "3": {
@@ -68,7 +78,12 @@
                 "starting_top": 921,
                 "raw_sentence": [
                     "Total (HK$) ",
-                    ": 2,200 "
+                    ": 2,200 ",
+                    "Catering ",
+                    "fee ",
+                    "for ",
+                    "glassware ",
+                    "cleaning "
                 ]
             }
         }
@@ -80,14 +95,14 @@
                 "starting_left": 141,
                 "starting_top": 1096,
                 "raw_sentence": [
-                    "4. TT details :  "
+                    "4. TT details : "
                 ]
             },
             "1": {
                 "starting_left": 142,
                 "starting_top": 1130,
                 "raw_sentence": [
-                    "Bank name : 028 Public Bank  "
+                    "Bank name : 028 Public Bank "
                 ]
             }
         }

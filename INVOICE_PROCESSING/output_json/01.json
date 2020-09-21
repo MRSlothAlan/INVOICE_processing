@@ -61,19 +61,6 @@
         "abbreviated": "hkd"
     },
     "table_proposed_0": {
-        "confidence": 0.8636363636363635,
-        "raw_content": {
-            "0": {
-                "starting_left": 909,
-                "starting_top": 832,
-                "raw_sentence": [
-                    "Page(s)  ",
-                    "2 (in  total)  "
-                ]
-            }
-        }
-    },
-    "table_proposed_1": {
         "confidence": 0.800187921322375,
         "raw_content": {
             "0": {
@@ -82,7 +69,18 @@
                 "raw_sentence": [
                     "Flight ",
                     "LY075 ",
-                    "Our ref FR-CNK-1808-0001 "
+                    "Our ref FR-CNK-1808-0001 ",
+                    "Our ",
+                    "ref ",
+                    "Dearture ",
+                    "Airort ",
+                    "Paris ",
+                    "Charles ",
+                    "de ",
+                    "Gaulle, ",
+                    "FR ",
+                    "date ",
+                    "08-Aug-18 "
                 ]
             },
             "1": {
@@ -91,7 +89,19 @@
                 "raw_sentence": [
                     "Dearture Airort Paris Charles de Gaulle, FR ",
                     "Flight ",
-                    "08-Aug-18 "
+                    "08-Aug-18 ",
+                    "LY075 ",
+                    "Our ",
+                    "ref ",
+                    "FR-CNK-1808-0001 ",
+                    "Dearture ",
+                    "Airort ",
+                    "Paris ",
+                    "Charles ",
+                    "de ",
+                    "Gaulle, ",
+                    "FR ",
+                    "date "
                 ]
             },
             "2": {
@@ -99,14 +109,59 @@
                 "starting_top": 945,
                 "raw_sentence": [
                     "Arrival Airort Hong Kong, HK ",
-                    "Arrival "
+                    "Arrival ",
+                    "Airort ",
+                    "Hong ",
+                    "Kong, ",
+                    "HK ",
+                    "date ",
+                    "AIR ",
+                    "TERMINAL ",
+                    "FEE ",
+                    "9,400 ",
+                    "Kilogram ",
+                    "1.72 ",
+                    "16,168.00 ",
+                    "LOCAL ",
+                    "DELIVERY ",
+                    ": ",
+                    "200   ",
+                    "PLT ",
+                    "X ",
+                    "43 ",
+                    "43 ",
+                    "Pallet(s) ",
+                    " ",
+                    "350.00 ",
+                    "350.00 "
                 ]
             },
             "3": {
                 "starting_left": 1072,
                 "starting_top": 946,
                 "raw_sentence": [
-                    "09-Aug-18 "
+                    "09-Aug-18 ",
+                    "Dearture ",
+                    "Airort ",
+                    "Paris ",
+                    "Charles ",
+                    "de ",
+                    "Gaulle, ",
+                    "FR ",
+                    "Flight ",
+                    "date ",
+                    "2 ",
+                    "DAYS ",
+                    "O.T. ",
+                    "STORAGE ",
+                    "10 ",
+                    "PALLETS ",
+                    " 1025KGS ",
+                    " 2,050 ",
+                    "Kilogram ",
+                    "Total ",
+                    "HKD ",
+                    "40,438.00 "
                 ]
             },
             "4": {
@@ -115,7 +170,17 @@
                 "raw_sentence": [
                     "Sulier ",
                     "Mumm et Cie ",
-                    "Ref "
+                    "Ref ",
+                    "Mumm ",
+                    "et ",
+                    "Cie ",
+                    "Imorter ",
+                    "Pernod ",
+                    "Ricard ",
+                    "Asia ",
+                    "Duty ",
+                    "Free ",
+                    "Ltd. "
                 ]
             },
             "5": {
@@ -123,14 +188,49 @@
                 "starting_top": 1007,
                 "raw_sentence": [
                     "Imorter ",
-                    "Pernod Ricard Asia Duty Free Ltd. Ref "
+                    "Pernod Ricard Asia Duty Free Ltd. Ref ",
+                    "Pernod ",
+                    "Ricard ",
+                    "Asia ",
+                    "Duty ",
+                    "Free ",
+                    "Ltd. ",
+                    "Ref "
                 ]
             },
             "6": {
                 "starting_left": 1072,
                 "starting_top": 1027,
                 "raw_sentence": [
-                    ": "
+                    ": ",
+                    "LOCAL ",
+                    "DELIVERY ",
+                    "HKD ",
+                    "200   ",
+                    "PLT ",
+                    "X ",
+                    "43 ",
+                    "43 ",
+                    "Pallet(s) ",
+                    "HKD ",
+                    " ",
+                    "350.00 ",
+                    "HKD ",
+                    "350.00 ",
+                    "Remarks ",
+                    "MAWB# ",
+                    "114-1514 ",
+                    "5830 ",
+                    "  ",
+                    "9400 ",
+                    "KGS ",
+                    "( ",
+                    "VOL ",
+                    "WT ",
+                    ") ",
+                    "MUMM ",
+                    "ADV ",
+                    "MAT "
                 ]
             },
             "7": {
@@ -140,7 +240,18 @@
                     "Incoterms to imorter CPT Hong Kong ",
                     "Our ref FR-CNK-1808-0001 ",
                     "Flight ",
-                    "LY075 "
+                    "LY075 ",
+                    "Our ",
+                    "ref ",
+                    "Dearture ",
+                    "Airort ",
+                    "Paris ",
+                    "Charles ",
+                    "de ",
+                    "Gaulle, ",
+                    "FR ",
+                    "date ",
+                    "08-Aug-18 "
                 ]
             },
             "8": {
@@ -149,7 +260,12 @@
                 "raw_sentence": [
                     "Descrition ",
                     "(Quantity Unit ",
-                    "Unit Price Amount GST "
+                    "Unit Price Amount GST ",
+                    "imorter ",
+                    "CPT ",
+                    "Hong ",
+                    "Kong ",
+                    "FR-CNK-1808-0001 "
                 ]
             },
             "9": {
@@ -165,9 +281,7 @@
                 "starting_top": 1148,
                 "raw_sentence": [
                     "CFS CHARGE ",
-                    "9,400 Kilogram HKD 0.95 HKD 8,930.00 ",
-                    "9,400 Kilogram ",
-                    " HKD 8,930.00 "
+                    "9,400 Kilogram HKD 0.95 HKD 8,930.00 "
                 ]
             },
             "11": {
@@ -191,15 +305,30 @@
                 "starting_top": 1266,
                 "raw_sentence": [
                     "HANDLING FEE ",
-                    "43 Pallet(s) HKD . 200.00 HKD 8,600.00 "
+                    "43 Pallet(s) HKD . 200.00 HKD 8,600.00 ",
+                    "FEE ",
+                    "  ",
+                    "PLT ",
+                    "X ",
+                    "43 ",
+                    "43 ",
+                    "Pallet(s) ",
+                    "HKD ",
+                    " ",
+                    "350.00 ",
+                    "HKD ",
+                    "350.00 ",
+                    "LOCAL ",
+                    "DELIVERY ",
+                    ": ",
+                    "200   "
                 ]
             },
             "14": {
                 "starting_left": 693,
                 "starting_top": 1258,
                 "raw_sentence": [
-                    "1 X HKD - 350.00 HKD 350.00 ",
-                    "CUSTOMS CLEARANCE "
+                    "1 X HKD - 350.00 HKD 350.00 "
                 ]
             },
             "15": {
@@ -216,15 +345,33 @@
                 "raw_sentence": [
                     "AIRPORT BRIDGE ",
                     "TOLL ",
-                    "FEE 1 File HKD 1,100.00 HKD 1,100.00 "
+                    "FEE 1 File HKD 1,100.00 HKD 1,100.00 ",
+                    "AIRPORT ",
+                    "BRIDGE ",
+                    "2 ",
+                    "Xx ",
+                    "HKD ",
+                    "50.00 ",
+                    " HKD ",
+                    "100.00 ",
+                    "DAYS ",
+                    "O.T. ",
+                    "STORAGE ",
+                    "FOR ",
+                    "10 ",
+                    "PALLETS ",
+                    " 1025KGS ",
+                    " 2,050 ",
+                    "Kilogram ",
+                    "Total ",
+                    "40,438.00 "
                 ]
             },
             "17": {
                 "starting_left": 691,
                 "starting_top": 1338,
                 "raw_sentence": [
-                    "2 Xx HKD 50.00 HKD 100.00 ",
-                    "CUSTOMS CLEARANCE "
+                    "2 Xx HKD 50.00 HKD 100.00 "
                 ]
             },
             "18": {
@@ -232,7 +379,25 @@
                 "starting_top": 1384,
                 "raw_sentence": [
                     "WAREHOUSE PARKING REGISTRATION ",
-                    "FEE 1 File HKD 1,100.00 HKD 1,100.00 "
+                    "FEE 1 File HKD 1,100.00 HKD 1,100.00 ",
+                    "WAREHOUSE ",
+                    "FEE ",
+                    "1 ",
+                    "File ",
+                    "1,100.00 ",
+                    "HKD ",
+                    "1,100.00 ",
+                    "2 ",
+                    "DAYS ",
+                    "O.T. ",
+                    "STORAGE ",
+                    "FOR ",
+                    "PALLETS ",
+                    " 1025KGS ",
+                    " 2,050 ",
+                    "Kilogram ",
+                    "Total ",
+                    "40,438.00 "
                 ]
             },
             "19": {
@@ -247,7 +412,19 @@
                 "starting_top": 1458,
                 "raw_sentence": [
                     "Total HKD ",
-                    "40,438.00 "
+                    "40,438.00 ",
+                    "2 ",
+                    "DAYS ",
+                    "O.T. ",
+                    "STORAGE ",
+                    "FOR ",
+                    "10 ",
+                    "PALLETS ",
+                    " 1025KGS ",
+                    " 2,050 ",
+                    "Kilogram ",
+                    "Total ",
+                    "HKD "
                 ]
             },
             "21": {
@@ -256,7 +433,22 @@
                 "raw_sentence": [
                     "Remarks ",
                     "MAWB# 114-1514 5830 ",
-                    "43 PLTS 9400 KGS ( VOL WT ) MUMM ADV MAT "
+                    "43 PLTS 9400 KGS ( VOL WT ) MUMM ADV MAT ",
+                    "MAWB# ",
+                    "114-1514 ",
+                    "5830 ",
+                    "43 ",
+                    "PLTS ",
+                    "  ",
+                    "9400 ",
+                    "KGS ",
+                    "( ",
+                    "VOL ",
+                    "WT ",
+                    ") ",
+                    "MUMM ",
+                    "ADV ",
+                    "MAT "
                 ]
             },
             "22": {
@@ -270,8 +462,7 @@
                 "starting_left": 322,
                 "starting_top": 1603,
                 "raw_sentence": [
-                    "JF Hillebrand HongKong Limited ",
-                    "Bank accounts "
+                    "JF Hillebrand HongKong Limited "
                 ]
             },
             "24": {
@@ -292,8 +483,7 @@
                 "starting_left": 51,
                 "starting_top": 1732,
                 "raw_sentence": [
-                    "Bank accounts ",
-                    "name :  JF Hillebrand HongKong Ltd "
+                    "Bank accounts "
                 ]
             },
             "27": {
@@ -326,14 +516,34 @@
                 "raw_sentence": [
                     "Account ",
                     ": ",
-                    "741044010001 (HKD) "
+                    "741044010001 (HKD) ",
+                    "(Quantity ",
+                    "Unit ",
+                    "Unit ",
+                    "Price ",
+                    "GST ",
+                    "LOCAL ",
+                    "DELIVERY ",
+                    "HKD ",
+                    "200   ",
+                    "PLT ",
+                    "X ",
+                    "43 ",
+                    "43 ",
+                    "Pallet(s) ",
+                    "HKD ",
+                    " ",
+                    "350.00 ",
+                    "HKD ",
+                    "350.00 "
                 ]
             },
             "31": {
                 "starting_left": 584,
                 "starting_top": 1866,
                 "raw_sentence": [
-                    "741044010201 (USD) "
+                    "741044010201 (USD) ",
+                    "(USD) "
                 ]
             }
         }

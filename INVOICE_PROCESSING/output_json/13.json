@@ -68,7 +68,11 @@
                 "starting_top": 785,
                 "raw_sentence": [
                     "DESCRIPTIONS ",
-                    "Quantity AMT (SGD) "
+                    "Quantity AMT (SGD) ",
+                    "Quantity ",
+                    " ",
+                    "AMT ",
+                    "(SGD) "
                 ]
             },
             "1": {

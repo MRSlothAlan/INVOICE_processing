@@ -310,7 +310,10 @@ def is_table_header(raw_words):
     score = 0.0
     count = 0
     word_list = list(POSSIBLE_HEADER_WORDS.keys())
+    raw_string = ""
+
     for word in raw_words:
+        raw_string += word
         # need to apply Levenshtein Distance in order to extract words needed
         # also apply the weighting defined by me.
         max_score = max(levenshtein_ratio_and_distance(word.lower(), k, True)
@@ -329,6 +332,12 @@ def is_table_header(raw_words):
         score = 0
     # print("Line: {}, Score: {}, No. of words: {}".format(raw_words, score, count))
     # 02092020: only rows with score > 80% or above are extracted
+    """
+    21/09/2020: exclude rows if it contains page(?)
+    """
+    if raw_string.__contains__("page"):
+        score /= 2
+
     if score >= 0.8:
         return True, score
     else:
@@ -336,7 +345,7 @@ def is_table_header(raw_words):
     # return len([word for word in raw_words if word in POSSIBLE_HEADER_WORDS]) > 0
 
 
-def parse_lines_get_items(content, keywords_list, score, index, rect_regions, words_raw_new, resize_r, is_block, width):
+def parse_lines_get_items(keywords_list, score, index, rect_regions, words_raw, resize_r, is_block, width):
     table_line_items = list()
     if not is_block:
         if LOG_LINE_ITEM:
@@ -351,20 +360,19 @@ def parse_lines_get_items(content, keywords_list, score, index, rect_regions, wo
         """
         may need to also parse the raw node in order to put them into different columns
         """
-        content_temp, label = extract_words(words_raw_new, rect_regions[temp_ptr], resize_r)
+        content_temp, label = extract_words(words_raw, rect_regions[temp_ptr], resize_r)
 
-        line_node_merged = merge_nearby_node_info_process(content_temp, width)
+        # line_node_merged = merge_nearby_node_info_process(content_temp, width)
         keywords_list_temp = generate_raw_words(content_temp)
         # check whether any word(s) within the row has the label 'total'
         # perform word matching for now
         # print([node.word for node in line_node_merged])
-        for node in line_node_merged:
-            if str(node.word).lower().__contains__("total") or \
-                str(node.word).lower().__contains__("remark") or \
-                str(node.word).lower().__contains__("bank"):
+        for word in keywords_list_temp:
+            if  str(word).lower().__contains__("remark") or \
+                str(word).lower().__contains__("bank"):
                 TO_CONTINUE = False
 
-        table_line_items.append(line_node_merged)
+        table_line_items.append(content_temp)
         """
          When shall I end the parsing?
          ..when there are still numbers?
@@ -388,6 +396,10 @@ def parse_lines_get_items(content, keywords_list, score, index, rect_regions, wo
 
 
 def is_header_only(all_lines_in_block_raw):
+    """
+    :param all_lines_in_block_raw: [[node, node, ...], [node, node, ...]]
+    :return:
+    """
     if LOG_LINE_ITEM:
         print("CHECK IS HEADER ONLY?")
     """
@@ -404,20 +416,226 @@ def is_header_only(all_lines_in_block_raw):
                     num_digits += 1
     # I do not believe that there are more than 4 digits existed in a header
     if num_digits < 4:
-        if LOG_LINE_ITEM:
-            print("\nonly a header\n")
         return True
     else:
         return False
 
 
-def find_line_item_rule_based_new(words_raw, rect_regions, resize_r):
+def segment_block_into_lines(content):
+    """
+    segment according to node connections instead of line number suggested by OCR
+    :param content:
+    :return:
+    """
+    index = 0
+    block_segmented = list()
+    block_segmented_linked_list = list()
+    block_segmented_top = list()
+
+    all_node = content
+    """
+    parse according to node parsing, the linked list
+    """
+    """
+    while len(all_node) > 0:
+        result = list()
+        line = list()
+        line.append(all_node[0])
+        result.append(all_node[0])
+
+        temp_node = all_node[0].right_node_ptr
+
+        while temp_node is not None:
+            line.append(temp_node)
+            result.append(temp_node)
+            print([node.word for node in result])
+            temp_node = temp_node.right_node_ptr
+            try:
+                temp_node.word
+            except Exception as e:
+                break
+        print("L(PTR): => ", [node.word for node in line])
+        block_segmented_linked_list.append(line)
+
+        removed_result = [node for node in all_node if node not in result]
+        all_node = removed_result
+        # print([node.word for node in all_node])
+    """
+
+    """
+    parse the node list, according to height, with buffer of 5
+    """
+    while len(all_node) > 0:
+        result = list()
+        line = list()
+        line.append(all_node[0])
+        result.append(all_node[0])
+        temp = all_node[0]
+
+        for node in all_node:
+            if node.id is not temp.id and \
+                abs(node.top - temp.top) <= 5:
+                line.append(node)
+                result.append(node)
+                temp = node
+        if LOG_LINE_ITEM:
+            print("L(TOP): => ", [node.word for node in line])
+        block_segmented_top.append(line)
+        removed_result = [node for node in all_node if node not in result]
+        all_node = removed_result
+
+    """
+    segment based on OCR line number
+    while index < len(content) - 1:
+        line = list()
+        line.append(content[index])
+        index += 1
+        while content[index].line_no == content[index - 1].line_no and index < len(content):
+            line.append(content[index])
+            index += 1
+            if index >= len(content):
+                break
+        print("L: => ", [node.word for node in line])
+        avg_height = 0
+        # further check the line. segment it according to different top coordinate
+        for h in [node.height for node in line]:
+            avg_height += h
+        avg_height /= len(line)
+        diff_in_top = abs(line[-1].top - line[0].top)
+        if diff_in_top > avg_height:
+            # a buffer
+            if abs(diff_in_top - avg_height) > 3:
+                print(diff_in_top, " > ", avg_height)
+                print("can be further splited")
+
+        block_segmented.append(line)
+    """
+    return block_segmented_top
+
+
+def predict_header_space(header_node_list):
+    """
+    input: [[left, [node string]], [left, [node string]], ...]
+    return a list of coordinates for segment columns
+    :return:
+    """
+
+    # preprocess header, remove space nodes
+    return [node[0] for index, node in enumerate(header_node_list) if index > 0]
+
+
+def table_row_partition(row_nodes, coordinate_list):
+    """
+    given row of nodes and coordinates_lists, partition them into N groups
+    :param row_nodes:
+    :param coordinate_list:
+    :return:
+    """
+    partition_row = list()
+    for i in range(0, len(coordinate_list) + 2):
+        partition_row.append([])
+
+    for index, left_cor in enumerate(coordinate_list):
+        temp_part = list()
+        result = list()
+        for node in row_nodes:
+            if node.left + node.width <= left_cor:
+                temp_part.append(node.word)
+                result.append(node)
+        node_remove = [node for node in row_nodes if node not in result]
+        row_nodes = node_remove
+        partition_row[index] = temp_part
+    # for remaining nodes, put in the last partition
+    partition_row[-1] = [node.word for node in row_nodes]
+
+    # convert the 2D list into a 1D list
+    final_row_content = list()
+    for list_content in partition_row:
+        final_row_content.append(' '.join(list_content))
+
+    return final_row_content
+
+
+def table_node_segmentation(table_rows, keywords_list_in, width):
+    """
+    based on extracted lines, classify the header,
+    then based on width of nodes between header,
+    classify the columns
+    :return:
+    """
+    ALL_PROPOSED_TABLE = list()
+
+    len_max = len(table_rows)
+    index = 0
+
+    while index < len_max:
+        keyword_list = generate_raw_words(table_rows[index])
+        bool, score = is_table_header(keyword_list)
+
+        if bool and len(keyword_list) <= 10:
+            # a header detected
+            table_list = list()
+
+            def merge_nearby_col(header_nodes, width):
+                """
+                return a list of the following format:
+                    [[left, node_merged], [left, node_merged]]
+                :param header_nodes:
+                :param width:
+                :return:
+                """
+
+                i = 0
+                merged = list()
+                thresh = width / 100
+                while i < len(header_nodes):
+                    final = [header_nodes[i].left, [header_nodes[i].word]]
+                    i += 1
+                    try:
+                        while header_nodes[i].left - header_nodes[i - 1].left - header_nodes[i - 1].width <= thresh:
+                            final[1].append(header_nodes[i].word)
+                            i += 1
+                            if i > len(header_nodes):
+                                break
+                    except IndexError as e:
+                        pass
+                    merged.append(final)
+                return merged
+            merged = merge_nearby_col(table_rows[index], width)
+            coordinate_columns = predict_header_space(merged)
+
+            table_list.append([' '.join(n[1]) for n in merged])
+            # starting from next row
+            """
+            extract proposed line items
+            """
+            index_temp = index + 1
+            END_EXTRACTING = False
+
+            while index_temp < len_max and not END_EXTRACTING:
+                if ["remark", "remarks", "bank"] in [node.word.lower() for node in table_rows[index_temp]]:
+                    END_EXTRACTING = True
+                table_list.append(table_row_partition(table_rows[index_temp], coordinate_columns))
+                index_temp += 1
+
+            ALL_PROPOSED_TABLE.append(table_list)
+            # convert this part into a csv
+
+            # append entries according to the coordinates extracted
+        index += 1
+
+
+    return ALL_PROPOSED_TABLE
+
+
+def find_line_item_rule_based_new(words_raw, rect_regions, resize_r, image):
     """
     Goal: get line items based on possible headers
     :param words_raw:
     :param rect_regions:
     :return:
     """
+    print("==============================================")
     ALL_SUGGESTED_LINE_ITEM_LIST = list()
     """
     Loop through the rectangles, get contents inside.
@@ -428,7 +646,7 @@ def find_line_item_rule_based_new(words_raw, rect_regions, resize_r):
         3. the header is a block within a rectangle, the line items are lines
     Possible problems:
         1. the original OCR words do not have good quality, re-parse that region again?
-            I DON'T THINK I NEED TO RE-PARSE SINCE IT DOESN'T MAKE A HUGE DIFFERENCE ANYWAY
+            -- I DON'T THINK I NEED TO RE-PARSE SINCE IT DOESN'T MAKE A HUGE DIFFERENCE ANYWAY --
     
     Method:
         for each rect, parse the content
@@ -444,35 +662,97 @@ def find_line_item_rule_based_new(words_raw, rect_regions, resize_r):
                         if row == header
                             parse lines below til some keywords are matched
     """
+    height, width, color = image.shape
+
     for index_r, rect in enumerate(rect_regions):
         content, label = extract_words(words_raw, rect, resize_r)
+
         keywords_list = generate_raw_words(content)
+
         if label == "line":
             bool, score = is_table_header(keywords_list)
             if bool:
-                print([node.line_no for node in content])
-                print("     found a header")
-                print("     ", keywords_list)
-                print("SCORE: ", score)
-                pass
+                """
+                parse the lines below the header
+                """
+                table_line_items = parse_lines_get_items(keywords_list, score, index_r,
+                                                         rect_regions, words_raw, resize_r,
+                                                         False, width)
+                # table_line_items.insert(0, content)
+                """
+                Done for line only
+                """
+                ALL_SUGGESTED_LINE_ITEM_LIST.append([table_node_segmentation(table_line_items, keywords_list, width), score])
+
         elif label == "block":
             bool, score = is_table_header(keywords_list)
             if bool:
-                print([node.line_no for node in content])
-                print("     found a block which is a header / contains a header")
+
                 """
                 segment the content into lines
                 """
+                block_segmented = segment_block_into_lines(content)
 
                 """
                 is the block a header or a complete table?
                 """
+                if is_header_only(block_segmented):
+                    """
+                    parse the lines below it, calculate a distance metric, classify entries of line items
+                    """
+                    table_line_items = parse_lines_get_items(keywords_list, score, index_r + 1,
+                                                             rect_regions, words_raw, resize_r,
+                                                             False, width)
+
+                    for i, line in reversed(list(enumerate(block_segmented))):
+                        table_line_items.insert(0, line)
+                    ALL_SUGGESTED_LINE_ITEM_LIST.append([table_node_segmentation(table_line_items, None, width), score])
+
+                else:
+                    """
+                    re-parse the region. The regions are suggested based on the resized image
+                    x = int(rect[0] / resize_r)
+                    y = int(rect[1] / resize_r)
+                    w = int(rect[2] / resize_r)
+                    h = int(rect[3] / resize_r)
+                    score_header_block = score
+                    crop_img = image[y:y + h, x:x + w]
+                    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (1, 1))
+                    crop_img = cv2.erode(crop_img, kernel, iterations=1)
+                    height_c, width_c, color_c = crop_img.shape
+                    # necessary?
+                    info_detailed = pytesseract.image_to_data(crop_img, output_type='dict')
+                    words_raw_temp, same_line, same_block = ocr_to_standard_data(info_detailed)
+
+                    # block_segmented_temp = segment_block_into_lines(words_raw_temp)
+                    """
+                    """
+                    21092020: re-parse does not have good result
+                    testing only
+                    """
+                    ALL_SUGGESTED_LINE_ITEM_LIST.append([table_node_segmentation(block_segmented, None, width), score])
+                    """
+                    # Function to do insertion sort
+                    def insertionSort(arr):
+                        # Traverse through 1 to len(arr)
+                        for i in range(1, len(arr)):
+                            key = arr[i][0].top
+                            # Move elements of arr[0..i-1], that are
+                            # greater than key, to one position ahead
+                            # of their current position
+                            j = i - 1
+                            while j >= 0 and key < arr[j][0].top:
+                                arr[j + 1] = arr[j]
+                                j -= 1
+                            arr[j + 1][0].top = key
+                        return arr
+
+                    sorted_block_seg = insertionSort(block_segmented_temp)
+                    final_block = list()
+                    """
 
 
-                print("     ", keywords_list)
-                print("SCORE: ", score)
-                pass
-
+    return ALL_SUGGESTED_LINE_ITEM_LIST
 
 @deprecated
 def find_line_item_rule_based(words_raw_new, words_raw, rect_regions, resize_r, image):
@@ -651,7 +931,7 @@ def find_line_item_rule_based(words_raw_new, words_raw, rect_regions, resize_r, 
                 # check whether line is header
                 bool, score = is_table_header(keywords_list)
                 if bool:
-                    table_line_items = parse_lines_get_items(content, keywords_list, score, index, rect_regions,
+                    table_line_items = parse_lines_get_items(keywords_list, score, index, rect_regions,
                                                              words_raw_new, resize_r, HEADER_IS_BLOCK, width)
                     ALL_SUGGESTED_LINE_ITEMS.append([table_line_items, score])
 
@@ -661,7 +941,7 @@ def find_line_item_rule_based(words_raw_new, words_raw, rect_regions, resize_r, 
                 if LOG_LINE_ITEM:
                     print("Header is a block, but no info such as 'total'")
                     print("parse the lines below")
-                table_line_items = parse_lines_get_items(None, None, None, index, rect_regions, words_raw_new, resize_r,
+                table_line_items = parse_lines_get_items(None, None, index, rect_regions, words_raw_new, resize_r,
                                                          constants.HEADER_IS_BLOCK, width)
                 temp_line_items += table_line_items
 

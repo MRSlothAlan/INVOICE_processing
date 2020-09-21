@@ -54,7 +54,12 @@
                     "Order Descrition ",
                     "Period ",
                     "GST Annual condition ",
-                    "Net "
+                    "Net ",
+                    "Order ",
+                    "Descrition ",
+                    "GST ",
+                    "Annual ",
+                    "condition "
                 ]
             },
             "1": {
@@ -75,63 +80,90 @@
                 "starting_left": 189,
                 "starting_top": 1419,
                 "raw_sentence": [
-                    "6060583 Royal Salute DF JKT T3 07  "
+                    "6060583 Royal Salute DF JKT T3 07 "
                 ]
             },
             "4": {
                 "starting_left": 190,
                 "starting_top": 1443,
                 "raw_sentence": [
-                    "Royal Salute  "
+                    "Royal Salute "
                 ]
             },
             "5": {
                 "starting_left": 190,
                 "starting_top": 1466,
                 "raw_sentence": [
-                    "312 Wky visual, backlit instore anel 01.01.2019 - 31.12.2019 0 6,050.00 USD 6,050.00 USD  "
+                    "312 Wky visual, backlit instore anel 01.01.2019 - 31.12.2019 0 6,050.00 USD 6,050.00 USD "
                 ]
             },
             "6": {
                 "starting_left": 189,
                 "starting_top": 1520,
                 "raw_sentence": [
-                    "6068532 Royal Salute DF JKT T3 07  "
+                    "6068532 Royal Salute DF JKT T3 07 "
                 ]
             },
             "7": {
                 "starting_left": 190,
                 "starting_top": 1544,
                 "raw_sentence": [
-                    "Royal Salute  "
+                    "Royal Salute "
                 ]
             },
             "8": {
                 "starting_left": 190,
                 "starting_top": 1568,
                 "raw_sentence": [
-                    "311 Wky visual, backlit backwall  01.01.2019 - 31.12.2019 0 1,085.00 USD 1,085.00 USD  "
+                    "311 Wky visual, backlit backwall ",
+                    "01.01.2019 - 31.12.2019 0 1,085.00 USD 1,085.00 USD "
                 ]
             },
             "9": {
                 "starting_left": 968,
                 "starting_top": 1657,
                 "raw_sentence": [
-                    "Net amount  7,135.00 USD  "
+                    "Net amount ",
+                    "7,135.00 USD "
                 ]
             },
             "10": {
                 "starting_left": 968,
                 "starting_top": 1686,
                 "raw_sentence": [
-                    "GST 0% 0.00 USD  "
+                    "GST 0% 0.00 USD "
                 ]
             },
             "11": {
                 "starting_left": 967,
                 "starting_top": 1717,
                 "raw_sentence": [
-                    "Total amount  7,135.00 USD  "
+                    "Total amount ",
+                    "7,135.00 USD "
+                ]
+            },
+            "13": {
+                "starting_left": 190,
+                "starting_top": 1800,
+                "raw_sentence": [
+                    "GST : 00% "
+                ]
+            },
+            "14": {
+                "starting_left": 190,
+                "starting_top": 1830,
+                "raw_sentence": [
+                    "GST : 17% "
+                ]
+            },
+            "16": {
+                "starting_left": 869,
+                "starting_top": 2057,
+                "raw_sentence": [
+                    "Account ",
+                    "SWIFT ",
+                    "Bank name & address ",
+                    "Bank account name "
                 ]
             }
         }

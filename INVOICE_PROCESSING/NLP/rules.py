@@ -72,7 +72,8 @@ POSSIBLE_HEADER_WORDS = {
     "po.no.": 0.6,
     "net amount": 0.5,
     "net" : 0.6,
-    "po" : 0.8
+    "po" : 0.8,
+    "page" : 0.1,
 }
 
 # used in parsing total amount

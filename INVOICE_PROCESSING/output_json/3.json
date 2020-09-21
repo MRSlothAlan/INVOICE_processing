@@ -56,7 +56,19 @@
                     "Tye of Weight ",
                     "Standard ",
                     "Extra Charges ",
-                    "Extra "
+                    "Extra ",
+                    "Air Waybill ",
+                    "Shiers ",
+                    "Shiment ",
+                    "Origin ",
+                    "Destination ",
+                    "  ",
+                    "Consignee ",
+                    "Tye ",
+                    "of ",
+                    "Weight ",
+                    "Number ",
+                    "Charges "
                 ]
             },
             "1": {
@@ -67,7 +79,20 @@
                     "Date ",
                     "Service inKg ofitems Charge ",
                     "Descrition ",
-                    "Charges "
+                    "Charges ",
+                    "Air Waybill ",
+                    "Shiers ",
+                    "Shiment ",
+                    "Origin ",
+                    "Destination ",
+                    "  ",
+                    "Consignee ",
+                    "Tye ",
+                    "of ",
+                    "Weight ",
+                    "Standard ",
+                    "Extra ",
+                    "Extra "
                 ]
             },
             "2": {
@@ -77,7 +102,16 @@
                     "7731084395 11829020 01 11 2019 MEL, MELBOURNE ",
                     "TYO, TOKYO ",
                     "EXPRESS 37.50W 3 7,189.00 ",
-                    "7,189.00 "
+                    "7,189.00 ",
+                    "7731084395 ",
+                    "11829020 ",
+                    "01 11 2019 ",
+                    "MEL, ",
+                    "MELBOURNE ",
+                    "TYO, ",
+                    "TOKYO ",
+                    "EXPRESS ",
+                    "37.50W "
                 ]
             },
             "3": {
@@ -89,7 +123,21 @@
                     "WORLDWIDE ",
                     "DUTIES TAXES PAID ",
                     "150.00 ",
-                    "150.00 "
+                    "150.00 ",
+                    "PERNOD ",
+                    "RICARD ",
+                    "JAPAN ",
+                    "PAID ",
+                    "Service ",
+                    "Sub Total ",
+                    "- ",
+                    "EXPRESS ",
+                    "nondoc ",
+                    "37.50 ",
+                    "3 ",
+                    "7,189.00 ",
+                    "1,426.05 ",
+                    "8,615.05 "
                 ]
             },
             "4": {
@@ -101,7 +149,12 @@
                     "nondoc ",
                     "FUEL SURCHARGE ",
                     "1,276.05 ",
-                    "1,276.05 "
+                    "1,276.05 ",
+                    "Tristian ",
+                    "Andrews ",
+                    "Madoka-san ",
+                    "Nishiok ",
+                    " "
                 ]
             },
             "5": {
@@ -117,7 +170,12 @@
                 "starting_top": 457,
                 "raw_sentence": [
                     "AU-3045, MELBOURNE AIRPORT ",
-                    "JP-112-0004, TOKYO-TO BUNKYO KU "
+                    "JP-112-0004, TOKYO-TO BUNKYO KU ",
+                    "AU-3045, ",
+                    "JP-112-0004, ",
+                    "TOKYO-TO ",
+                    "BUNKYO ",
+                    "KU "
                 ]
             },
             "7": {
@@ -125,7 +183,17 @@
                 "starting_top": 480,
                 "raw_sentence": [
                     "vIC ",
-                    "TOKYO "
+                    "TOKYO ",
+                    "7731084395 ",
+                    "11829020 ",
+                    "01 11 2019 ",
+                    "MEL, ",
+                    "MELBOURNE ",
+                    "TYO, ",
+                    "EXPRESS ",
+                    "37.50W ",
+                    "7,189.00 ",
+                    "7,189.00 "
                 ]
             },
             "8": {
@@ -137,7 +205,16 @@
                     "- EXPRESS WORLDWIDE nondoc ",
                     "37.50 3 7,189.00 ",
                     "1,426.05 ",
-                    "8,615.05 "
+                    "8,615.05 ",
+                    "Number ",
+                    "Reference ",
+                    "Date ",
+                    "inKg ",
+                    "ofitems ",
+                    "Charge ",
+                    "Extra ",
+                    "Charges ",
+                    "Extra "
                 ]
             },
             "9": {
@@ -153,7 +230,17 @@
                 "raw_sentence": [
                     "A Customer Actual Weight ",
                     "V Customer Volumetric Weight ",
-                    "B DHL Actual Weight W DHL Volumetric Weight "
+                    "B DHL Actual Weight W DHL Volumetric Weight ",
+                    "A ",
+                    "Customer Actual ",
+                    "Weight ",
+                    "V  ",
+                    "B ",
+                    " ",
+                    "DHL Actual ",
+                    "Weight ",
+                    "W  ",
+                    "DHL Volumetric Weight "
                 ]
             },
             "11": {
@@ -163,7 +250,14 @@
                     "Total : ",
                     "HKD : 37.50 3 7,189.00 ",
                     "1,426.05 ",
-                    "8,615.05 "
+                    "8,615.05 ",
+                    "Tristian ",
+                    "Andrews ",
+                    "Madoka-san ",
+                    "Nishiok ",
+                    "nondoc ",
+                    "FUELSURCHARGE ",
+                    " "
                 ]
             },
             "12": {
@@ -177,14 +271,26 @@
                 "starting_left": 2112,
                 "starting_top": 503,
                 "raw_sentence": [
-                    "8,615.05 "
+                    "8,615.05 ",
+                    "Service ",
+                    "Sub Total ",
+                    "- ",
+                    "EXPRESS ",
+                    "WORLDWIDE ",
+                    "nondoc ",
+                    "37.50 ",
+                    "3 ",
+                    "7,189.00 ",
+                    "1,426.05 "
                 ]
             },
             "14": {
                 "starting_left": 2088,
                 "starting_top": 592,
                 "raw_sentence": [
-                    "M Mixed "
+                    "M Mixed ",
+                    "M ",
+                    " "
                 ]
             }
         }

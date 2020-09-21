@@ -18,6 +18,7 @@ TESSERACT_PATH = str(Path.cwd() / "Tesseract-OCR/tesseract.exe")
 dataset_dir = Path.cwd() / "test_images"
 output_dir = Path.cwd() / "output"
 output_json_dir = Path.cwd() / "output_json"
+output_csv_dir = Path.cwd() / "output_csv"
 csv_currency_dir = Path.cwd() / "csv_currency/codes-all.csv"
 # currency_dict = dict()
 
@@ -84,7 +85,7 @@ def get_currency_csv():
 
 # format [[left, top, width, height, 'invoice_number', original_word, entry]]
 # format ['HONG KONG', 'Hong Kong Dollar']
-def save_as_json(json_path, results, line_items, currency, currency_info, raw_colon_separated_entries):
+def save_as_json(json_path, results, currency, currency_info, raw_colon_separated_entries):
     dictionary_json = dict()
     for index, result in enumerate(results):
         name = result[4] + "_" + str(index)
@@ -102,21 +103,6 @@ def save_as_json(json_path, results, line_items, currency, currency_info, raw_co
         [<line items>, <score>] 
     """
 
-    for index, proposed in enumerate(line_items):
-        name_table = "table_proposed_" + str(index)
-        dictionary_json[name_table] = dict()
-        dictionary_json[name_table]["confidence"] = proposed[1]
-        dictionary_json[name_table]["raw_content"] = dict()
-
-        for index_line, line in enumerate(proposed[0]):
-            # check whether the list is 1D first
-            if len(np.array(line).shape) > 1:
-                line = list(np.concatenate(line).flat)
-            if len(line) > 0:
-                dictionary_json[name_table]["raw_content"][index_line] = dict()
-                dictionary_json[name_table]["raw_content"][index_line]["starting_left"] = line[0].left
-                dictionary_json[name_table]["raw_content"][index_line]["starting_top"] = line[0].top
-                dictionary_json[name_table]["raw_content"][index_line]["raw_sentence"] = [n.word for n in line]
     if currency is not None:
         dictionary_json["currency"]["type"] = currency_info[1]
         dictionary_json["currency"]["country"] = currency_info[0]

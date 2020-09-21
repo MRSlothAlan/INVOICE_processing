@@ -165,7 +165,19 @@
                 "raw_sentence": [
                     "Please Reimburse the ",
                     "Total ",
-                    "Charges Shown Below To : DHL EXPRESS (HONG KONG) LIMITED "
+                    "Charges Shown Below To : DHL EXPRESS (HONG KONG) LIMITED ",
+                    "Please ",
+                    "Reimburse ",
+                    "the ",
+                    "Charges ",
+                    "Shown ",
+                    "Below ",
+                    "To :  ",
+                    "DHL ",
+                    "EXPRESS ",
+                    "(HONG ",
+                    "KONG) ",
+                    "LIMITED "
                 ]
             },
             "1": {
@@ -207,9 +219,7 @@
                 "starting_left": 372,
                 "starting_top": 755,
                 "raw_sentence": [
-                    "IMPORT EXPORT DUTIES ",
-                    "4,311.50 ",
-                    "4,311.50 "
+                    "IMPORT EXPORT DUTIES "
                 ]
             },
             "2": {
@@ -249,7 +259,19 @@
                 "raw_sentence": [
                     "THIS Is A COMPUTER GENERATED ",
                     "INVOICE. NO ",
-                    "SIGNATURE IS REQUIRED "
+                    "SIGNATURE IS REQUIRED ",
+                    "THIS ",
+                    "Is ",
+                    "A ",
+                    "COMPUTER ",
+                    "GENERATED ",
+                    "NO ",
+                    "SIGNATURE ",
+                    "IS ",
+                    "REQUIRED ",
+                    "Total ",
+                    "Payable :  ",
+                    "HKD "
                 ]
             },
             "7": {
@@ -258,7 +280,25 @@
                 "raw_sentence": [
                     "Total Payable ",
                     ": HKD ",
-                    "4,401.50 "
+                    "4,401.50 ",
+                    "stated ",
+                    "otherwise ",
+                    "on ",
+                    "the ",
+                    "invoice ",
+                    "Sub-Total ",
+                    "THIS ",
+                    "Is ",
+                    "A ",
+                    "COMPUTER ",
+                    "GENERATED ",
+                    "INVOICE. ",
+                    "NO ",
+                    "SIGNATURE ",
+                    "IS ",
+                    "REQUIRED ",
+                    "Total ",
+                    "Payable :  "
                 ]
             }
         }

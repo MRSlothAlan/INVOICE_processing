@@ -138,6 +138,9 @@ def parse_main():
             if SHOW_IMAGE or SHOW_SUB_IMAGE:
                 resize_temp = same_line_copy.draw_graph(words_raw, resize_temp, resize_ratio)
         end = time.time()
+
+        same_line_copy.generate_graph()
+        words_raw_after_gen = same_line_copy.return_raw_node()
         if TIMER:
             print("Process OCR data, time: {}".format(abs(start - end)))
         if DL:
@@ -284,8 +287,31 @@ def parse_main():
             # check specific entries only
             image, all_results = find_information_rule_based(words_raw_new, resize_function, resize_ratio, d)
             # may also need to pass raw nodes in order to split the content
+
             all_line_items = find_line_item_rule_based(words_raw_new, words_raw, rect_regions, resize_ratio, image_copy)
-            find_line_item_rule_based_new(words_raw, rect_regions, resize_ratio)
+
+            # words_raw not used
+            ALL_SUGGESTED_LINE_ITEMS = find_line_item_rule_based_new(words_raw_after_gen, rect_regions, resize_ratio, image_copy)
+
+            # write to csv
+            print("==========WRITE TO CSV=============")
+            import csv
+            print(ALL_SUGGESTED_LINE_ITEMS)
+            for index_ta, all_tables in enumerate(ALL_SUGGESTED_LINE_ITEMS):
+                score = int(all_tables[1] * 100)
+
+                for index_ti, table in enumerate(all_tables[0]):
+                    csv_name = output_csv_dir / str(image_name[:-4] +
+                                                    "_{}_".format(index_ta) +
+                                                    "_{}_".format(index_ti) +
+                                                    "_{}".format(str(score)) + ".csv")
+                    with open(str(csv_name), "w", newline='') as f_out_csv:
+                        wr = csv.writer(f_out_csv)
+                        for line in table:
+                            wr.writerow(line)
+                            print(line)
+                    f_out_csv.close()
+
             # with the node structure, you can tag stuff easily.
             results, currency = same_line_copy.use_parser_re(currency_dict)
             if currency is not None:
@@ -312,10 +338,10 @@ def parse_main():
 
             cv2.waitKey(0)
             try:
-                save_as_json(json_name, results, all_line_items, currency, currency_dict[currency.upper()],
+                save_as_json(json_name, results, currency, currency_dict[currency.upper()],
                              raw_colon_separated_entries=all_raw_colon_separated_entry)
             except AttributeError as e:
-                save_as_json(json_name, results, all_line_items, currency=None, currency_info=None,
+                save_as_json(json_name, results, currency=None, currency_info=None,
                              raw_colon_separated_entries=all_raw_colon_separated_entry)
 
 
