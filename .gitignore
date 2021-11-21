@@ -1,0 +1,8 @@
+INVOICE_PROCESSING/Tesseract-OCR/
+playground/
+related_research/
+INVOICE_PROCESSING/test_images/
+INVOICE_PROCESSING/output_json/
+INVOICE_PROCESSING/output_csv/
+INVOICE_PROCESSING/OpenCV_EAST/
+# use git rm -r . --cached to remove cache haha.

@@ -1,6 +1,35 @@
 # Read me for the invoice parsing system
+This is a fun side-project fyr.
+
 Please make sure that you have installed all required packages.
 ```pip install -r "requirements.txt"```
+
+# About Tesseract-OCR, and other missing directory and data
+The repo is for the presentation of the logic. 
+Other directories, such as /Tesseract-OCR, and some testing code / dataset are ignored.
+Datasets are removed due to privacy concerns.
+
+The list of removed directories:
+
+* INVOICE_PROCESSING/Tesseract-OCR/
+* playground/
+* related_research/
+* INVOICE_PROCESSING/test_images/
+* INVOICE_PROCESSING/output_json/
+* INVOICE_PROCESSING/output_csv/
+* INVOICE_PROCESSING/OpenCV_EAST/
+
+# Demo:
+### Input invoice
+![Alt text](demo/original_invoice.png?raw=true "Original invoice")
+
+### Output csv
+Tables (with or without border / features) are stored in a CSV file.
+![Alt text](demo/result_csv.png?raw=true "CSV")
+
+### Output json
+Other entries are exported to a json file
+![Alt text](demo/result_json.png?raw=true "JSON")
 
 ### Work done:
 #### Parse invoices in local directory
